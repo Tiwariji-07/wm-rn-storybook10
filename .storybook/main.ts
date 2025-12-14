@@ -6,7 +6,9 @@ const main: StorybookConfig = {
     "../components/**/*.stories.@(js|jsx|ts|tsx)",
   ],
 
-  addons: ["@storybook/addon-docs", "@chromatic-com/storybook"],
+  addons: ["@storybook/addon-docs", "@chromatic-com/storybook",
+    'storybook/addon-actions'
+  ],
 
   framework: {
     name: "@storybook/react-native-web-vite",
