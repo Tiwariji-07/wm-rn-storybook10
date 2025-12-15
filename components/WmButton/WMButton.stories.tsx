@@ -4,6 +4,20 @@ import { View, Text } from "react-native";
 import WmButton from "@wavemaker/app-rn-runtime/components/basic/button/button.component";
 import { action } from "storybook/actions";
 import { animationNames } from "../../constants/constant";
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import studioPropsAndEvents from "./docs/studio-props-and-events.md?raw";
+import scriptPropsMethods from "./docs/script-props-methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+const ButtonDocs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    studioPropsAndEvents={studioPropsAndEvents}
+    scriptPropsMethods={scriptPropsMethods}
+    styling={styling}
+  />
+);
 
 const meta = {
   title: "Form/Button",
@@ -18,86 +32,10 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmButton Component
-
-A versatile button component that supports various styles, icons, animations, and states.
-
-## Features
-- Multiple button styles (primary, secondary, success, danger, warning, info, muted, default)
-- Icon support with positioning
-- Animation support
-- Disabled state
-- Custom styling through class names
-- Background image support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the button |
-| caption | string | '' | Text to display on the button |
-| disabled | boolean | false | Whether the button is disabled |
-| classname | string | 'btn-primary' | CSS class for styling the button |
-| defaultClass | string | 'app-button' | Default CSS class applied to the button |
-
-### Icon Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| iconclass | string | null | CSS class for the icon |
-| iconposition | string | 'left' | Position of the icon ('left' or 'right') |
-
-### Background Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| backgroundcolor | string | '' | Background color of the button |
-| backgroundimage | string | '' | URL of the background image |
-| backgroundsize | string | 'cover' | Size of the background image |
-| backgroundposition | string | 'center' | Position of the background image |
-| backgroundrepeat | string | 'no-repeat' | Repeat behavior of the background image |
-
-### Animation Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| animation | string | null | Animation type to apply |
-| animationdelay | number | null | Delay before animation starts |
-| iterationcount | number | undefined | Number of times to repeat the animation |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onTap | (e: Event, proxy: ComponentProxy) | Triggered when the button is clicked |
-
-## Styling Classes
-Available button classes:
-- \`btn-primary\`
-- \`btn-secondary\`
-- \`btn-success\`
-- \`btn-danger\`
-- \`btn-warning\`
-- \`btn-info\`
-- \`btn-muted\`
-- \`btn-default\`
-- \`btn-link\`
-
-## Icon Libraries
-The button supports icons from multiple libraries:
-- Font Awesome (prefix: \`fa fa-\`)
-- Wavicon (prefix: \`wi wi-\`)
-- Streamline Light (prefix: \`wm-sl-l sl-\`)
-- Streamline Regular (prefix: \`wm-sl-r sl-\`)
-        `
-      }
+      page: ButtonDocs,
+      canvas: {
+        sourceState: "none",
+      },
     }
   },
 } satisfies Meta<typeof WmButton>;

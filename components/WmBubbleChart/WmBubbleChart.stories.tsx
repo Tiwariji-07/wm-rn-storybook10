@@ -64,6 +64,21 @@ const sampleData = [
   }
 ];
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import studioPropsAndEvents from "./docs/studio-props-and-events.md?raw";
+import scriptPropsMethods from "./docs/script-props-methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+const BubbleChartDocs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    studioPropsAndEvents={studioPropsAndEvents}
+    scriptPropsMethods={scriptPropsMethods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Charts/BubbleChart",
   component: WmBubbleChart,
@@ -77,83 +92,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmBubbleChart Component
-
-A chart component that displays data as bubbles with customizable size and color.
-
-## Features
-- Bubble chart visualization
-- Multiple series support
-- Custom bubble sizes
-- Color customization
-- Interactive tooltips
-- Animation support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the chart |
-| data | array | [] | Chart data array |
-| xField | string | 'x' | Field name for X-axis values |
-| yField | string | 'y' | Field name for Y-axis values |
-| sizeField | string | 'size' | Field name for bubble size values |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the chart is visible |
-| enabled | boolean | true | Whether the chart is enabled |
-| showLegend | boolean | true | Whether to show chart legend |
-| showTooltip | boolean | true | Whether to show tooltips |
-
-### Chart Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| series | array | [] | Chart series configuration |
-| xAxis | object | {} | X-axis configuration |
-| yAxis | object | {} | Y-axis configuration |
-| legend | object | {} | Legend configuration |
-| tooltip | object | {} | Tooltip configuration |
-| minSize | number | 10 | Minimum bubble size |
-| maxSize | number | 50 | Maximum bubble size |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | '100%' | Width of the chart |
-| height | number/string | '300px' | Height of the chart |
-| styles | object | {} | Custom styles for the component |
-| chartStyle | object | {} | Custom styles for the chart |
-| bubbleStyle | object | {} | Custom styles for the bubbles |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onBubbleClick | (bubble: object) | Triggered when a bubble is clicked |
-| onSeriesClick | (series: object) | Triggered when a series is clicked |
-| onLegendClick | (legend: object) | Triggered when a legend item is clicked |
-
-## Usage Notes
-- Data should be provided with x, y, and size values
-- Multiple series can be displayed with different colors
-- Bubble sizes can be customized using minSize and maxSize
-- Chart can be customized with various styling options
-- Interactive features like tooltips and click events are supported
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: BubbleChartDocs,
     }
   },
   argTypes: {

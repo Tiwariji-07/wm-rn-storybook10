@@ -6,8 +6,7 @@ const main: StorybookConfig = {
     "../components/**/*.stories.@(js|jsx|ts|tsx)",
   ],
 
-  addons: ["@storybook/addon-docs", "@chromatic-com/storybook",
-    'storybook/addon-actions'
+  addons: ["@storybook/addon-docs", "@chromatic-com/storybook"
   ],
 
   framework: {
