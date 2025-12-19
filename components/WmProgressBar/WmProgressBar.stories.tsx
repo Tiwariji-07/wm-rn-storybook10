@@ -3,6 +3,24 @@ import React from "react";
 import { Text, View } from "react-native";
 import WmProgressBar from "@wavemaker/app-rn-runtime/components/basic/progress-bar/progress-bar.component";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Basic/ProgressBar",
   component: WmProgressBar,
@@ -16,67 +34,7 @@ const meta = {
   parameters: {
     layout: 'centered',
     docs: {
-      description: {
-        component: `
-# WmProgressBar Component
-
-A linear progress indicator component that shows the progress of an operation.
-
-## Features
-- Linear progress display
-- Customizable progress value
-- Multiple progress types
-- Custom styling support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the progress bar |
-| datavalue | number | 0 | Current progress value (0-100) |
-| minvalue | number | 0 | Minimum value of the progress range |
-| maxvalue | number | 100 | Maximum value of the progress range |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| type | string | 'default' | Type of progress bar ('default', 'info', 'success', 'warning', 'danger') |
-| showvalue | boolean | true | Whether to show the progress value |
-| showlabel | boolean | true | Whether to show the progress label |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| classname | string | '' | CSS class for styling |
-| width | string | '100%' | Width of the progress bar |
-| height | string | '20px' | Height of the progress bar |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Progress Types
-- \`default\`: Standard progress bar
-- \`info\`: Blue progress bar for information
-- \`success\`: Green progress bar for success
-- \`warning\`: Yellow progress bar for warnings
-- \`danger\`: Red progress bar for errors
-
-## Usage Notes
-- Progress value should be between minvalue and maxvalue
-- The component supports both percentage and absolute value display
-- Custom styling can be applied through the styles prop
-- The component is fully accessible with proper ARIA attributes
-
-
-        `
-      }
+      page: Docs,
     }
   }
 } satisfies Meta<typeof WmProgressBar>;

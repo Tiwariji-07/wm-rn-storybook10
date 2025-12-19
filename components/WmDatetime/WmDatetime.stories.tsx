@@ -8,6 +8,24 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { WmTimeService } from "../../services/WmTimeService";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Form/Datetime",
   component: WmDatetime,
@@ -27,75 +45,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmDatetime Component
-
-A datetime input component that allows users to select both date and time with a calendar and time picker.
-
-## Features
-- Date and time selection
-- Custom date/time formats
-- Min/max date constraints
-- Time zone support
-- Custom validation
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the input |
-| value | string/Date | - | Current value of the input |
-| placeholder | string | 'Select date and time' | Placeholder text |
-| required | boolean | false | Whether the input is required |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the input is visible |
-| enabled | boolean | true | Whether the input is enabled |
-| readOnly | boolean | false | Whether the input is read-only |
-| showLabel | boolean | true | Whether to show the label |
-
-### Validation Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| minDate | string/Date | - | Minimum allowed date |
-| maxDate | string/Date | - | Maximum allowed date |
-| format | string | 'YYYY-MM-DD HH:mm' | Date/time format |
-| timezone | string | 'local' | Time zone for the input |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| labelClass | string | '' | CSS class for the label |
-| inputClass | string | '' | CSS class for the input |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | 'textbox' | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onChange | (value, event) | Triggered when value changes |
-| onFocus | (event) | Triggered when input is focused |
-| onBlur | (event) | Triggered when input loses focus |
-
-## Usage Notes
-- Value can be a string in the specified format or a Date object
-- Format string supports various tokens (YYYY, MM, DD, HH, mm, etc.)
-- Min/max date constraints prevent invalid selections
-- Time zone support allows for consistent datetime handling
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

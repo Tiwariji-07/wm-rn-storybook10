@@ -1,15 +1,17 @@
 # Overview
 
-The **WmButton** component provides a versatile, styled button for mobile applications. It supports customizable captions, icons, and various visual styles, enabling developers to create interactive touch targets that fit the app’s design language.
+A **Button** component provides a styled clickable UI element that indicates possible user actions. It supports various visual states, animations, and touch interactions optimized for mobile applications. The button can trigger navigation, function calls, or other user-defined actions when tapped.
+
+The Button component extends BaseProps and offers comprehensive customization options including icons, badges, accessibility features, and responsive design capabilities for React Native applications.
 
 ## Features
 
-- **Customizable Caption**: Set the button text via the `caption` property.
-- **Icon Support**: Add an icon using `iconClass` or `iconUrl` with adjustable size and position.
-- **Size Variants**: Apply predefined size classes such as `btn-primary`, `btn-xs`, etc.
-- **Conditional Styling**: Use `conditionalClass` to apply CSS classes based on runtime conditions.
-- **Show/Hide**: Control visibility with the `show` property, supporting lazy loading via `loadOnDemand`.
-- **Disabled State**: Prevent interaction by setting `disabled`.
-- **Animation**: Apply CSS animations from libraries like Animate.css for dynamic feedback.
-
-These features are optimized for mobile platforms, ensuring responsive touch interactions and appropriate visual feedback.
+- **Touch Interactions**: Supports tap, double-tap, long-tap, and touch events
+- **Icon Support**: Display icons using icon classes or image URLs with flexible positioning
+- **Badge Display**: Show notification badges with custom values
+- **Accessibility**: Built-in accessibility features with customizable labels and roles
+- **Responsive Design**: Device-specific visibility controls (xs, sm, md, lg, xl, xxl)
+- **Animation Support**: CSS-based animations with configurable delays
+- **Skeleton Loading**: Show placeholder content during loading states
+- **State Management**: Enable/disable functionality with visual feedback
+- **Touch Effects**: Configurable touch feedback for enhanced user experience

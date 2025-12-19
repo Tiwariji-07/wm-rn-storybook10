@@ -6,6 +6,13 @@ import { action } from "storybook/actions";
 
 import ThemeFactory from "@wavemaker/app-rn-runtime/components/chart/theme/chart.theme";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const colors = ["#FF9800", "#2196F3", "#4CAF50", "#9C27B0", "#F44336"];
 
 const defaultTheme = {
@@ -54,6 +61,17 @@ const sampleData = [
   }
 ];
 
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Charts/DonutChart",
   component: WmDonutChart,
@@ -67,77 +85,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmDonutChart Component
-
-A donut chart component that displays data in a circular format with a hollow center.
-
-## Features
-- Donut chart visualization
-- Multiple series support
-- Custom styling options
-- Interactive tooltips
-- Animation support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the chart |
-| data | array | [] | Data array for the chart |
-| angleField | string | 'value' | Field name for angle values |
-| colorField | string | 'type' | Field name for color values |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the chart is visible |
-| enabled | boolean | true | Whether the chart is enabled |
-| loading | boolean | false | Whether the chart is loading |
-
-### Chart Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| radius | number | 0.8 | Outer radius of the donut |
-| innerRadius | number | 0.6 | Inner radius of the donut |
-| startAngle | number | -90 | Starting angle in degrees |
-| endAngle | number | 270 | Ending angle in degrees |
-| label | object | {} | Label configuration |
-| legend | object | {} | Legend configuration |
-| tooltip | object | {} | Tooltip configuration |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | '100%' | Width of the chart |
-| height | number/string | '300px' | Height of the chart |
-| styles | object | {} | Custom styles for the component |
-| theme | object | {} | Chart theme configuration |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onSegmentClick | (data) | Triggered when segment is clicked |
-| onLegendClick | (data) | Triggered when legend item is clicked |
-
-## Usage Notes
-- Donut chart is useful for showing proportions
-- Multiple series can be displayed
-- Custom styling can be applied
-- Interactive features like tooltips and click events
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   tags: ['autodocs'],

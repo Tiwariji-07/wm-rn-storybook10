@@ -5,6 +5,24 @@ import WmDate from "@wavemaker/app-rn-runtime/components/input/epoch/date/date.c
 import { action } from "storybook/actions";
 import { ModalServiceComponent } from "../../services/ModalService";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Form/Date",
   component: WmDate,
@@ -22,75 +40,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmDate Component
-
-A date input component that allows users to select dates with a calendar picker.
-
-## Features
-- Date selection with calendar picker
-- Custom date formats
-- Date range validation
-- Custom styling
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the input |
-| value | string/Date | - | Selected date value |
-| placeholder | string | 'Select date' | Placeholder text |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the input is visible |
-| enabled | boolean | true | Whether the input is enabled |
-| readOnly | boolean | false | Whether the input is read-only |
-| required | boolean | false | Whether the input is required |
-
-### Validation Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| minDate | string/Date | - | Minimum allowed date |
-| maxDate | string/Date | - | Maximum allowed date |
-| format | string | 'YYYY-MM-DD' | Date format string |
-| validation | object | {} | Validation rules |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | '100%' | Width of the input |
-| height | number/string | 'auto' | Height of the input |
-| styles | object | {} | Custom styles for the component |
-| inputStyle | object | {} | Custom styles for input |
-| calendarStyle | object | {} | Custom styles for calendar |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onChange | (date: Date) | Triggered when date changes |
-| onFocus | () | Triggered when input is focused |
-| onBlur | () | Triggered when input loses focus |
-
-## Usage Notes
-- Date can be selected using calendar picker
-- Custom date formats are supported
-- Date range can be restricted
-- The component is fully accessible with proper ARIA attributes
-- Validation rules can be applied
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof WmDate>;

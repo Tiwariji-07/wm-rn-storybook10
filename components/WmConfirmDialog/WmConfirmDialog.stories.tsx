@@ -6,6 +6,13 @@ import WmButton from '@wavemaker/app-rn-runtime/components/basic/button/button.c
 import { action } from "storybook/actions";
 import { ModalServiceComponent } from "../../services/ModalService";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 
 
 const ConfirmDialogWithTrigger = (props: any) => {
@@ -39,6 +46,17 @@ const ConfirmDialogWithTrigger = (props: any) => {
 };
 
 
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Dialogs/Confirm",
   component: ConfirmDialogWithTrigger,
@@ -52,77 +70,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmConfirmDialog Component
-
-A dialog component that prompts users to confirm an action with customizable content and buttons.
-
-## Features
-- Customizable title and message
-- Multiple button options
-- Custom styling
-- Animation support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the dialog |
-| title | string | '' | Dialog title text |
-| message | string | '' | Dialog message text |
-| open | boolean | false | Whether the dialog is open |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the dialog is visible |
-| enabled | boolean | true | Whether the dialog is enabled |
-| showClose | boolean | true | Whether to show close button |
-| showBackdrop | boolean | true | Whether to show backdrop |
-
-### Button Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| confirmText | string | 'OK' | Text for confirm button |
-| cancelText | string | 'Cancel' | Text for cancel button |
-| showCancel | boolean | true | Whether to show cancel button |
-| buttonAlignment | string | 'right' | Alignment of buttons |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | '400px' | Width of the dialog |
-| height | number/string | 'auto' | Height of the dialog |
-| styles | object | {} | Custom styles for the component |
-| titleStyle | object | {} | Custom styles for title |
-| messageStyle | object | {} | Custom styles for message |
-| buttonStyle | object | {} | Custom styles for buttons |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onConfirm | () | Triggered when confirmed |
-| onCancel | () | Triggered when cancelled |
-| onClose | () | Triggered when dialog is closed |
-
-## Usage Notes
-- Dialog can be used to confirm important actions
-- Custom content can be added to title and message
-- Multiple buttons can be configured
-- Dialog can be styled to match application theme
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

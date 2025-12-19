@@ -4,11 +4,29 @@ import { View } from "react-native";
 import WmNumber from "@wavemaker/app-rn-runtime/components/input/number/number.component";
 import { action } from "storybook/actions";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const style = {
   numberStyle: {
     width: 200,
   },
 };
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 const meta = {
   title: "Form/Number",
@@ -23,83 +41,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmNumber Component
-
-A numeric input component that handles number values with validation and formatting options.
-
-## Features
-- Number input with validation
-- Min/max value constraints
-- Step value support
-- Custom formatting
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the input |
-| datavalue | number | 0 | Current numeric value |
-| placeholder | string | '' | Placeholder text when input is empty |
-| required | boolean | false | Whether the field is required |
-
-### Validation Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| minvalue | number | null | Minimum allowed value |
-| maxvalue | number | null | Maximum allowed value |
-| step | number | 1 | Step value for increment/decrement |
-| regexp | string | null | Regular expression for validation |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the input is visible |
-| enabled | boolean | true | Whether the input is enabled |
-| readonly | boolean | false | Whether the input is read-only |
-| showSpinner | boolean | true | Whether to show increment/decrement buttons |
-
-### Format Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| decimals | number | 0 | Number of decimal places |
-| thousandseparator | boolean | false | Whether to use thousand separator |
-| prefix | string | '' | Prefix for the number |
-| suffix | string | '' | Suffix for the number |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | - | Width of the input |
-| height | number/string | - | Height of the input |
-| styles | object | {} | Custom styles for the component |
-| inputStyle | object | {} | Custom styles for the input field |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onChange | (value: number) | Triggered when value changes |
-| onBlur | () | Triggered when input loses focus |
-| onFocus | () | Triggered when input gains focus |
-
-## Usage Notes
-- Value range can be restricted using minvalue and maxvalue
-- Step value controls increment/decrement amount
-- Decimal places can be configured using decimals prop
-- Number formatting can be customized with prefix/suffix
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

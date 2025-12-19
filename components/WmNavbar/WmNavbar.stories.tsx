@@ -6,6 +6,13 @@ import WmNavItem from "@wavemaker/app-rn-runtime/components/navigation/navitem/n
 import WmAnchor from "@wavemaker/app-rn-runtime/components/basic/anchor/anchor.component";
 import { action } from "storybook/actions";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const dataset = [
   { label: "Label 1", link: "www.wavemaker.com", icon: 'wm-sl-r sl-settings', badgevalue: 1 },
   { label: "Label 2", link: "www.wavemaker.com", icon: 'wm-sl-r sl-home', badgevalue: 2 },
@@ -27,6 +34,17 @@ const style = {
   },
 };
 
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Navigation/Navbar",
   component: WmNavbar,
@@ -40,73 +58,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmNavbar Component
-
-A navigation bar component that provides a responsive header with navigation items and branding.
-
-## Features
-- Responsive design
-- Custom branding
-- Navigation items
-- Search functionality
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the navbar |
-| brand | ReactNode | - | Brand/logo element |
-| items | array | [] | Array of navigation items |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the navbar is visible |
-| enabled | boolean | true | Whether the navbar is enabled |
-| fixed | boolean | false | Whether navbar is fixed at top |
-| transparent | boolean | false | Whether navbar is transparent |
-
-### Layout Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| height | number/string | '64px' | Height of the navbar |
-| padding | number/string | '0 16px' | Padding around navbar content |
-| justify | string | 'space-between' | Justify content alignment |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| brandStyle | object | {} | Custom styles for brand element |
-| itemStyle | object | {} | Custom styles for navigation items |
-| backgroundColor | string | '#fff' | Background color |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onItemClick | (item) | Triggered when item is clicked |
-| onBrandClick | () | Triggered when brand is clicked |
-| onSearch | (query) | Triggered when search is performed |
-
-## Usage Notes
-- Navbar can be used for main navigation
-- Brand element can be customized
-- Navigation items can include icons
-- Search functionality can be added
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

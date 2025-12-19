@@ -4,6 +4,13 @@ import { View } from "react-native";
 import WmPieChart from "@wavemaker/app-rn-runtime/components/chart/pie-chart/pie-chart.component";
 import ThemeFactory from "@wavemaker/app-rn-runtime/components/chart/theme/chart.theme";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const colors = ["#FF9800", "#2196F3", "#4CAF50", "#9C27B0", "#F44336"];
 
 const defaultTheme = {
@@ -60,13 +67,24 @@ const sampleDataSet = [
 //   },
 // };
 
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Charts/PieChart",
   component: WmPieChart,
   tags: ['autodocs'],
   render: (args) => {
     const [dataset, setDataset] = useState(args.dataset);
-    
+
     useEffect(() => {
       // Force a re-render by setting the dataset again after initial mount
       setDataset([...args.dataset]);
@@ -78,7 +96,7 @@ const meta = {
       </View>
     );
   },
-  argTypes:{
+  argTypes: {
     type: {
       table: {
         disable: true,
@@ -93,99 +111,31 @@ const meta = {
       control: {
         type: "select",
       },
-      options: ["hide", "top", "bottom","right"],
+      options: ["hide", "top", "bottom", "right"],
     },
     showlabels: {
       control: {
         type: "select",
       },
-      options: ["hide", "inside"  ,"outside"],
+      options: ["hide", "inside", "outside"],
     },
     labeltype: {
       control: {
         type: "select",
       },
-      options: ["percent", "key-value"  ,"value","key"],
+      options: ["percent", "key-value", "value", "key"],
     },
     xaxisdatakey: {
-      control:{
+      control: {
         type: "select"
       },
-      options:[ ...Object.keys(sampleDataSet[0])],
+      options: [...Object.keys(sampleDataSet[0])],
     },
   },
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmPieChart Component
-
-A pie chart component that displays data as proportional segments of a circle.
-
-## Features
-- Multiple data series support
-- Custom colors and themes
-- Interactive tooltips
-- Legend support
-- Animation support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the chart |
-| data | array | [] | Array of data points |
-| series | array | [] | Array of series configurations |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the chart is visible |
-| enabled | boolean | true | Whether the chart is enabled |
-| showLegend | boolean | true | Whether to show legend |
-| showTooltip | boolean | true | Whether to show tooltips |
-
-### Chart Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| innerRadius | number | 0 | Inner radius for donut chart |
-| startAngle | number | 0 | Starting angle in degrees |
-| endAngle | number | 360 | Ending angle in degrees |
-| padAngle | number | 0 | Padding between segments |
-| cornerRadius | number | 0 | Corner radius of segments |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| colors | array | ChartTheme.colors | Array of colors for segments |
-| theme | object | ChartTheme | Chart theme configuration |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | 'img' | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onSegmentClick | (segment, index) | Triggered when segment is clicked |
-| onLegendClick | (series, index) | Triggered when legend item is clicked |
-| onTooltipShow | (segment, index) | Triggered when tooltip is shown |
-
-## Usage Notes
-- Data should be an array of objects with value and label properties
-- Each series can have its own color and configuration
-- Inner radius > 0 creates a donut chart
-- Corner radius adds rounded corners to segments
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof WmPieChart>;

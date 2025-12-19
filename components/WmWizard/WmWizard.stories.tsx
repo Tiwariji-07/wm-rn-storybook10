@@ -6,6 +6,13 @@ import WmWizardstep from "@wavemaker/app-rn-runtime/components/container/wizard/
 import WmLabel from "@wavemaker/app-rn-runtime/components/basic/label/label.component";
 import { action } from "storybook/actions";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const style = {
   wizardStyle: {
 
@@ -17,6 +24,17 @@ const style = {
 
   },
 };
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 const meta = {
   title: "Containers/Wizard",
@@ -31,68 +49,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmWizard Component
-
-A step-by-step wizard component that guides users through a multi-step process.
-
-## Features
-- Multi-step navigation
-- Progress tracking
-- Custom step content
-- Navigation controls
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the wizard |
-| steps | array | [] | Array of step configurations |
-| currentStep | number | 0 | Index of the current step |
-| children | ReactNode | - | Step content components |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the wizard is visible |
-| enabled | boolean | true | Whether the wizard is enabled |
-| showProgress | boolean | true | Whether to show progress indicator |
-| showNavigation | boolean | true | Whether to show navigation buttons |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | - | Width of the wizard |
-| height | number/string | - | Height of the wizard |
-| styles | object | {} | Custom styles for the component |
-| stepStyle | object | {} | Custom styles for steps |
-| contentStyle | object | {} | Custom styles for content |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onChange | (step: number) | Triggered when current step changes |
-| onComplete | () | Triggered when wizard is completed |
-| onCancel | () | Triggered when wizard is cancelled |
-
-## Usage Notes
-- Each step can have custom content and validation
-- Progress can be tracked through the currentStep prop
-- The component is fully accessible with proper ARIA attributes
-- Step changes can be monitored through onChange event
-- Navigation can be customized or hidden
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

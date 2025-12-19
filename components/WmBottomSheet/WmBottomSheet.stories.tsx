@@ -7,6 +7,22 @@ import WmButton from '@wavemaker/app-rn-runtime/components/basic/button/button.c
 import { action } from "storybook/actions";
 import { ModalServiceComponent } from "../../services/ModalService";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 const BottomSheetWithTrigger = (props: any) => {
   const bottomsheetRef: any = useRef();
@@ -60,51 +76,7 @@ const meta = {
   parameters: {
     //layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmBottomSheet Component
-
-A Bottom Sheet is a slide-up panel used in mobile apps to show extra content or actions without leaving the current screen..
-
-## Features
-- Customizable content
-- Custom styling
-- Tap outside to close
-- Swipe down to dismiss
-- Smooth open/close animations
-- Full accessibility support
-
-
-## Props
-### Basic Props
-
-| Prop                           | Type     | Default | Description                                                                          |
-|--------------------------------|----------|---------|-----------------------------------------------------------------------------         |
-| showonrender                   | boolean  | false   | Automatically opens the bottom sheet when the page loads                             |
-| bottomsheetheightratio         | number   | 0.5     | Initial height of the bottom sheet as a fraction of screen height (0 to 1)           |
-| expand                         | boolean  | false   | Enables swipe-up to expand the bottom sheet                                          |
-| bottomsheetexpandedheightratio | number   | 0.8     | Height of the bottom sheet after expanding, as a percentage of screen height (0 to 1)|              
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event   | Parameters | Description                           |
-|---------|------------|---------------------------------------|  
-| onOpen  | ()         | Triggered when the bottom sheet opens  |
-| onClose | ()         | Triggered when the bottom sheet closes |
-
-## Usage Notes
-- Custom content can be added
-- Custom styling can be applied
-- Supports swipe gestures for dismissing or expanding  
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   // argTypes: {

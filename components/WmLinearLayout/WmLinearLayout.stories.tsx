@@ -5,6 +5,13 @@ import WmLinearlayout from "@wavemaker/app-rn-runtime/components/container/linea
 import WmLabel from "@wavemaker/app-rn-runtime/components/basic/label/label.component";
 import WmLinearlayoutitem from '@wavemaker/app-rn-runtime/components/container/linearlayout/linearlayoutitem/linearlayoutitem.component';
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const style = {
     layoutStyle: {
         backgroundColor: "#A9B7C5",
@@ -16,8 +23,8 @@ const style = {
     },
     itemStyle: {
         backgroundColor: '#7C8B9C',
-        paddingHorizontal:"60px",
-        paddingVertical:"10px",
+        paddingHorizontal: "60px",
+        paddingVertical: "10px",
         borderRadius: 4,
         // minWidth: 100,
     },
@@ -27,6 +34,16 @@ const style = {
         textAlign: 'center'
     }
 };
+
+
+const Docs = () => (
+    <ComponentDocumentation
+        overview={overview}
+        studioPropsAndEvents={studioPropsAndEvents}
+        scriptPropsMethods={scriptPropsMethods}
+        styling={styling}
+    />
+);
 
 const meta = {
     title: "Containers/LinearLayout",
@@ -41,71 +58,13 @@ const meta = {
     parameters: {
         layout: "centered",
         docs: {
-            description: {
-                component: `
-# WmLinearLayout Component
-
-A layout component that arranges its children in a single row or column.
-
-## Features
-- Linear arrangement of components
-- Horizontal and vertical orientation
-- Customizable spacing
-- Custom styling options
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the layout |
-| orientation | string | 'horizontal' | Layout direction ('horizontal' or 'vertical') |
-| children | ReactNode | - | Child components to render |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the layout is visible |
-| enabled | boolean | true | Whether the layout is enabled |
-| spacing | number | 0 | Space between child components |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | - | Width of the layout |
-| height | number/string | - | Height of the layout |
-| styles | object | {} | Custom styles for the component |
-| padding | number/string | 0 | Padding around the layout |
-| margin | number/string | 0 | Margin around the layout |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onPress | () | Triggered when layout is pressed |
-| onLayout | (event: LayoutChangeEvent) | Triggered when layout changes |
-
-## Usage Notes
-- Components can be arranged horizontally or vertically
-- Custom spacing can be applied between components
-- Custom styling can be applied through the styles prop
-- The component is fully accessible with proper ARIA attributes
-- Layout changes can be monitored through onLayout event
-                `
-            }
+            page: Docs,
         }
     },
     argTypes: {
         direction: {
             control: { type: "select" },
-            options: ["row","row-reverse", "column","column-reverse"],
+            options: ["row", "row-reverse", "column", "column-reverse"],
         },
         horizontalalign: {
             control: { type: "select" },
@@ -133,14 +92,14 @@ export const Horizontal: Story = {
     render: (args) => (
         <WmLinearlayout {...args}>
             {[1, 2, 3].map((num) => (
-                <WmLinearlayoutitem key={num} name={`item${num}`} styles={{root: style.itemStyle, text: {}}}>
-                    <WmLabel 
-                        name={`label${num}`} 
+                <WmLinearlayoutitem key={num} name={`item${num}`} styles={{ root: style.itemStyle, text: {} }}>
+                    <WmLabel
+                        name={`label${num}`}
                         caption={`Item ${num}`}
                         styles={{
                             root: style.labelStyle,
                             text: style.labelStyle
-                        }} 
+                        }}
                     />
                 </WmLinearlayoutitem>
             ))}
@@ -159,16 +118,16 @@ export const Vertical: Story = {
     render: (args) => (
         <WmLinearlayout {...args}>
             {[1, 2, 3].map((num) => (
-                <WmLinearlayoutitem key={num} name={`item${num}`} styles={{root: style.itemStyle, text: {}}}>
-                <WmLabel 
-                    name={`label${num}`} 
-                    caption={`Item ${num}`}
-                    styles={{
-                        root: style.labelStyle,
-                        text: style.labelStyle
-                    }} 
-                />
-            </WmLinearlayoutitem>
+                <WmLinearlayoutitem key={num} name={`item${num}`} styles={{ root: style.itemStyle, text: {} }}>
+                    <WmLabel
+                        name={`label${num}`}
+                        caption={`Item ${num}`}
+                        styles={{
+                            root: style.labelStyle,
+                            text: style.labelStyle
+                        }}
+                    />
+                </WmLinearlayoutitem>
             ))}
         </WmLinearlayout>
     ),
@@ -180,7 +139,7 @@ export const Centered: Story = {
         direction: "row",
         horizontalalign: "center",
         verticalalign: "center",
-        styles: { 
+        styles: {
             root: {
                 ...style.layoutStyle,
                 height: 200
@@ -190,16 +149,16 @@ export const Centered: Story = {
     render: (args) => (
         <WmLinearlayout {...args}>
             {[1, 2, 3].map((num) => (
-                <WmLinearlayoutitem key={num} name={`item${num}`} styles={{root: style.itemStyle, text: {}}}>
-                <WmLabel 
-                    name={`label${num}`} 
-                    caption={`Item ${num}`}
-                    styles={{
-                        root: style.labelStyle,
-                        text: style.labelStyle
-                    }} 
-                />
-            </WmLinearlayoutitem>
+                <WmLinearlayoutitem key={num} name={`item${num}`} styles={{ root: style.itemStyle, text: {} }}>
+                    <WmLabel
+                        name={`label${num}`}
+                        caption={`Item ${num}`}
+                        styles={{
+                            root: style.labelStyle,
+                            text: style.labelStyle
+                        }}
+                    />
+                </WmLinearlayoutitem>
             ))}
         </WmLinearlayout>
     ),

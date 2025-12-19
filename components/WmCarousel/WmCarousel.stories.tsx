@@ -11,8 +11,22 @@ import { mockFragment } from './mockFragment';
 import { handleAsset } from "../../services/Assethandler";
 import { DynamicTemplate } from "../../templates/carousel/DynamicTemplate";
 import { carouselImages } from "../../constants/constant";
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
 
-
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 const createCarouselContent = (index: number) => (
   <WmCarouselContent name={`carousel_content${index}`} >
@@ -31,6 +45,8 @@ const sampleItems = [
   createCarouselContent(3),
 ];
 
+
+
 const meta = {
   title: "Advanced/Carousel",
   component: WmCarousel,
@@ -48,78 +64,7 @@ const meta = {
   parameters: {
     layout: 'centered',
     docs: {
-      description: {
-        component: `
-# WmCarousel Component
-
-A component that displays a set of items in a carousel/slider format with customizable navigation and transitions.
-
-## Features
-- Horizontal and vertical scrolling
-- Auto-play support
-- Custom navigation controls
-- Smooth transitions
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the carousel |
-| children | array | [] | Array of items to display |
-| type | string | "static" | Type of carousel |
-| controls | string | "both" | Controls to display |
-| animation | string | "none" | Animation type |
-| styles | object | {} | Custom styles for the component |
-| onChange | function | - | Function to call when slide changes |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the carousel is visible |
-| enabled | boolean | true | Whether the carousel is enabled |
-| showIndicators | boolean | true | Whether to show slide indicators |
-| showControls | boolean | true | Whether to show navigation controls |
-
-### Navigation Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| autoPlay | boolean | false | Whether to auto-play slides |
-| interval | number | 3000 | Auto-play interval in milliseconds |
-| swipeEnabled | boolean | true | Whether swipe navigation is enabled |
-| orientation | string | 'horizontal' | Carousel orientation |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | '100%' | Width of the carousel |
-| height | number/string | '300px' | Height of the carousel |
-| indicatorStyle | object | {} | Custom styles for indicators |
-| controlStyle | object | {} | Custom styles for controls |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onChange | (index: number) | Triggered when slide changes |
-| onItemClick | (item: object) | Triggered when item is clicked |
-| onSwipe | (direction: string) | Triggered when swipe occurs |
-
-## Usage Notes
-- Items can be any type of content (images, text, components)
-- Auto-play can be enabled for automatic sliding
-- Navigation can be done through swipe, controls, or indicators
-- Carousel supports both horizontal and vertical orientations
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

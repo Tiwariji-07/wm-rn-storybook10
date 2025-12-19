@@ -5,7 +5,22 @@ import WmAnchor from "@wavemaker/app-rn-runtime/components/basic/anchor/anchor.c
 import { action } from "storybook/actions";
 import { NavigationServiceProvider } from "@wavemaker/app-rn-runtime/core/navigation.service";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
 
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 // Create a mock navigation service
 const navigationService = {
@@ -42,92 +57,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmAnchor Component
-
-A versatile link component that supports icons, badges, and various styling options.
-
-## Features
-- Internal and external link support
-- Icon integration with multiple positions
-- Badge support for notifications/counts
-- Skeleton loading state
-- Custom styling through class names
-- Animation support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the anchor component |
-| caption | string | 'Link' | Text to display on the anchor |
-| hyperlink | string | null | URL to navigate to when clicked |
-| target | string | '_blank' | Target window for the link |
-| encodeurl | boolean | false | Whether to encode the URL before opening |
-
-### Icon Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| iconclass | string | null | CSS class for the icon |
-| iconurl | string | null | URL for a custom icon image |
-| iconposition | string | 'left' | Position of the icon ('left', 'right', or 'top') |
-| iconheight | string | null | Height of the icon |
-| iconwidth | string | null | Width of the icon |
-| iconmargin | string | null | Margin around the icon |
-
-### Badge Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| badgevalue | string | null | Value to display in the badge |
-| skeletonwidth | string | undefined | Width of the skeleton loading state |
-| skeletonheight | string | undefined | Height of the skeleton loading state |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | string | null | Width of the anchor |
-| height | string | null | Height of the anchor |
-| classname | string | - | CSS class name for styling |
-| backgroundcolor | string | - | Background color |
-| color | string | - | Text color |
-| fontsize | string | '18px' | Font size of the text |
-
-### Animation Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| animation | string | null | Animation type to apply |
-| animationdelay | number | null | Delay before animation starts |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | 'link' | ARIA role |
-| hint | string | undefined | Tooltip text |
-| nooflines | number | undefined | Maximum number of lines for the caption text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onTap | (e: Event, proxy: ComponentProxy) | Triggered when the anchor is clicked |
-
-## Styling Classes
-Available class names for styling:
-- \`link-primary\`
-- \`link-secondary\`
-- \`link-success\`
-- \`link-danger\`
-- \`link-warning\`
-- \`link-info\`
-- \`link-muted\`
-- \`link-default\`
-
-
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

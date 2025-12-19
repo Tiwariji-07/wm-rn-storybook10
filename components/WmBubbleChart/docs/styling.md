@@ -2,12 +2,19 @@
 
 ## Available CSS Classes
 
-The bubble-chart component provides the following specific CSS classes for styling customization:
+### Component-Specific Classes
 
-### `.app-bubble-chart`
-- **Description**: Default style class
-- **Visual Impact**: This is the base styling class that applies the fundamental appearance and layout properties to the bubble chart component, including default dimensions, positioning, and core visual styling.
+- **`.app-bubble-chart`** - Default style class for the bubble chart component
+
+## Visual Customization
+
+The `.app-bubble-chart` class provides the base styling for the bubble chart component. This class can be used to customize the overall appearance, including:
+
+- Chart container dimensions and positioning
+- Background colors and borders
+- Spacing and padding around the chart area
+- Typography for labels and legends
 
 ## Additional Styling Options
 
-Beyond the component-specific class, you can utilize standard application CSS classes and custom styles to further customize the appearance of your bubble chart component according to your design requirements.
+In addition to the component-specific class, you can utilize standard application CSS classes for further customization of layout, spacing, and visual properties.

@@ -5,6 +5,13 @@ import WmLineChart from "@wavemaker/app-rn-runtime/components/chart/line-chart/l
 import { action } from "storybook/actions";
 import ThemeFactory from "@wavemaker/app-rn-runtime/components/chart/theme/chart.theme";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const colors = ["#FF9800", "#2196F3", "#4CAF50", "#9C27B0", "#F44336"];
 
 const defaultTheme = {
@@ -67,6 +74,17 @@ const sampleData = [
   }
 ];
 
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Charts/LineChart",
   component: WmLineChart,
@@ -80,85 +98,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmLineChart Component
-
-A line chart component that displays data points connected by lines to show trends over time or categories.
-
-## Features
-- Multiple series support
-- Custom line styles
-- Area fill options
-- Interactive tooltips
-- Axis customization
-- Animation support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the chart |
-| data | array | [] | Array of data points |
-| series | array | [] | Array of series configurations |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the chart is visible |
-| enabled | boolean | true | Whether the chart is enabled |
-| showLegend | boolean | true | Whether to show legend |
-| showTooltip | boolean | true | Whether to show tooltips |
-
-### Chart Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| xAxisKey | string | 'x' | Key for x-axis data |
-| yAxisKey | string | 'y' | Key for y-axis data |
-| curveType | string | 'linear' | Type of curve (linear, step, etc.) |
-| areaFill | boolean | false | Whether to fill area under line |
-| dotSize | number | 4 | Size of data points |
-
-### Axis Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| xAxisLabel | string | '' | Label for x-axis |
-| yAxisLabel | string | '' | Label for y-axis |
-| xAxisTickCount | number | 5 | Number of x-axis ticks |
-| yAxisTickCount | number | 5 | Number of y-axis ticks |
-| showGrid | boolean | true | Whether to show grid lines |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| colors | array | ChartTheme.colors | Array of colors for lines |
-| theme | object | ChartTheme | Chart theme configuration |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | 'img' | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onPointClick | (point, series, index) | Triggered when point is clicked |
-| onLegendClick | (series, index) | Triggered when legend item is clicked |
-| onTooltipShow | (point, series, index) | Triggered when tooltip is shown |
-
-## Usage Notes
-- Data should be an array of objects with x and y values
-- Each series can have its own line style and color
-- Area fill can be enabled for each series
-- Axis labels and ticks can be customized
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

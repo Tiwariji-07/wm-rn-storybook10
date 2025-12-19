@@ -10,6 +10,13 @@ import { Users } from "../../constants/constant";
 import { AssetProvider } from "@wavemaker/app-rn-runtime/core/asset.provider";
 import { handleAsset } from "../../services/Assethandler";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 
 const SearchWrapper = (props: any) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,6 +36,17 @@ const SearchWrapper = (props: any) => {
     </View>
   );
 };
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Basic/Search",
   component: SearchWrapper,
@@ -97,79 +115,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmSearch Component
-
-A search input component that provides search functionality with customizable options.
-
-## Features
-- Search input with customizable styling
-- Placeholder text support
-- Clear button option
-- Search icon support
-- Custom styling options
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the search input |
-| datavalue | string | '' | Current value of the search input |
-| placeholder | string | '' | Placeholder text when input is empty |
-| required | boolean | false | Whether the field is required |
-| disabled | boolean | false | Whether the input is disabled |
-| readonly | boolean | false | Whether the input is read-only |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| showclear | boolean | true | Whether to show the clear button |
-| iconclass | string | '' | CSS class for the search icon |
-| iconposition | string | 'left' | Position of the icon ('left' or 'right') |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | string | '300px' | Width of the search input |
-| height | string | '40px' | Height of the search input |
-| fontsize | string | '16px' | Font size of the text |
-| color | string | '' | Text color |
-| backgroundcolor | string | '' | Background color |
-| textalign | string | 'left' | Text alignment |
-| classname | string | '' | CSS class for styling |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onChange | (value: string) | Triggered when the search value changes |
-| onSearch | (value: string) | Triggered when search is performed |
-| onClear | () | Triggered when the clear button is clicked |
-| onBlur | () | Triggered when the input loses focus |
-| onFocus | () | Triggered when the input gains focus |
-
-## Styling Classes
-Available classes for styling:
-- \`input-sm\` - Small input size
-- \`input-lg\` - Large input size
-- \`input-primary\`
-- \`input-secondary\`
-- \`input-success\`
-- \`input-danger\`
-- \`input-warning\`
-- \`input-info\`
-- \`input-muted\`
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof SearchWrapper>;

@@ -8,6 +8,13 @@ import { action } from "storybook/actions";
 import { ModalServiceComponent } from "../../services/ModalService";
 import { animationNames } from "../../constants/constant";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const style = {
   popoverStyle: {
     width: 200,
@@ -36,6 +43,17 @@ const PopoverContent = () => (
   </View>
 );
 
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Navigation/Popover",
   component: WmPopover,
@@ -51,75 +69,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmPopover Component
-
-A popover component that displays content in a floating container relative to a trigger element.
-
-## Features
-- Position customization
-- Custom trigger element
-- Auto-positioning
-- Animation support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the popover |
-| trigger | ReactNode | - | Element that triggers the popover |
-| content | ReactNode | - | Content to display in popover |
-| open | boolean | false | Whether popover is open |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the popover is visible |
-| enabled | boolean | true | Whether the popover is enabled |
-| placement | string | 'bottom' | Placement relative to trigger |
-| arrow | boolean | true | Whether to show arrow |
-
-### Layout Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | 'auto' | Width of popover |
-| maxWidth | number/string | '300px' | Maximum width |
-| maxHeight | number/string | '400px' | Maximum height |
-| offset | number | 8 | Offset from trigger |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| contentStyle | object | {} | Custom styles for content |
-| arrowStyle | object | {} | Custom styles for arrow |
-| backgroundColor | string | '#fff' | Background color |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onOpen | () | Triggered when popover opens |
-| onClose | () | Triggered when popover closes |
-| onPositionChange | (position) | Triggered when position changes |
-
-## Usage Notes
-- Popover can be used for tooltips, menus, or custom content
-- Trigger element can be any React node
-- Content can be any React node
-- Auto-positioning prevents overflow
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

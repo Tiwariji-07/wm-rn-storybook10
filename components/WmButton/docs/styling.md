@@ -1,32 +1,72 @@
 # Styling
 
-The button component provides a comprehensive set of CSS classes for various visual styles and use cases:
+The Button component supports various CSS classes for different visual styles and states.
 
 ## Base Classes
 
-- **`app-button`** - Default style class that provides the foundational styling for all button components
-- **`app-button-disabled`** - Applies disabled state styling, typically reducing opacity and preventing interaction
+| Class Name | Description |
+|------------|-------------|
+| app-button | Default style class for all buttons |
+| app-button-disabled | Applied when button is disabled |
 
-## Contextual Button Styles
+## Button Variants
 
-- **`btn-default`** - Standard button appearance with neutral styling
-- **`btn-primary`** - Primary action button with prominent brand color styling
-- **`btn-secondary`** - Secondary action button with subdued styling
-- **`btn-info`** - Informational button with blue/info color scheme
-- **`btn-success`** - Success state button with green color scheme
-- **`btn-warning`** - Warning state button with yellow/orange color scheme
-- **`btn-danger`** - Destructive action button with red color scheme
-- **`btn-link`** - Button styled to appear as a text link without borders or background
+| Class Name | Description |
+|------------|-------------|
+| btn-default | Default button style |
+| btn-primary | Primary action button (usually blue) |
+| btn-secondary | Secondary action button |
+| btn-info | Informational button style |
+| btn-success | Success/positive action button (green) |
+| btn-warning | Warning button style (yellow/orange) |
+| btn-danger | Destructive action button (red) |
+| btn-link | Text-only button without background |
+| btn-dark | Dark themed button |
+| btn-light | Light themed button |
 
-## Theme Variants
+## Special Button Types
 
-- **`btn-dark`** - Button with dark color scheme for light backgrounds
-- **`btn-light`** - Button with light color scheme for dark backgrounds
+| Class Name | Description |
+|------------|-------------|
+| fab-btn | Floating Action Button style |
+| mini-fab-btn | Smaller floating action button |
+| btn-only-label | Button with text only, no padding/background |
 
-## Specialized Styles
+### Custom Styling Examples
 
-- **`btn-only-label`** - Minimalist button style displaying only text without background or borders
-- **`fab-btn`** - Floating Action Button style with circular appearance
-- **`mini-fab-btn`** - Smaller version of the floating action button
+#### Apply Button Variant
+```javascript
+// Set primary button style
+Page.Widgets.myButton.classname = 'btn-primary';
 
-These classes can be combined with standard application CSS classes to achieve the desired visual appearance for your button components.
+// Combine multiple classes
+Page.Widgets.myButton.classname = 'btn-success btn-lg';
+```
+
+#### Floating Action Button
+```javascript
+// Create FAB
+Page.Widgets.myButton.classname = 'fab-btn';
+Page.Widgets.myButton.iconclass = 'fa fa-plus';
+Page.Widgets.myButton.caption = ''; // No text for FAB
+```
+
+#### Conditional Styling
+```javascript
+// Dynamic styling based on state
+if (Page.Variables.hasErrors.dataSet) {
+    Page.Widgets.submitButton.classname = 'btn-danger';
+} else {
+    Page.Widgets.submitButton.classname = 'btn-success';
+}
+```
+
+#### Custom Inline Styles
+```javascript
+// Apply custom styles
+Page.Widgets.myButton.styles = {
+    backgroundColor: '#007bff',
+    borderRadius: 20,
+    padding: '10px 20px'
+};
+```

@@ -4,6 +4,22 @@ import { View } from "react-native";
 import WmChips from "@wavemaker/app-rn-runtime/components/input/chips/chips.component";
 import { action } from "storybook/actions";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 const sampleDataset = [
   { label: "React", value: "react" },
   { label: "Angular", value: "angular" },
@@ -26,6 +42,8 @@ const ChipsWrapper = (props: any) => {
   return <WmChips {...props} ref={chipsRef} />;
 };
 
+
+
 const meta = {
   title: "Form/Chips",
   component: ChipsWrapper,
@@ -39,75 +57,7 @@ const meta = {
   parameters: {
     layout: 'centered',
     docs: {
-      description: {
-        component: `
-# WmChips Component
-
-A component that displays a set of interactive chips/tags with customizable styling and behavior.
-
-## Features
-- Multiple chip selection
-- Custom styling
-- Icon support
-- Deletable chips
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the chips |
-| value | array | [] | Array of selected chips |
-| options | array | [] | Array of chip options |
-| multiple | boolean | true | Whether multiple selection is allowed |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the chips are visible |
-| enabled | boolean | true | Whether the chips are enabled |
-| showIcons | boolean | false | Whether to show chip icons |
-| deletable | boolean | false | Whether chips can be deleted |
-
-### Layout Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | '100%' | Width of the chips container |
-| height | number/string | 'auto' | Height of the chips container |
-| layout | string | 'flow' | Layout of chips ('flow' or 'grid') |
-| spacing | number | 8 | Space between chips |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| chipStyle | object | {} | Custom styles for individual chips |
-| selectedStyle | object | {} | Custom styles for selected chips |
-| iconStyle | object | {} | Custom styles for chip icons |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onChange | (values: array) | Triggered when selection changes |
-| onDelete | (chip: object) | Triggered when a chip is deleted |
-| onChipClick | (chip: object) | Triggered when a chip is clicked |
-
-## Usage Notes
-- Chips can be used for selection or display
-- Multiple chips can be selected
-- Chips can be deleted if enabled
-- Custom styling can be applied to chips
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof WmChips>;

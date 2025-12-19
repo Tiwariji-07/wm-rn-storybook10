@@ -18,10 +18,28 @@ import { glyphMap as fontAwesomeIcons } from "../../constants/constant";
 import { animationNames } from "../../constants/constant";
 import * as Clipboard from 'expo-clipboard';
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const windowWidth = Dimensions.get("window").width;
-const iconstyles= { 
-  text: { fontSize:24  }
+const iconstyles = {
+  text: { fontSize: 24 }
 }
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 const meta = {
   title: "Basic/Icon",
@@ -29,99 +47,12 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmIcon Component
-
-A versatile icon component that supports multiple icon libraries, animations, and various styling options.
-
-## Features
-- Multiple icon library support (Wavicon, Streamline Light, Streamline Regular, Font Awesome)
-- Icon positioning (left, right)
-- Animation support
-- Custom styling through class names
-- Full accessibility support
-- Skeleton loading state
-- Custom icon images support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the icon component |
-| caption | string | '' | Text to display alongside the icon |
-| iconclass | string | 'wm-sl-l sl-user' | CSS class for the icon |
-| iconposition | string | 'left' | Position of the icon ('left' or 'right') |
-| iconsize | number | 0 | Size of the icon |
-
-### Icon Image Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| iconurl | string | null | URL for a custom icon image |
-| iconheight | string | null | Height of the icon |
-| iconwidth | string | null | Width of the icon |
-| iconmargin | string | null | Margin around the icon |
-
-### Animation Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| animation | string | null | Animation type to apply |
-| animationdelay | number | null | Delay before animation starts |
-| iterationcount | number | undefined | Number of times to repeat the animation |
-
-### Loading State Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| skeletonwidth | string | null | Width of the skeleton loading state |
-| skeletonheight | string | null | Height of the skeleton loading state |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onTap | (e: Event, proxy: ComponentProxy) | Triggered when the icon is clicked |
-
-## Styling Classes
-Available class names for styling:
-- \`text-primary\`
-- \`text-secondary\`
-- \`text-success\`
-- \`text-danger\`
-- \`text-warning\`
-- \`text-info\`
-- \`text-muted\`
-
-## Icon Libraries
-
-### Wavicon
-Prefix: \`wi wi-\`
-Example: \`wi wi-user\`
-
-### Streamline Light
-Prefix: \`wm-sl-l sl-\`
-Example: \`wm-sl-l sl-user\`
-
-### Streamline Regular
-Prefix: \`wm-sl-r sl-\`
-Example: \`wm-sl-r sl-user\`
-
-### Font Awesome
-Prefix: \`fa fa-\`
-Example: \`fa fa-user\`
-        `
-      }
+      page: Docs,
     }
   },
   decorators: [
     (Story) => (
-      <View style={{ padding: 16 ,width:'100%'}}>
+      <View style={{ padding: 16, width: '100%' }}>
         <Story />
       </View>
     )
@@ -217,39 +148,39 @@ const IconLibrary = ({ title, icons, iconClassPrefix }) => {
 export const Basic: Story = {
   args: {
     name: "basicIcon",
-    caption:"",
-    classname:"",
-    fontsize:24,
+    caption: "",
+    classname: "",
+    fontsize: 24,
     iconclass: "wm-sl-l sl-camera",
     iconposition: "left",
-    iconsize: 32,  
-    styles:iconstyles,
-    
+    iconsize: 32,
+    styles: iconstyles,
+
   },
   argTypes: {
     classname: {
       control: {
         type: "select",
       },
-      options: ["text-primary", "text-secondary", "text-success", "text-danger", "text-warning", "text-info","text-muted"],
-      name:'class'
+      options: ["text-primary", "text-secondary", "text-success", "text-danger", "text-warning", "text-info", "text-muted"],
+      name: 'class'
     },
-    iconclass:{
-      control:{
-        type:"select"
+    iconclass: {
+      control: {
+        type: "select"
       },
-      options:[ "fa fa-adjust", "fa fa-anchor", "fa fa-archive", "fa fa-area-chart", 
+      options: ["fa fa-adjust", "fa fa-anchor", "fa fa-archive", "fa fa-area-chart",
         "fa fa-asterisk", "fa fa-at", "fa fa-automobile", "fa fa-balance-scale", "fa fa-bank", "fa fa-bar-chart",],
-      name:"icon class"
+      name: "icon class"
     },
     iconposition: {
       control: { type: "radio" },
       options: ["left", "right"],
-      name:"icon position"
+      name: "icon position"
     },
     animation: {
-      control:{
-        type:'select'
+      control: {
+        type: 'select'
       },
       options: animationNames
     },
@@ -260,34 +191,34 @@ export const WithCaption: Story = {
   args: {
     name: "captionIcon",
     caption: "Message",
-    classname:"",
-    fontsize:24,
+    classname: "",
+    fontsize: 24,
     iconclass: "wi wi-message",
     iconposition: "left",
-    iconsize: 24,  
-    styles:iconstyles,
+    iconsize: 24,
+    styles: iconstyles,
   },
-  
+
   argTypes: {
     classname: {
       control: {
         type: "select",
       },
-      options: ["text-primary", "text-secondary", "text-success", "text-danger", "text-warning", "text-info","text-muted"],
-      name:'class'
+      options: ["text-primary", "text-secondary", "text-success", "text-danger", "text-warning", "text-info", "text-muted"],
+      name: 'class'
     },
-    iconclass:{
-      control:{
-        type:"select"
+    iconclass: {
+      control: {
+        type: "select"
       },
-      options:[ "fa fa-adjust", "fa fa-anchor", "fa fa-archive", "fa fa-area-chart", 
+      options: ["fa fa-adjust", "fa fa-anchor", "fa fa-archive", "fa fa-area-chart",
         "fa fa-asterisk", "fa fa-at", "fa fa-automobile", "fa fa-balance-scale", "fa fa-bank", "fa fa-bar-chart",],
-      name:"icon class"
+      name: "icon class"
     },
     iconposition: {
       control: { type: "radio" },
       options: ["left", "right"],
-      name:"icon position"
+      name: "icon position"
     },
     // animation: {
     //   control:{
@@ -295,7 +226,7 @@ export const WithCaption: Story = {
     //   },
     //   options: animationNames
     // },
-    
+
   },
 };
 
@@ -307,7 +238,7 @@ export const Animations: Story = {
         iconclass: "wi wi-info",
         iconsize: 24,
         animation: "shake",
-        classname:"text-primary",
+        classname: "text-primary",
       },
       {
         name: "bounceIcon",
@@ -315,7 +246,7 @@ export const Animations: Story = {
         caption: "Text",
         iconsize: 24,
         animation: "bounce",
-        classname:"text-primary",
+        classname: "text-primary",
       },
       {
         name: "delayedFadeInIcon",
@@ -324,14 +255,14 @@ export const Animations: Story = {
         iconsize: 24,
         animation: "fadeIn",
         animationdelay: 1000,
-        classname:"text-primary",
+        classname: "text-primary",
       },
       {
         name: "fadeInRightIcon",
         iconclass: "wi wi-spinner fa-spin",
         iconsize: 24,
         caption: "Spin Animation",
-        classname:"text-primary",
+        classname: "text-primary",
       },
       {
         name: "fadeInRightIcon",
@@ -339,8 +270,8 @@ export const Animations: Story = {
         iconsize: 24,
         animation: "fadeInRight",
         caption: "Pulse Animation",
-        classname:"text-danger",
-        
+        classname: "text-danger",
+
       },
     ],
   },
@@ -515,7 +446,7 @@ const styles = StyleSheet.create({
   iconWrapperHover: {
     backgroundColor: "#f0f0f0",
   },
-  appIconShape:{
-   padding:0,
+  appIconShape: {
+    padding: 0,
   }
 });

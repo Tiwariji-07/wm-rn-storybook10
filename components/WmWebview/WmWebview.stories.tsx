@@ -4,6 +4,24 @@ import { View } from "react-native";
 import WmWebview from "@wavemaker/app-rn-runtime/components/advanced/webview/webview.component";
 import { action } from "storybook/actions";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Basic/Webview",
   component: WmWebview,
@@ -17,68 +35,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmWebView Component
-
-A component that renders web content within your application.
-
-## Features
-- Web content rendering
-- JavaScript execution support
-- Navigation controls
-- Custom styling options
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the WebView |
-| source | string | - | URL to load in the WebView |
-| html | string | '' | HTML content to render |
-| baseUrl | string | '' | Base URL for relative paths |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| showsHorizontalScrollIndicator | boolean | true | Show horizontal scroll indicator |
-| showsVerticalScrollIndicator | boolean | true | Show vertical scroll indicator |
-| javaScriptEnabled | boolean | true | Enable JavaScript execution |
-| domStorageEnabled | boolean | true | Enable DOM storage |
-| startInLoadingState | boolean | true | Show loading indicator initially |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | - | Width of the WebView |
-| height | number/string | - | Height of the WebView |
-| styles | object | {} | Custom styles for the component |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onLoad | () | Triggered when content is loaded |
-| onError | (error: Error) | Triggered when an error occurs |
-| onNavigationStateChange | (navState: object) | Triggered on navigation state change |
-| onMessage | (message: object) | Triggered when message is received |
-
-## Usage Notes
-- The component supports both URL and HTML content
-- JavaScript execution can be enabled/disabled
-- Navigation state changes can be monitored
-- Custom styling can be applied through the styles prop
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof WmWebview>;

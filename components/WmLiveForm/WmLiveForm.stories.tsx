@@ -7,6 +7,24 @@ import WmText from "@wavemaker/app-rn-runtime/components/input/text/text.compone
 import WmNumber from "@wavemaker/app-rn-runtime/components/input/number/number.component";
 import WmButton from "@wavemaker/app-rn-runtime/components/basic/button/button.component";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Data/LiveForm",
   component: WmLiveForm,
@@ -20,82 +38,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmLiveForm Component
-
-A dynamic form component that handles data operations with real-time validation and submission.
-
-## Features
-- Dynamic form generation
-- Real-time validation
-- Data operations (insert, update, delete)
-- Custom form fields
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the form |
-| title | string | '' | Form title |
-| operationtype | string | 'insert' | Type of operation ('insert', 'update', 'delete') |
-| children | ReactNode | - | Form field components |
-
-### Data Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| datavariable | string | '' | Variable to store form data |
-| defaultdata | object | {} | Default form data |
-| validationrules | object | {} | Form validation rules |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the form is visible |
-| enabled | boolean | true | Whether the form is enabled |
-| showTitle | boolean | true | Whether to show form title |
-| showActions | boolean | true | Whether to show action buttons |
-
-### Action Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| submitButtonText | string | 'Submit' | Text for submit button |
-| cancelButtonText | string | 'Cancel' | Text for cancel button |
-| showCancelButton | boolean | true | Whether to show cancel button |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | - | Width of the form |
-| height | number/string | - | Height of the form |
-| styles | object | {} | Custom styles for the component |
-| fieldStyle | object | {} | Custom styles for form fields |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onSubmit | (data: object) | Triggered when form is submitted |
-| onCancel | () | Triggered when form is cancelled |
-| onSuccess | (response: any) | Triggered when operation succeeds |
-| onError | (error: Error) | Triggered when operation fails |
-
-## Usage Notes
-- Form fields can be added as children components
-- Validation rules can be defined for each field
-- Form data is automatically managed by the component
-- Operation type determines the form behavior
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof WmLiveForm>;

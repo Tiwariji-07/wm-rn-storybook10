@@ -5,6 +5,24 @@ import WmCurrency from "@wavemaker/app-rn-runtime/components/input/currency/curr
 import { action } from "storybook/actions";
 import { CURRENCY_INFO } from '@wavemaker/app-rn-runtime/core/currency-constants';
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 const meta = {
   title: "Form/Currency",
@@ -27,82 +45,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmCurrency Component
-
-A currency input component that handles monetary values with proper formatting and validation.
-
-## Features
-- Currency value input
-- Multiple currency formats
-- Custom formatting options
-- Validation support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the input |
-| datavalue | number | 0 | Current currency value |
-| placeholder | string | '' | Placeholder text when input is empty |
-| required | boolean | false | Whether the field is required |
-
-### Currency Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| currency | string | 'USD' | Currency code (e.g., USD, EUR, GBP) |
-| decimals | number | 2 | Number of decimal places |
-| prefix | string | '$' | Currency symbol prefix |
-| suffix | string | '' | Currency symbol suffix |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the input is visible |
-| enabled | boolean | true | Whether the input is enabled |
-| readonly | boolean | false | Whether the input is read-only |
-| showCurrency | boolean | true | Whether to show currency symbol |
-
-### Validation Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| minvalue | number | null | Minimum allowed value |
-| maxvalue | number | null | Maximum allowed value |
-| regexp | string | null | Regular expression for validation |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | - | Width of the input |
-| height | number/string | - | Height of the input |
-| styles | object | {} | Custom styles for the component |
-| inputStyle | object | {} | Custom styles for the input field |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onChange | (value: number) | Triggered when value changes |
-| onBlur | () | Triggered when input loses focus |
-| onFocus | () | Triggered when input gains focus |
-
-## Usage Notes
-- Currency format is determined by the currency prop
-- Decimal places can be customized using decimals prop
-- Currency symbol can be shown as prefix or suffix
-- Value range can be restricted using minvalue and maxvalue
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   }
 } satisfies Meta<typeof WmCurrency>;

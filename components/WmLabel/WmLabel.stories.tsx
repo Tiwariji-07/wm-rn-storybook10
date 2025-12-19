@@ -5,6 +5,24 @@ import WmLabel from "@wavemaker/app-rn-runtime/components/basic/label/label.comp
 import { action } from "storybook/actions";
 import { animationNames } from "../../constants/constant";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Basic/Label",
   component: WmLabel,
@@ -21,73 +39,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmLabel Component
-
-A versatile label component that supports various text styles, animations, and customization options.
-
-## Features
-- Text display with customizable styling
-- Animation support
-- Border customization
-- Text alignment options
-- Font size and weight control
-- Background color support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the label |
-| caption | string | '' | Text to display in the label |
-| required | boolean | false | Whether to show required indicator |
-| classname | string | '' | CSS class for styling the label |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| fontsize | string | '16px' | Font size of the text |
-| fontweight | string | '400' | Font weight of the text |
-| textalign | string | 'center' | Text alignment ('left', 'center', 'right') |
-| backgroundcolor | string | '' | Background color of the label |
-| borderwidth | string | 'px' | Width of the border |
-| borderstyle | string | 'dashed' | Style of the border ('solid', 'dotted', 'dashed') |
-| bordercolor | string | '#8a8989' | Color of the border |
-
-### Animation Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| animation | string | null | Animation type to apply |
-| animationdelay | number | null | Delay before animation starts |
-| iterationcount | number | undefined | Number of times to repeat the animation |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onTap | (e: Event, proxy: ComponentProxy) | Triggered when the label is clicked |
-
-## Styling Classes
-Available classes for styling:
-- \`text-primary\`
-- \`text-secondary\`
-- \`text-success\`
-- \`text-danger\`
-- \`text-warning\`
-- \`text-info\`
-- \`text-muted\`
-- \`h1\` through \`h6\` for heading styles
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof WmLabel>;

@@ -8,6 +8,13 @@ import { AssetProvider } from "@wavemaker/app-rn-runtime/core/asset.provider";
 import { handleAsset } from "../../services/Assethandler";
 import { ModalServiceComponent } from "../../services/ModalService";
 
+
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
 import {
   TextTemplate,
   TextWithAvatar,
@@ -39,6 +46,17 @@ const handleTemplate = (templateName: string, $item: any, $index: number, list: 
   }
 };
 
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Data/List",
   component: WmList,
@@ -56,73 +74,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmList Component
-
-A list component that displays a collection of items in a structured format.
-
-## Features
-- Multiple list types (ordered, unordered)
-- Custom item rendering
-- Selection support
-- Pagination
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the list |
-| items | array | [] | Array of items to display |
-| type | string | 'unordered' | List type (ordered/unordered) |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the list is visible |
-| enabled | boolean | true | Whether the list is enabled |
-| loading | boolean | false | Whether list is loading |
-| emptyText | string | 'No items' | Text to show when empty |
-
-### Layout Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| itemSpacing | number/string | '8px' | Space between items |
-| padding | number/string | '0' | Padding around list |
-| maxHeight | number/string | 'none' | Maximum height |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| itemStyle | object | {} | Custom styles for items |
-| selectedStyle | object | {} | Custom styles for selected items |
-| backgroundColor | string | 'transparent' | Background color |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | 'list' | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onItemClick | (item, index) | Triggered when item is clicked |
-| onItemSelect | (item, index) | Triggered when item is selected |
-| onLoadMore | () | Triggered when more items need to be loaded |
-
-## Usage Notes
-- List can be used for displaying any type of data
-- Items can be custom rendered
-- Selection can be single or multiple
-- Pagination can be implemented
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

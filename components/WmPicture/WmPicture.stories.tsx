@@ -5,6 +5,24 @@ import WmPicture from "@wavemaker/app-rn-runtime/components/basic/picture/pictur
 import { AssetProvider } from "@wavemaker/app-rn-runtime/core/asset.provider";
 import { handleAsset } from "../../services/Assethandler";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 const meta = {
   title: "Basic/Picture",
@@ -24,68 +42,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmPicture Component
-
-A versatile image component that supports various image display options and styling.
-
-## Features
-- Image display with customizable dimensions
-- Multiple resize modes
-- Shape options (circle, rounded, thumbnail)
-- Custom styling support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the picture |
-| picturesource | string | - | URL or path to the image source |
-| width | number/string | - | Width of the image |
-| height | number/string | - | Height of the image |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| resizemode | string | 'stretch' | How to resize the image ('cover', 'contain', 'stretch', 'repeat', 'center') |
-| shape | string | null | Shape of the image ('circle', 'rounded', 'thumbnail') |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| classname | string | '' | CSS class for styling |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Resize Modes
-- \`cover\`: Scale the image uniformly to cover the container
-- \`contain\`: Scale the image uniformly to fit within the container
-- \`stretch\`: Stretch the image to fill the container
-- \`repeat\`: Repeat the image to fill the container
-- \`center\`: Center the image in the container
-
-## Shape Options
-- \`circle\`: Circular image with equal width and height
-- \`rounded\`: Image with rounded corners
-- \`thumbnail\`: Small version of the image
-
-## Usage Notes
-- The component requires a valid image source URL or path
-- Image dimensions can be specified in pixels or percentages
-- Custom styling can be applied through the styles prop
-- The component is fully accessible with proper ARIA attributes
-
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof WmPicture>;
@@ -107,10 +64,10 @@ export const Basic: Story = {
       },
     },
   },
-  argTypes:{
-    shape:{
-      control:"select",
-      options:['circle',"rounded","thumbnail"]
+  argTypes: {
+    shape: {
+      control: "select",
+      options: ['circle', "rounded", "thumbnail"]
     }
   }
 };

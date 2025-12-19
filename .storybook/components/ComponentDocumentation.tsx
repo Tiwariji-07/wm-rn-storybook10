@@ -2,51 +2,53 @@ import React, { useState } from "react";
 import { Markdown, Title, Subtitle, Primary } from "@storybook/addon-docs/blocks";
 
 interface DocumentationProps {
-    overview?: string;
-    studioPropsAndEvents?: string;
-    scriptPropsMethods?: string;
-    styling?: string;
+  overview?: string;
+  props?: string;
+  methods?: string;
+  styling?: string;
+  events?: string;
 }
 
 export const ComponentDocumentation: React.FC<DocumentationProps> = ({
-    overview,
-    studioPropsAndEvents,
-    scriptPropsMethods,
-    styling,
+  overview,
+  props,
+  methods,
+  styling,
+  events,
 }) => {
-    const [activeTab, setActiveTab] = useState("overview");
-    const activeColor = "#296df6"; // Blue theme
+  const [activeTab, setActiveTab] = useState("overview");
+  const activeColor = "#296df6"; // Blue theme
 
-    const renderTab = (key: string, label: string) => (
-        <button
-            style={{
-                padding: "10px 20px",
-                border: "none",
-                background: "transparent",
-                color: activeTab === key ? activeColor : "inherit",
-                borderBottom:
-                    activeTab === key
-                        ? `2px solid ${activeColor}`
-                        : "2px solid transparent",
-                cursor: "pointer",
-                fontWeight: "bold",
-                fontSize: "14px",
-                outline: "none",
-                opacity: activeTab === key ? 1 : 0.7,
-                transition: "all 0.2s ease",
-            }}
-            onClick={() => setActiveTab(key)}
-        >
-            {label}
-        </button>
-    );
+  const renderTab = (key: string, label: string) => (
+    <button
+      style={{
+        padding: "10px 20px",
+        border: "none",
+        background: "transparent",
+        color: activeTab === key ? activeColor : "inherit",
+        borderBottom:
+          activeTab === key
+            ? `2px solid ${activeColor}`
+            : "2px solid transparent",
+        cursor: "pointer",
+        fontWeight: "bold",
+        fontSize: "14px",
+        outline: "none",
+        opacity: activeTab === key ? 1 : 0.7,
+        transition: "all 0.2s ease",
+      }}
+      onClick={() => setActiveTab(key)}
+    >
+      {label}
+    </button>
+  );
 
-    return (
-        <div
-            className="component-documentation-container"
-            style={{ fontFamily: "sans-serif" }}
-        >
-            <style>{`
+  return (
+    <div
+      className="component-documentation-container"
+      style={{ fontFamily: "sans-serif" }}
+    >
+      <style>{`
         .component-documentation-container {
           --primary-blue: #296df6;
           --bg-soft: #f8fafc;
@@ -149,7 +151,7 @@ export const ComponentDocumentation: React.FC<DocumentationProps> = ({
         }
 
         .component-documentation-container th {
-          background: var(--primary-blue);
+          background: #ffffffff;
           color: #ffffff;
           padding: 14px 16px;
           text-align: left;
@@ -157,6 +159,7 @@ export const ComponentDocumentation: React.FC<DocumentationProps> = ({
           text-transform: uppercase;
           font-size: 12px;
           letter-spacing: 0.05em;
+          color: #ffffffff;
         }
 
         .component-documentation-container td {
@@ -189,45 +192,53 @@ export const ComponentDocumentation: React.FC<DocumentationProps> = ({
         }
       `}</style>
 
-            <Title />
-            <Subtitle />
-            <Primary />
+      <Title />
+      <Subtitle />
+      <Primary />
 
-            <div
-                style={{
-                    display: "flex",
-                    borderBottom: "1px solid rgba(128,128,128,0.2)",
-                    marginBottom: "20px",
-                }}
-            >
-                {overview && renderTab("overview", "Overview")}
-                {studioPropsAndEvents && renderTab("studioPropsAndEvents", "Studio Props & Callback Events")}
-                {styling && renderTab("styling", "Styling")}
-                {scriptPropsMethods && renderTab("scriptPropsMethods", "Script Props & Methods")}
-            </div>
+      <div
+        style={{
+          display: "flex",
+          borderBottom: "1px solid rgba(128,128,128,0.2)",
+          marginBottom: "20px",
+        }}
+      >
+        {overview && renderTab("overview", "Overview")}
+        {props && renderTab("props", "Props")}
+        {events && renderTab("events", "Events")}
+        {methods && renderTab("methods", "Methods")}
+        {styling && renderTab("styling", "Styling")}
+      </div>
 
-            <div style={{ padding: "10px 0" }}>
-                {activeTab === "overview" && overview && (
-                    <div>
-                        <Markdown>{overview}</Markdown>
-                    </div>
-                )}
-                {activeTab === "studioPropsAndEvents" && studioPropsAndEvents && (
-                    <div>
-                        <Markdown>{studioPropsAndEvents}</Markdown>
-                    </div>
-                )}
-                {activeTab === "styling" && styling && (
-                    <div>
-                        <Markdown>{styling}</Markdown>
-                    </div>
-                )}
-                {activeTab === "scriptPropsMethods" && scriptPropsMethods && (
-                    <div>
-                        <Markdown>{scriptPropsMethods}</Markdown>
-                    </div>
-                )}
-            </div>
-        </div>
-    );
+      <div style={{ padding: "10px 0" }}>
+        {activeTab === "overview" && overview && (
+          <div>
+            <Markdown>{overview}</Markdown>
+          </div>
+        )}
+        {activeTab === "props" && props && (
+          <div>
+            <Markdown>{props}</Markdown>
+          </div>
+        )}
+        {activeTab === "events" && events && (
+          <div>
+            <Markdown>{events}</Markdown>
+          </div>
+        )}
+        {activeTab === "methods" && methods && (
+          <div>
+            <Markdown>{methods}</Markdown>
+          </div>
+        )}
+        {activeTab === "styling" && styling && (
+          <div>
+            <Markdown>{styling}</Markdown>
+          </div>
+        )}
+
+
+      </div>
+    </div>
+  );
 };

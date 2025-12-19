@@ -5,6 +5,22 @@ import WmAlertdialog from "@wavemaker/app-rn-runtime/components/dialogs/alertdia
 import WmButton from "@wavemaker/app-rn-runtime/components/basic/button/button.component";
 import { action } from "storybook/actions";
 import { ModalServiceComponent } from "../../services/ModalService";
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 const AlertDialogWithTrigger = (props: any) => {
   const dialogRef = useRef();
@@ -45,75 +61,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmAlertDialog Component
-
-A modal dialog component that displays alert messages with different severity levels.
-
-## Features
-- Multiple alert types (error, information, success, warning)
-- Customizable content
-- Action buttons
-- Animation support
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the dialog |
-| title | string | '' | Title of the alert |
-| message | string | '' | Alert message content |
-| alerttype | string | 'information' | Type of alert ('error', 'information', 'success', 'warning') |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | false | Whether the dialog is visible |
-| enabled | boolean | true | Whether the dialog is enabled |
-| showIcon | boolean | true | Whether to show alert type icon |
-| showClose | boolean | true | Whether to show close button |
-
-### Action Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| okButtonText | string | 'OK' | Text for the OK button |
-| cancelButtonText | string | 'Cancel' | Text for the Cancel button |
-| showCancelButton | boolean | false | Whether to show Cancel button |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | - | Width of the dialog |
-| height | number/string | - | Height of the dialog |
-| styles | object | {} | Custom styles for the component |
-| headerStyle | object | {} | Custom styles for the header |
-| contentStyle | object | {} | Custom styles for the content |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onOk | () | Triggered when OK button is clicked |
-| onCancel | () | Triggered when Cancel button is clicked |
-| onClose | () | Triggered when dialog is closed |
-
-## Usage Notes
-- Different alert types have different visual styles
-- Custom content can be added through children prop
-- The component is fully accessible with proper ARIA attributes
-- Dialog state can be controlled through visible prop
-- Action buttons can be customized or hidden
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof AlertDialogWithTrigger>;

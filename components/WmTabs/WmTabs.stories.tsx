@@ -6,6 +6,13 @@ import WmTabpane from "@wavemaker/app-rn-runtime/components/container/tabs/tabpa
 import WmLabel from "@wavemaker/app-rn-runtime/components/basic/label/label.component";
 import { action } from "storybook/actions";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 const style = {
     tabsStyle: {
         backgroundColor: "white",
@@ -27,6 +34,16 @@ const style = {
     }
 };
 
+
+const Docs = () => (
+    <ComponentDocumentation
+        overview={overview}
+        studioPropsAndEvents={studioPropsAndEvents}
+        scriptPropsMethods={scriptPropsMethods}
+        styling={styling}
+    />
+);
+
 const meta = {
     title: "Containers/Tabs",
     component: WmTabs,
@@ -40,66 +57,7 @@ const meta = {
     parameters: {
         layout: "centered",
         docs: {
-            description: {
-                component: `
-# WmTabs Component
-
-A tabbed interface component that organizes content into multiple sections.
-
-## Features
-- Tabbed navigation interface
-- Customizable tab headers
-- Content switching
-- Custom styling options
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the tabs |
-| activeTab | number | 0 | Index of the active tab |
-| children | ReactNode | - | Tab content components |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the tabs are visible |
-| enabled | boolean | true | Whether the tabs are enabled |
-| showIcons | boolean | false | Whether to show icons in tabs |
-| showClose | boolean | false | Whether to show close buttons |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | - | Width of the tabs |
-| height | number/string | - | Height of the tabs |
-| styles | object | {} | Custom styles for the component |
-| tabStyle | object | {} | Custom styles for tabs |
-| contentStyle | object | {} | Custom styles for content |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onChange | (index: number) | Triggered when active tab changes |
-| onClose | (index: number) | Triggered when a tab is closed |
-
-## Usage Notes
-- Each tab can have a custom header and content
-- Tabs can be styled individually or as a group
-- The component is fully accessible with proper ARIA attributes
-- Tab changes can be monitored through onChange event
-- Tabs can be closed if showClose is enabled
-                `
-            }
+            page: Docs,
         }
     },
     argTypes: {

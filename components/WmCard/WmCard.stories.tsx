@@ -7,7 +7,6 @@ import { Users } from "../../constants/constant";
 import { AssetProvider } from "@wavemaker/app-rn-runtime/core/asset.provider";
 import { handleAsset } from "../../services/Assethandler";
 import { ModalServiceComponent } from "../../services/ModalService";
-
 import {
   CardWithText,
   ContactCard,
@@ -16,6 +15,23 @@ import {
   NewsPost,
   PersonalSpotlight,
 } from "../../templates/card/index";
+
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
 
 const handleTemplate = (
   templateName: string,
@@ -41,6 +57,9 @@ const handleTemplate = (
   }
 };
 
+
+
+
 const meta = {
   title: "Data/Card",
   component: WmList,
@@ -58,77 +77,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      description: {
-        component: `
-# WmCard Component
-
-A container component that displays content in a card-like format with customizable styling and interactions.
-
-## Features
-- Card layout with header, body, and footer sections
-- Custom styling options
-- Interactive elements
-- Shadow and elevation effects
-- Full accessibility support
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the card |
-| title | string | '' | Card title text |
-| subtitle | string | '' | Card subtitle text |
-| content | string | '' | Card content text |
-
-### Display Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| visible | boolean | true | Whether the card is visible |
-| enabled | boolean | true | Whether the card is enabled |
-| showHeader | boolean | true | Whether to show card header |
-| showFooter | boolean | true | Whether to show card footer |
-
-### Layout Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| width | number/string | '100%' | Width of the card |
-| height | number/string | 'auto' | Height of the card |
-| padding | number/string | 16 | Padding around card content |
-| margin | number/string | 0 | Margin around card |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| headerStyle | object | {} | Custom styles for header |
-| bodyStyle | object | {} | Custom styles for body |
-| footerStyle | object | {} | Custom styles for footer |
-| elevation | number | 2 | Card elevation level |
-| borderRadius | number | 4 | Card corner radius |
-
-### Accessibility Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| accessibilitylabel | string | undefined | Label for screen readers |
-| accessibilityrole | string | undefined | ARIA role |
-| hint | string | undefined | Tooltip text |
-
-## Events
-| Event | Parameters | Description |
-|-------|------------|-------------|
-| onPress | () | Triggered when card is pressed |
-| onHeaderPress | () | Triggered when header is pressed |
-| onFooterPress | () | Triggered when footer is pressed |
-
-## Usage Notes
-- Card can be used as a container for various content types
-- Header and footer sections are optional
-- Custom styling can be applied to different card sections
-- Card supports elevation and shadow effects
-- The component is fully accessible with proper ARIA attributes
-        `
-      }
+      page: Docs,
     }
   },
   argTypes: {

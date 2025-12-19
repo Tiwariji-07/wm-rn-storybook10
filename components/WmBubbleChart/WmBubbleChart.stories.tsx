@@ -66,15 +66,17 @@ const sampleData = [
 
 import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
 import overview from "./docs/overview.md?raw";
-import studioPropsAndEvents from "./docs/studio-props-and-events.md?raw";
-import scriptPropsMethods from "./docs/script-props-methods.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
 import styling from "./docs/styling.md?raw";
 
-const BubbleChartDocs = () => (
+const Docs = () => (
   <ComponentDocumentation
     overview={overview}
-    studioPropsAndEvents={studioPropsAndEvents}
-    scriptPropsMethods={scriptPropsMethods}
+    props={props}
+    events={events}
+    methods={methods}
     styling={styling}
   />
 );
@@ -92,7 +94,7 @@ const meta = {
   parameters: {
     layout: "centered",
     docs: {
-      page: BubbleChartDocs,
+      page: Docs,
     }
   },
   argTypes: {

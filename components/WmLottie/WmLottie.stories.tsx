@@ -6,6 +6,13 @@ import { AssetProvider } from "@wavemaker/app-rn-runtime/core/asset.provider";
 import { action } from "storybook/actions";
 import { handleAsset } from "../../services/Assethandler";
 
+import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
+import overview from "./docs/overview.md?raw";
+import props from "./docs/props.md?raw";
+import events from "./docs/events.md?raw";
+import methods from "./docs/methods.md?raw";
+import styling from "./docs/styling.md?raw";
+
 // Custom wrapper to handle initial animation
 const LottieWrapper = (props: any) => {
   const lottieRef = useRef<any>();
@@ -23,6 +30,17 @@ const LottieWrapper = (props: any) => {
   return <WmLottie {...props} ref={lottieRef} />;
 };
 
+
+const Docs = () => (
+  <ComponentDocumentation
+    overview={overview}
+    props={props}
+    events={events}
+    methods={methods}
+    styling={styling}
+  />
+);
+
 const meta = {
   title: "Basic/Lottie",
   component: LottieWrapper,
@@ -38,58 +56,7 @@ const meta = {
   parameters: {
     layout: 'centered',
     docs: {
-      description: {
-        component: `
-# WmLottie Component
-
-A component for rendering Lottie animations in your application.
-
-## Features
-- Lottie animation support
-- Auto-play capability
-- Loop control
-- Animation speed control
-- Custom styling
-- Event handling for animation states
-
-## Props
-
-### Basic Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| name | string | - | Unique identifier for the Lottie component |
-| source | string | - | URL or path to the Lottie JSON file |
-| autoPlay | boolean | true | Whether to automatically play the animation |
-| loop | boolean | true | Whether to loop the animation |
-| speed | number | 1 | Speed of the animation (1 is normal speed) |
-
-### Styling Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| styles | object | {} | Custom styles for the component |
-| width | number/string | - | Width of the animation container |
-| height | number/string | - | Height of the animation container |
-
-### Event Props
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| onPlay | function | - | Callback when animation starts playing |
-| onPause | function | - | Callback when animation is paused |
-| onStop | function | - | Callback when animation is stopped |
-| onComplete | function | - | Callback when animation completes |
-| onLoopComplete | function | - | Callback when animation loop completes |
-| onReady | function | - | Callback when animation is ready to play |
-
-## Usage Notes
-- The component requires a valid Lottie JSON file URL or path
-- Animation speed can be adjusted using the speed prop (1 is normal speed)
-- The component supports both auto-play and manual control
-- Custom styling can be applied through the styles prop
-- The component is wrapped in an AssetProvider for proper asset handling
-
-
-        `
-      }
+      page: Docs,
     }
   },
 } satisfies Meta<typeof LottieWrapper>;
