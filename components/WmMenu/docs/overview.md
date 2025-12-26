@@ -1,16 +1,16 @@
 # Overview
 
-The Menu component is a versatile navigation element designed to provide organized access to different sections or features within a mobile application. Built on the BaseNavProps foundation, this component serves as a primary navigation interface that can be used for main app menus, drawer navigation, or contextual action menus.
+The **Menu** component is a navigation widget that displays grouped actions in a dropdown format. It's commonly used in navigation headers to show a list of related links when triggered by user interaction. The Menu component provides a flexible way to create both command menus (that initiate actions) and navigation menus (that take users to different locations).
 
-This component offers a comprehensive solution for creating interactive menu systems with rich visual feedback and customization options. It supports both simple list-based menus and more complex hierarchical navigation structures, making it suitable for a wide range of mobile app navigation patterns from bottom tab bars to slide-out navigation drawers.
+The Menu widget supports dynamic data binding from variables or databases, allowing you to create rich menu structures with labels, icons, links, and nested sub-menus. It offers customizable layouts and animations to enhance the user experience.
 
 ## Features
 
-- **Animated Interactions** - Smooth transitions and animations for menu item interactions and state changes
-- **Flexible Item Configuration** - Support for custom labels, links, and navigation targets for each menu item
-- **Icon Integration** - Configurable icon display with customizable icon classes for visual menu identification
-- **Badge Support** - Built-in badge functionality for displaying notifications, counts, or status indicators
-- **Active State Management** - Visual indication of currently selected or active menu items
-- **Caption Support** - Additional descriptive text capability for enhanced menu item context
-- **Data Binding** - Integration with data sources for dynamic menu generation and content updates
-- **Responsive Design** - Optimized layout and interaction patterns for mobile touch interfaces
+- **Dynamic Data Binding**: Populate menu items from variables or database sources
+- **Rich Menu Items**: Support for labels, icons, links, and badges
+- **Nested Menu Structure**: Create multi-level menus with sub-items
+- **Flexible Layout Options**: Horizontal or vertical menu layouts
+- **Animation Support**: Slide, fade, or scale animations for menu items
+- **User Role Integration**: Show/hide menu items based on user permissions
+- **Customizable Positioning**: Control menu placement relative to trigger element
+- **Touch-Friendly**: Optimized for mobile interaction patterns

@@ -7,9 +7,10 @@
 
 /* hide the add story button */
 
-.search-field + div:has(button) {
+.search-field+div:has(button) {
   display: none;
 }
+
 div.search-field,
 div.css-1sx5ibh:has(input:focus),
 div.css-1sx5ibh:has(input:active) {
@@ -37,6 +38,7 @@ div.search-field code {
 div.search-field code span {
   font-size: 18px;
 }
+
 div.search-field input {
   color: #5e686f;
 }
@@ -44,6 +46,7 @@ div.search-field input {
 div.search-field button[title="Tag filters"] {
   display: none;
 }
+
 div.sidebar-subheading {
   font-size: 12px;
 }
@@ -52,15 +55,18 @@ div.sidebar-item button,
 div.sidebar-item a {
   height: 38px;
 }
+
 div.sidebar-item {
   border-radius: 8px;
 }
+
 div.sidebar-item button {
   align-items: center;
   padding: 8px 12px;
   gap: 8px;
   border-radius: 8px;
 }
+
 div.sidebar-item button i {
   font-size: 14px;
   color: var(--icon-color);
@@ -72,9 +78,7 @@ div.sidebar-item button i {
 }
 
 div.sidebar-item:has(button[aria-expanded="true"]),
-div.sidebar-item[data-ref-id="storybook_internal"]:not(
-    [data-selected="true"]
-  )[data-nodetype="component"]:has(button[aria-expanded="true"]) {
+div.sidebar-item[data-ref-id="storybook_internal"]:not([data-selected="true"])[data-nodetype="component"]:has(button[aria-expanded="true"]) {
   background-color: var(--color-primary);
   color: var(--brand-white);
   font-weight: 700;
@@ -83,15 +87,18 @@ div.sidebar-item[data-ref-id="storybook_internal"]:not(
 div.sidebar-item button[aria-expanded="true"] i {
   color: var(--brand-white);
 }
+
 /* arrow to right aligned */
 div.css-1l40f7d {
   position: absolute;
   right: 12px;
 }
+
 div.sidebar-item .css-1h0aucu {
   position: absolute;
   right: 12px;
 }
+
 div.sidebar-item button[aria-expanded="true"] svg path {
   stroke-width: 1.5px;
   fill: var(--brand-white);
@@ -107,9 +114,11 @@ div.css-13zuqpq[data-selected="true"].css-13zuqpq[data-selected="true"]:focus {
   /* border: 1px solid rgba(0, 0, 0, 0.04); */
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
 }
+
 div.css-13zuqpq {
   margin-top: 6px;
 }
+
 div.css-13zuqpq[data-selected="true"] svg {
   color: var(--color-primary);
 }
@@ -119,6 +128,7 @@ div.sidebar-item a {
   padding-bottom: 5px;
   align-items: center;
 }
+
 div.css-99l9qv {
   margin-top: 0;
 }
@@ -132,7 +142,7 @@ div.sb-bar {
 .sb-bar button:hover {
   background-color: rgba(41, 109, 246, 0.14) !important;
   box-shadow: none !important;
-  color: #5e686f !important ;
+  color: #5e686f !important;
 }
 
 
@@ -143,5 +153,5 @@ div.sb-bar {
 }
 
 img.css-32o4gv {
-  max-width:100% !important;
+  max-width: 100% !important;
 }

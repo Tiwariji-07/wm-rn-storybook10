@@ -1,15 +1,48 @@
 # Styling
 
-## Available CSS Classes
+The Spinner component supports custom styling through CSS classes and inline styles.
 
-The spinner component provides the following specific styling classes:
+## CSS Classes
 
-### `.app-spinner`
-Default style class that applies the standard spinner appearance and animation behavior.
+| Class Name | Description |
+|------------|-------------|
+| `app-spinner` | Default style class applied to the spinner container |
+| `app-spinner-rtl` | Style class applied for right-to-left language support |
 
-### `.app-spinner-rtl`
-Right-to-left (RTL) variant class that adjusts the spinner's animation direction and positioning for RTL language support and layouts.
+## Customization
 
-## Additional Styling
+```css
+/* Custom spinner styling */
+.app-spinner {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+}
 
-In addition to the component-specific classes above, you can use standard application CSS classes to further customize the spinner's appearance, positioning, and behavior as needed.
+/* RTL specific styling */
+.app-spinner-rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Custom spinner animation */
+.custom-spinner-icon {
+    animation: spin 2s linear infinite;
+    color: #007bff;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+```
+
+You can also apply custom styles using the `styles` property:
+
+```javascript
+Page.Widgets.mySpinner.styles = {
+    backgroundColor: '#f8f9fa',
+    borderRadius: '10px',
+    padding: '15px'
+};
+```

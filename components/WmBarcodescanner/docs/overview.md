@@ -1,15 +1,14 @@
 # Overview
 
-The BarcodeScanner component is a device-specific component that provides barcode and QR code scanning functionality within mobile applications. This component leverages the device's camera capabilities to capture and decode various barcode formats, making it essential for applications that require product identification, inventory management, ticket validation, or general data capture through visual codes.
+The **Barcode Scanner** component is a device-specific widget that enables mobile applications to scan barcodes using the device's camera. When clicked, it opens the camera interface for barcode scanning, making scanned data available through the `datavalue` property. This component is commonly used in retail, inventory management, and product identification applications.
 
-Built on the BaseProps foundation, the BarcodeScanner component offers a comprehensive scanning solution with customizable visual elements and accessibility features. It seamlessly integrates into mobile workflows where users need to quickly capture data from physical barcodes or QR codes, eliminating the need for manual data entry and reducing human error in data collection processes.
+The widget appears as a button with customizable caption and icon. Upon successful scanning, it triggers callback events and populates the scanned data for use throughout your application.
 
 ## Features
 
-- **Multiple Barcode Format Support** - Configurable to scan various barcode types and formats based on application requirements
-- **Custom Visual Styling** - Configurable icon appearance with customizable icon classes and sizes for consistent UI integration
-- **User-Friendly Interface** - Customizable caption text to guide users through the scanning process
-- **Real-Time Data Capture** - Immediate access to scanned barcode data values for processing or display
-- **Accessibility Compliance** - Built-in accessibility features including labels, hints, and role definitions for screen reader compatibility
-- **Component Identification** - Standard identification properties for form integration and component management
-- **Responsive Design** - Adaptive sizing and styling options to fit various screen sizes and orientations
+- **Camera Integration**: Direct access to device camera for barcode scanning
+- **Multiple Format Support**: Supports various barcode formats including QR codes, EAN, UPC, and more
+- **Customizable Appearance**: Configurable caption, icon, and styling
+- **Accessibility Support**: Built-in accessibility features for screen readers
+- **Event-Driven**: Success callbacks for handling scanned data
+- **Responsive Design**: Device-specific display options

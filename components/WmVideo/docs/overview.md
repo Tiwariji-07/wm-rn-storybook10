@@ -1,16 +1,17 @@
 # Overview
 
-The Video component is a fundamental UI element that provides comprehensive video playback functionality for mobile applications. This component serves as a versatile media player that can handle various video formats and configurations, making it ideal for displaying promotional content, tutorials, entertainment media, or any video-based user experience within your app.
+The Video widget provides comprehensive video playback functionality for mobile applications built with WaveMaker. It supports multiple video formats (MP4, WebM, Ogg) and offers features like subtitles, poster images, and playback controls to deliver a rich media experience across different mobile platforms.
 
-Built on the BaseProps foundation, the Video component offers extensive customization options for both playback behavior and visual presentation. It supports modern web video standards while providing developers with fine-grained control over the user experience, from automatic playback scenarios to fully interactive media consumption with custom branding and accessibility features.
+The widget automatically handles cross-platform compatibility and provides a native video player experience with customizable controls and behaviors suitable for mobile viewing.
 
 ## Features
 
-- **Multi-format Support** - Handles both MP4 and OGG video formats for broad compatibility
-- **Automatic Playback Control** - Configurable autoplay functionality for seamless user experiences
-- **Interactive Controls** - Optional video controls for user-managed playback
-- **Continuous Playback** - Loop functionality for repetitive content display
-- **Audio Management** - Muted playback options for context-appropriate scenarios
-- **Visual Customization** - Custom poster images with optional default fallback display
-- **Accessibility Support** - Subtitle integration with configurable language and source options
-- **Responsive Design** - Adaptable to various screen sizes and orientations
+- **Multiple Format Support**: Supports MP4, WebM, and Ogg video formats for broad compatibility
+- **Subtitle Support**: Built-in subtitle functionality with customizable language settings
+- **Poster Images**: Display custom poster frames before video playback
+- **Playback Controls**: Configurable autoplay, loop, mute, and control visibility
+- **Accessibility**: Full accessibility support with ARIA labels and roles
+- **Fullscreen Support**: Native fullscreen capabilities with enter/exit callbacks
+- **Live Streaming**: Support for live video content with appropriate controls
+- **Picture-in-Picture**: Optional picture-in-picture mode support
+- **Responsive Design**: Adaptive sizing for different screen sizes and orientations

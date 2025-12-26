@@ -1,56 +1,57 @@
 # Styling
 
-The label component supports various CSS classes for customization and styling.
+The Label component supports extensive styling through CSS classes. Apply styles using the `classname` property.
 
-## Component-Specific Classes
+## Default Classes
 
-### Base Classes
-- **`app-label`** - Default style class for the label component
-- **`app-label-rtl`** - Right-to-left text direction support for the label
+- `app-label`: Base styling for all label components
+- `app-label-rtl`: Right-to-left text direction support
+- `form-label-horizontal`: Horizontal form label layout
 
-### Label Variants
-- **`label-danger`** - Applies danger/error styling with red color scheme
-- **`label-default`** - Default neutral styling for general use
-- **`label-info`** - Informational styling with blue color scheme
-- **`label-primary`** - Primary brand styling with main theme color
-- **`label-success`** - Success styling with green color scheme
-- **`label-warning`** - Warning styling with yellow/orange color scheme
+## Contextual Label Styles
 
-### Test Classes
-- **`label-test`** - Test styling variant
-- **`label-test1`** - Additional test styling variant
-- **`label-test9`** - Numbered test styling variant
-- **`label-test111`** - Extended test styling variant
-- **`label-test11112`** - Extended test styling variant
-- **`label-test12311`** - Extended test styling variant
+- `label-primary`: Primary theme colored label
+- `label-success`: Success/positive state styling
+- `label-info`: Informational state styling
+- `label-warning`: Warning state styling
+- `label-danger`: Error/danger state styling
+- `label-default`: Default neutral styling
 
-## Text Styling Classes
+## Text Color Classes
 
-### Text Colors
-- **`text-danger`** - Red text color for errors or warnings
-- **`text-info`** - Blue text color for informational content
-- **`text-primary`** - Primary brand color for text
-- **`text-success`** - Green text color for success states
-- **`text-warning`** - Yellow/orange text color for warnings
-- **`text-muted`** - Muted/gray text color for secondary content
+- `text-primary`: Primary theme text color
+- `text-success`: Success text color
+- `text-info`: Info text color
+- `text-warning`: Warning text color
+- `text-danger`: Danger text color
+- `text-muted`: Muted/subdued text color
 
-### Text Alignment
-- **`text-center`** - Center-aligned text
-- **`text-left`** - Left-aligned text
-- **`text-right`** - Right-aligned text
+## Text Alignment
+
+- `text-left`: Left-aligned text
+- `text-center`: Center-aligned text
+- `text-right`: Right-aligned text
 
 ## Typography Classes
 
-### Heading Styles
-- **`h1`** - Largest heading style
-- **`h2`** - Second level heading style
-- **`h3`** - Third level heading style
-- **`h4`** - Fourth level heading style
-- **`h5`** - Fifth level heading style
-- **`h6`** - Smallest heading style
-- **`media-heading`** - Specialized heading for media components
+- `h1`, `h2`, `h3`, `h4`, `h5`, `h6`: Heading styles
+- `media-heading`: Media component heading style
+- `p`: Paragraph styling
 
-### Text Elements
-- **`p`** - Paragraph text styling
+### Styling Examples
 
-These classes can be combined to achieve the desired visual appearance for your label components.
+```javascript
+// Apply contextual styling
+Page.Widgets.errorLabel.classname = "label-danger";
+Page.Widgets.successLabel.classname = "label-success";
+
+// Combine multiple classes
+Page.Widgets.titleLabel.classname = "h2 text-center text-primary";
+
+// Custom styling with inline styles
+Page.Widgets.customLabel.styles = {
+    fontSize: '18px',
+    fontWeight: 'bold',
+    color: '#333'
+};
+```

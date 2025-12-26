@@ -1,27 +1,49 @@
 # Styling
 
-The progress-circle component provides several CSS classes for customization and theming.
+The Progress Circle widget provides multiple CSS classes for customization and theming.
 
-## Available CSS Classes
+## Default Style Classes
 
-### Base Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-progress-circle` | Base style class applied to all progress circle instances |
 
-- **`app-progress-circle`** - Default style class that provides the base styling for the progress circle component
+## Type-Specific Classes
 
-### Theme Variant Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-default-progress-circle` | Styles for the default progress circle variant |
+| `app-success-progress-circle` | Styles for the success state (green/positive) |
+| `app-info-progress-circle` | Styles for the info state (blue/informational) |
+| `app-warning-progress-circle` | Styles for the warning state (yellow/caution) |
+| `app-danger-progress-circle` | Styles for the error/danger state (red/negative) |
 
-- **`app-default-progress-circle`** - Applies the default theme styling to the progress circle
-- **`app-success-progress-circle`** - Applies success theme styling with green color scheme
-- **`app-info-progress-circle`** - Applies info theme styling with blue color scheme  
-- **`app-danger-progress-circle`** - Applies danger theme styling with red color scheme
-- **`app-warning-progress-circle`** - Applies warning theme styling with yellow/orange color scheme
+## Additional Variant Classes
 
-### Size Variant Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-progress-circle1` | Alternative style variant 1 |
+| `app-progress-circle2` | Alternative style variant 2 |
+| `app-progress-circle3` | Alternative style variant 3 |
 
-- **`app-progress-circle1`** - Applies first size variant styling (typically smallest)
-- **`app-progress-circle2`** - Applies second size variant styling (typically medium)
-- **`app-progress-circle3`** - Applies third size variant styling (typically largest)
+### Custom Styling Examples
 
-## Usage
+```css
+/* Customize default progress circle */
+.app-progress-circle {
+    width: 120px;
+    height: 120px;
+}
 
-You can combine these classes to achieve the desired visual appearance for your progress circle component. The theme classes control the color scheme while the size classes control the dimensions of the progress circle.
+/* Success state customization */
+.app-success-progress-circle {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+/* Warning state customization */
+.app-warning-progress-circle {
+    border-color: #ffc107;
+    color: #856404;
+}
+```

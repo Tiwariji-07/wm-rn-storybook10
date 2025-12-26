@@ -1,40 +1,42 @@
 # Methods
 
-Access the Select Locale component methods using `Page.Widgets.widgetName` where widgetName is the name of your component.
+Access the selectlocale component methods using:
+`Page.Widgets.[componentName].[methodName]()`
 
 | Method | Parameters | Return Type | Description |
 |--------|------------|-------------|-------------|
-| onPress | event: any | void | Handles press events on the component |
-| onPropertyChange | name: string, newValue: any, oldValue: any | void | Called when component properties change |
-| prepareModalOptions | content: React.ReactNode, styles: WmSelectStyles, modalService: ModalService | void | Configures modal display options |
-| focus | - | void | Programmatically focuses the component |
-| renderSelect | - | void | Renders the select dropdown |
-| isSelected | item: any | void | Checks if an item is currently selected |
-| onItemSelect | item: any, isPlaceholder?: boolean | void | Handles item selection logic |
-| renderSelectItem | item: any, index: number, isPlaceholder: boolean, isLast: boolean | void | Renders individual select items |
-| updateDefaultQueryModel | - | void | Updates the default query parameters |
-| onDataItemsUpdate | - | void | Called when the data items are updated |
+| `onPress` | event: any | void | Handles press events on the component |
+| `onPropertyChange` | name: string, $new: any, $old: any | void | Handles property value changes |
+| `prepareModalOptions` | content: React.ReactNode, styles: WmSelectStyles, modalService: ModalService | void | Configures modal display options for locale selection |
+| `focus` | - | void | Programmatically sets focus to the component |
+| `renderSelect` | - | void | Renders the select component |
+| `isSelected` | item: any | void | Checks if a locale item is currently selected |
+| `onItemSelect` | item: any, isPlaceholder?: boolean | void | Handles selection of a locale item |
+| `renderSelectItem` | item: any, index: number, isPlaceholder: boolean, isLast: boolean | void | Renders individual locale items |
+| `updateDefaultQueryModel` | - | void | Updates the default query model for data filtering |
+| `onDataItemsUpdate` | - | void | Handles updates to the locale data items |
 
-### Common Method Usage
+## Common Method Usage
+
+### Programmatic Locale Selection
 
 ```javascript
-// Focus the select locale component
-Page.Widgets.selectLocale.focus();
+// Focus the locale selector
+Page.Widgets.myLocaleSelect.focus();
 
 // Check if specific locale is selected
-const isEnglishSelected = Page.Widgets.selectLocale.isSelected({value: 'en'});
+var isEnglishSelected = Page.Widgets.myLocaleSelect.isSelected({code: 'en'});
 
-// Update data items
-Page.Widgets.selectLocale.onDataItemsUpdate();
+// Programmatically select a locale
+Page.Widgets.myLocaleSelect.onItemSelect({code: 'es', name: 'Spanish'});
 ```
 
-### Programmatic Locale Management
+### Handle Property Changes
 
 ```javascript
-// Get current selected locale
-const currentLocale = Page.Widgets.selectLocale.datavalue;
+// Listen for dataset changes
+Page.Widgets.myLocaleSelect.onPropertyChange('dataset', newDataset, oldDataset);
 
-// Set new locale and trigger change
-Page.Widgets.selectLocale.datavalue = 'fr';
-Page.Widgets.selectLocale.onPropertyChange('datavalue', 'fr', currentLocale);
+// Update query model when filters change
+Page.Widgets.myLocaleSelect.updateDefaultQueryModel();
 ```

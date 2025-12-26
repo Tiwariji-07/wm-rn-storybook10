@@ -1,15 +1,52 @@
 # Styling
 
-The rating component provides the following CSS classes for customization:
+## CSS Classes
 
-## Available CSS Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-rating` | Default style class applied to the rating component container |
+| `form-rating-input-horizontal` | Styles for horizontal layout of rating input |
+| `app-rating-disabled` | Applied when the rating component is disabled |
 
-### `.app-rating`
-Default style class that applies the base styling for the rating component. This class defines the fundamental appearance including layout, spacing, and default visual state of the rating elements.
+## Customization
 
-### `.app-rating-disabled`
-Applied when the rating component is in a disabled state. This class typically modifies the visual appearance to indicate that the component is not interactive, often through reduced opacity, muted colors, or other visual cues that communicate the disabled status to users.
+### Icon Styling
+```css
+/* Customize rating stars */
+.app-rating {
+    /* Container styling */
+}
 
-## Additional Styling
+.app-rating .rating-icon {
+    /* Individual star/icon styling */
+    margin: 0 2px;
+}
 
-Beyond the component-specific classes listed above, you can utilize standard application CSS classes and custom styles to further customize the rating component's appearance according to your design requirements.
+.app-rating.app-rating-disabled {
+    opacity: 0.6;
+    /* Disabled state styling */
+}
+```
+
+### Size and Spacing
+```css
+.form-rating-input-horizontal {
+    /* Horizontal layout adjustments */
+    flex-direction: row;
+    align-items: center;
+}
+```
+
+## Dynamic Styling
+
+```javascript
+// Apply custom styles programmatically
+Page.Widgets.myRating.styles = {
+    backgroundColor: '#f5f5f5',
+    padding: '10px',
+    borderRadius: '8px'
+};
+
+// Add custom class
+Page.Widgets.myRating.classname = 'custom-rating-style';
+```

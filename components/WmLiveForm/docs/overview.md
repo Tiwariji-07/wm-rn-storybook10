@@ -1,18 +1,16 @@
 # Overview
 
-The **liveform** component is a dynamic data collection component designed to create interactive forms that respond to user input in real-time. This component enables developers to build sophisticated form interfaces that can validate, transform, and react to data changes as users interact with form fields, providing immediate feedback and a seamless user experience.
+The **Live Form** component provides a powerful data entry interface that automatically generates form fields based on your database schema. It seamlessly integrates with WaveMaker's Database CRUD variables to perform create, read, update, and delete operations through auto-generated REST APIs.
 
-Built for mobile applications that require complex data entry workflows, the liveform component excels in scenarios such as user registration, profile updates, survey collection, and multi-step data capture processes. It provides a foundation for creating forms that can adapt their behavior, validation rules, and appearance based on user interactions and data state changes.
+Live Form excels at handling database operations with minimal configuration. When bound to a database variable, it automatically creates appropriate input fields for each column, handles validation, and provides built-in CRUD functionality. The component can be associated with selected items from Lists or Data Tables to enable update operations on existing records.
 
 ## Features
 
-- Real-time form validation and error handling
-- Dynamic field rendering and conditional form logic
-- Automatic data binding and state management
-- Customizable input field types and layouts
-- Built-in accessibility support for mobile devices
-- Integration with external data sources and APIs
-- Form submission handling with loading states
-- Responsive design optimized for various screen sizes
-- Support for complex data structures and nested objects
-- Extensible architecture for custom field components
+- **Auto-generated form fields** from database schema
+- **Built-in CRUD operations** (Create, Read, Update, Delete)
+- **Automatic field validation** based on database constraints
+- **Flexible layout options** (1, 2, or 3 column layouts)
+- **Rich event callbacks** for custom business logic
+- **Smart widget mapping** - appropriate input widgets for different data types
+- **Read-only mode** for display-only scenarios
+- **Form state management** with reset and cancel operations

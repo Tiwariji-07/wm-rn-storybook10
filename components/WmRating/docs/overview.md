@@ -1,16 +1,15 @@
 # Overview
 
-The Rating component is an interactive input control that allows users to provide numerical ratings or feedback within a mobile application. This component is commonly used in review systems, feedback forms, user surveys, and anywhere quantitative user input is needed to express satisfaction, quality, or preference levels.
+The **Rating** component is an interactive input widget that allows users to display or elicit quantitative or qualitative feedback through a visual star rating system. It's particularly useful for collecting user ratings, displaying review scores, or gathering feedback in mobile applications.
 
-Built on the BaseProps foundation, the Rating component offers flexible data binding capabilities and customizable display options. It seamlessly integrates with data sources while providing an intuitive touch-friendly interface optimized for mobile devices, making it ideal for capturing user sentiment and ratings in various app contexts.
+The component renders as a series of stars (or custom icons) that users can tap to set a rating value. It supports data binding for both display and caption customization, making it versatile for various rating scenarios.
 
 ## Features
 
-- **Data Integration**: Connect to datasets with configurable data fields and display expressions
-- **Flexible Rating Scale**: Support for custom maximum rating values to accommodate different rating systems
-- **Visual Customization**: Configurable icon colors and sizes to match app branding and design
-- **Read-only Mode**: Display ratings without allowing user interaction when needed
-- **Caption Support**: Optional display of descriptive text labels alongside rating values
-- **Touch Optimization**: Mobile-friendly interface designed for easy finger navigation
-- **Data Binding**: Seamless integration with data sources through datafield and datavalue properties
-- **Dynamic Display**: Customizable display formatting through getDisplayExpression functionality
+- **Customizable maximum rating** - Set any maximum value up to 10 stars
+- **Data binding support** - Connect to variables or static datasets for captions
+- **Icon customization** - Configure size and color of rating icons
+- **Caption display** - Show/hide descriptive text for each rating level
+- **Read-only mode** - Display ratings without user interaction
+- **Accessibility support** - Full screen reader and keyboard navigation support
+- **Touch-friendly** - Optimized for mobile touch interactions

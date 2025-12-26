@@ -1,16 +1,14 @@
 # Overview
 
-The LayoutGrid component is a flexible container component designed to organize and structure content within mobile applications using a grid-based layout system. It serves as a foundational building block for creating responsive, well-organized interfaces by arranging child components in a structured grid pattern that adapts to different screen sizes and orientations.
+The `layoutgrid` component is a flexible container layout system that implements a 12-column grid structure for organizing content in React Native applications. It provides a responsive design foundation that adapts to different screen sizes and device orientations, making it ideal for creating structured layouts across mobile platforms.
 
-This component is particularly useful for creating dashboard layouts, content galleries, form sections, or any interface requiring consistent spacing and alignment of multiple elements. The LayoutGrid provides developers with fine-grained control over display behavior, styling, and user interaction while maintaining accessibility and performance optimization.
+This container component works hierarchically with `gridrow` and `gridcolumn` child components to create sophisticated grid-based layouts. The layout system automatically handles responsive behavior across different device breakpoints, ensuring optimal display on various screen sizes from mobile phones to tablets.
 
 ## Features
-
-- **Flexible Content Organization** - Accepts child components and arranges them in a structured grid layout
-- **Conditional Rendering** - Control component visibility with show/hide functionality
-- **Device-Specific Display** - Configure visibility based on specific device types or screen sizes
-- **Custom Styling** - Apply custom styles and CSS classes for tailored appearance
-- **Accessibility Support** - Built-in support for component identification and naming
-- **Loading States** - Skeleton loading capability for improved user experience during data fetching
-- **Interactive Controls** - Enable or disable user interaction and touch effects as needed
-- **State Management** - Built-in disabled state handling for form-like interactions
+- **12-Column Grid System**: Implements a flexible 12-column layout structure
+- **Responsive Design**: Adapts to different screen sizes with device-specific visibility controls
+- **Hierarchical Structure**: Supports nested `gridrow` and `gridcolumn` components
+- **Flexible Width Control**: Configurable column widths with automatic width distribution
+- **Device Targeting**: Show/hide content based on specific device sizes (xs, sm, md, lg, xl, xxl)
+- **Skeleton Loading**: Built-in loading state support
+- **Touch Effects**: Configurable touch interaction feedback

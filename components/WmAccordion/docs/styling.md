@@ -1,102 +1,100 @@
 # Styling
 
-The Accordion component can be customized using CSS classes and styling properties.
+## Default CSS Classes
 
-## CSS Classes
-
-### Accordion Classes
+### Accordion Container
 
 | Class Name | Description |
 |------------|-------------|
-| app-accordion | Default style class applied to the accordion container |
-| app-accordion-rtl | RTL (right-to-left) layout support for the accordion |
-| app-accordion1 | Alternative accordion styling variant |
+| `app-accordion` | Base styling for the accordion container |
+| `app-accordion-rtl` | Right-to-left layout support |
+| `app-accordion1` | Alternative accordion styling variant |
 
-### Accordion Pane Classes
+### Accordion Pane
 
 | Class Name | Description |
 |------------|-------------|
-| app-accordionpane | Default style class applied to each accordion pane |
+| `app-accordionpane` | Default styling for individual accordion panes |
 
-## Custom Styling Examples
+## Customization Examples
 
-### Accordion Container Styling
+### Custom Accordion Styles
 ```css
-/* Custom accordion styling */
+/* Custom accordion container */
 .my-custom-accordion {
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* RTL layout adjustments */
-.app-accordion-rtl {
-    direction: rtl;
+/* Custom pane styling */
+.my-custom-accordion .app-accordionpane {
+    border-bottom: 1px solid #f0f0f0;
 }
 
-/* Compact accordion variant */
-.app-accordion1 .app-accordionpane {
-    margin-bottom: 2px;
-}
-```
-
-### Accordion Pane Styling
-```css
-/* Custom pane header styling */
-.app-accordionpane .panel-heading {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 15px;
-}
-
-/* Pane content area */
-.app-accordionpane .panel-body {
-    padding: 20px;
+/* Header customization */
+.my-custom-accordion .accordion-header {
     background-color: #f8f9fa;
-}
-
-/* Badge styling */
-.app-accordionpane .badge {
-    border-radius: 12px;
+    padding: 16px;
     font-weight: 600;
 }
-```
 
-### Responsive Accordion
-```css
-/* Mobile-friendly accordion */
-@media (max-width: 768px) {
-    .app-accordion {
-        margin: 0 10px;
-    }
-    
-    .app-accordionpane .panel-heading {
-        padding: 12px;
-        font-size: 14px;
-    }
+/* Content area styling */
+.my-custom-accordion .accordion-content {
+    padding: 20px;
+    background-color: #ffffff;
 }
 ```
 
-### Animation Customization
+### Responsive Accordion Design
 ```css
-/* Custom expand/collapse animations */
-.app-accordionpane .panel-collapse {
-    transition: all 0.3s ease-in-out;
+/* Mobile-first responsive design */
+.responsive-accordion {
+    width: 100%;
+    margin: 0;
 }
 
-/* Custom fadeInDown animation */
-.fadeInDown {
-    animation: fadeInDown 0.4s ease-out;
+@media (min-width: 768px) {
+    .responsive-accordion {
+        max-width: 800px;
+        margin: 0 auto;
+    }
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Touch-friendly pane headers */
+.responsive-accordion .accordion-header {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+```
+
+### Badge and Icon Styling
+```css
+/* Custom badge styles */
+.accordion-badge {
+    background-color: #007bff;
+    color: white;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Icon positioning and styling */
+.accordion-icon {
+    margin-right: 12px;
+    font-size: 18px;
+    color: #6c757d;
+}
+
+/* Expand/collapse icon animation */
+.accordion-toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-expanded .accordion-toggle-icon {
+    transform: rotate(180deg);
 }
 ```

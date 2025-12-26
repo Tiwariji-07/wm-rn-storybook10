@@ -1,17 +1,18 @@
 # Overview
 
-The DateTime component is a versatile input control designed for collecting date and time information in mobile applications. It provides users with an intuitive interface for selecting dates, times, or both, depending on the configured mode. This component is essential for forms, scheduling interfaces, booking systems, and any application feature that requires temporal data input.
+The datetime component is a versatile input widget that allows users to select and input date, time, or combined datetime values. It provides a flexible and user-friendly interface for capturing temporal data with support for various display patterns, output formats, and customization options.
 
-Built on the BaseProps foundation, the DateTime component offers extensive customization options including date range restrictions, locale-specific formatting, and multiple display modes. It seamlessly integrates with form validation systems and provides real-time change notifications, making it ideal for dynamic user interfaces that require immediate feedback or dependent field updates.
+This component supports multiple modes including date-only, time-only, and combined datetime selection. It features native mobile picker interfaces with wheel selection for an optimal user experience on mobile devices.
 
 ## Features
 
-- **Multiple input modes** - Support for date-only, time-only, or combined datetime selection
-- **Flexible date formatting** - Customizable input patterns and output formats for different display requirements
-- **Date range validation** - Built-in minimum and maximum date constraints to restrict user selection
-- **Localization support** - Locale-aware formatting and display for international applications
-- **Interactive placeholder text** - Contextual hints to guide user input expectations
-- **Read-only mode** - Display-only configuration for showing datetime values without editing capability
-- **Real-time change handling** - Event callbacks for immediate response to user interactions
-- **Data binding** - Seamless integration with form data through datavalue property
-- **Accessibility compliance** - Screen reader support and keyboard navigation compatibility
+- **Multiple Input Modes**: Support for date, time, and datetime input modes
+- **Flexible Date Patterns**: Customizable display formats using standard date/time patterns
+- **Output Format Control**: Define how the selected value is returned (timestamp, formatted string, etc.)
+- **Date Range Validation**: Set minimum and maximum allowed dates
+- **Native Mobile Pickers**: Optimized wheel picker interface for mobile devices
+- **24-Hour and 12-Hour Time**: Support for both time formats
+- **Localization**: Built-in locale support for international date/time formatting
+- **Accessibility**: Full accessibility support with ARIA labels and roles
+- **Read-only Mode**: Display-only mode for showing dates without editing
+- **Validation Support**: Integration with form validation systems

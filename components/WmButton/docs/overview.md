@@ -1,17 +1,21 @@
 # Overview
 
-A **Button** component provides a styled clickable UI element that indicates possible user actions. It supports various visual states, animations, and touch interactions optimized for mobile applications. The button can trigger navigation, function calls, or other user-defined actions when tapped.
+A **button** component provides styled clickable UI functionality that indicates a possible user action. It delivers interactive touch-based functionality with customizable content to indicate different states in mobile applications.
 
-The Button component extends BaseProps and offers comprehensive customization options including icons, badges, accessibility features, and responsive design capabilities for React Native applications.
+The button widget can trigger various actions when tapped:
+- Navigate to another page
+- Query a database
+- Show or hide dialogs
+- Call JavaScript functions
+- Execute web service or API calls
 
 ## Features
 
-- **Touch Interactions**: Supports tap, double-tap, long-tap, and touch events
-- **Icon Support**: Display icons using icon classes or image URLs with flexible positioning
-- **Badge Display**: Show notification badges with custom values
-- **Accessibility**: Built-in accessibility features with customizable labels and roles
-- **Responsive Design**: Device-specific visibility controls (xs, sm, md, lg, xl, xxl)
-- **Animation Support**: CSS-based animations with configurable delays
-- **Skeleton Loading**: Show placeholder content during loading states
-- **State Management**: Enable/disable functionality with visual feedback
-- **Touch Effects**: Configurable touch feedback for enhanced user experience
+- **Touch Events**: Comprehensive touch event handling including tap, double tap, and long tap
+- **Icon Support**: Accommodates icons via class names or image URLs to enhance visual meaning
+- **Badge Integration**: Display badge values for notifications or status indicators
+- **Accessibility**: Built-in accessibility features with configurable roles and labels
+- **Conditional Visibility**: Show/hide based on device sizes and dynamic conditions
+- **Skeleton Loading**: Built-in skeleton loading states for better UX
+- **Flexible Styling**: Multiple predefined styles and custom class support
+- **Touch Effects**: Configurable touch feedback and animation effects

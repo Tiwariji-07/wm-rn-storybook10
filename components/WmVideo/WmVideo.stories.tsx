@@ -4,6 +4,7 @@ import { View } from "react-native";
 import WmVideo from "@wavemaker/app-rn-runtime/components/basic/video/video.component";
 import { AssetProvider } from "@wavemaker/app-rn-runtime/core/asset.provider";
 import { handleAsset } from "../../services/Assethandler";
+import { VideoServiceComponent } from "../../services/VideoService";
 
 import { ComponentDocumentation } from "../../.storybook/components/ComponentDocumentation";
 import overview from "./docs/overview.md?raw";
@@ -30,11 +31,13 @@ const meta = {
   component: WmVideo,
   decorators: [
     (Story) => (
-      <AssetProvider value={handleAsset}>
-        <View style={{ padding: 16 }}>
-          <Story />
-        </View>
-      </AssetProvider>
+      <VideoServiceComponent>
+        <AssetProvider value={handleAsset}>
+          <View style={{ padding: 16 }}>
+            <Story />
+          </View>
+        </AssetProvider>
+      </VideoServiceComponent>
     ),
   ],
   parameters: {

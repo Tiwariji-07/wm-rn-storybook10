@@ -1,17 +1,16 @@
 # Overview
 
-The Navbar component is a versatile navigation element designed to provide structured menu systems and hierarchical navigation within mobile applications. Built on the BaseNavProps foundation, this component serves as the primary interface for organizing and presenting navigation options, supporting both top-level navigation bars and nested child navigation structures.
+The **Navbar** widget provides a responsive navigation header component for mobile applications. It creates a collapsible navigation bar that automatically adapts to different screen sizes, providing an optimal user experience across various mobile devices.
 
-This component offers flexible layout configurations and interactive navigation patterns, making it suitable for various use cases including main application menus, sidebar navigation, breadcrumb trails, and multi-level menu systems. The navbar adapts to different navigation paradigms while maintaining consistent user experience patterns across the application.
+The Navbar widget supports dynamic data binding, allowing you to create navigation menus from data sources such as variables, services, or static datasets. It offers flexible customization options for styling, layout, and behavior while maintaining native mobile performance.
 
 ## Features
 
-- **Multiple Navigation Types** - Supports various navbar configurations through customizable type settings
-- **Flexible Layout Options** - Adaptable layout system to accommodate different design requirements
-- **Hierarchical Navigation** - Built-in support for child navigation elements and nested menu structures
-- **Interactive Selection Handling** - Integrated onSelect callback system for handling user navigation actions
-- **Visual Indentation Support** - Configurable indentation for displaying hierarchical relationships
-- **Rich Content Support** - Accommodates custom children elements, icons, labels, and links
-- **Data Integration** - Dataset support for dynamic content and external data binding
-- **Accessibility Features** - Structured markup with proper labeling and navigation semantics
-- **Nested Navigation Support** - Specialized handling for child navigation components and sub-menus
+- **Responsive Design**: Automatically adapts to different screen sizes and orientations
+- **Dynamic Data Binding**: Supports binding to variables, services, and static data
+- **Flexible Item Configuration**: Customizable labels, icons, links, and badges
+- **Multiple Layout Types**: Pills and other layout variations
+- **Touch Optimized**: Native mobile touch interactions and gestures
+- **Nested Navigation**: Support for child navigation items
+- **Conditional Display**: Show/hide based on device types and conditions
+- **Accessibility**: Built-in accessibility features and screen reader support

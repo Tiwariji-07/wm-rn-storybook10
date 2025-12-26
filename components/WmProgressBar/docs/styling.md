@@ -1,19 +1,71 @@
 # Styling
 
-The progress-bar component provides several CSS classes for different visual styles and states.
+The Progress Bar widget provides several CSS classes for customization and theming.
 
-## Available CSS Classes
+## Default CSS Classes
 
-### Base Class
-- **`app-progress-bar`** - Default style class that provides the foundational styling for the progress bar component
+| Class Name | Description |
+|------------|-------------|
+| `app-progress-bar` | Base class applied to all progress bar instances |
+| `app-default-progress-bar` | Applied when type is 'default' |
+| `app-success-progress-bar` | Applied when type is 'success' |
+| `app-info-progress-bar` | Applied when type is 'info' |
+| `app-warning-progress-bar` | Applied when type is 'warning' |
+| `app-danger-progress-bar` | Applied when type is 'error' |
 
-### Theme Variants
-- **`app-default-progress-bar`** - Applies the default theme styling with neutral colors
-- **`app-success-progress-bar`** - Applies success theme styling, typically using green colors to indicate successful completion or positive progress
-- **`app-info-progress-bar`** - Applies informational theme styling, typically using blue colors for general information or neutral progress states
-- **`app-danger-progress-bar`** - Applies danger/error theme styling, typically using red colors to indicate errors, warnings, or critical states
-- **`app-warning-progress-bar`** - Applies warning theme styling, typically using orange or yellow colors to indicate caution or attention-required states
+## Custom Styling Examples
 
-## Usage
+```css
+/* Customize default progress bar appearance */
+.app-progress-bar {
+    border-radius: 8px;
+    height: 12px;
+    background-color: #f0f0f0;
+}
 
-These classes can be applied to customize the appearance of the progress bar based on the context or state of the operation being tracked. The theme variant classes work in conjunction with the base `app-progress-bar` class to provide consistent styling while allowing for contextual color variations.
+/* Style success state */
+.app-success-progress-bar {
+    background: linear-gradient(90deg, #4caf50, #66bb6a);
+    box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+/* Style warning state */
+.app-warning-progress-bar {
+    background: linear-gradient(90deg, #ff9800, #ffb74d);
+    animation: pulse 1.5s infinite;
+}
+
+/* Style error state */
+.app-danger-progress-bar {
+    background: linear-gradient(90deg, #f44336, #ef5350);
+}
+
+/* Custom pulse animation for warning state */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Responsive progress bar sizing */
+@media (max-width: 768px) {
+    .app-progress-bar {
+        height: 8px;
+        border-radius: 4px;
+    }
+}
+```
+
+## Dynamic Styling
+
+```javascript
+// Apply custom styles programmatically
+Page.Widgets.myProgressBar.styles = {
+    backgroundColor: '#e3f2fd',
+    border: '2px solid #2196f3',
+    borderRadius: '20px',
+    height: '20px'
+};
+
+// Add custom CSS classes
+Page.Widgets.myProgressBar.classname = 'custom-progress-bar animated';
+```

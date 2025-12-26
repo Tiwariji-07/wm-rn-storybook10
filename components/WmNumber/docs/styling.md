@@ -1,21 +1,61 @@
 # Styling
 
-The number component provides the following CSS classes for customization:
+The Number component provides several CSS classes for customization:
 
-## Available CSS Classes
+## Default Classes
 
-### `.app-number`
-Default style class that provides the base styling for the number component.
+| Class Name | Description |
+|------------|-------------|
+| `app-number` | Base styling class applied to all Number components |
+| `form-number-input-horizontal` | Horizontal layout styling for form inputs |
+| `app-number-disabled` | Applied when the component is in disabled state |
+| `app-number-rtl` | Right-to-left text direction styling |
+| `app-number-with-label` | Applied when the component has a floating label |
 
-### `.app-number-disabled`
-Applied when the number component is in a disabled state. This class typically reduces opacity, changes cursor behavior, and prevents user interaction while maintaining visual hierarchy.
+## Styling Examples
 
-### `.app-number-rtl`
-Applied for right-to-left language support. This class adjusts the component's layout and text direction to properly display in RTL contexts, ensuring proper alignment and spacing.
+```css
+/* Custom number input styling */
+.app-number {
+    border-radius: 8px;
+    border-width: 2px;
+    font-size: 16px;
+}
 
-### `.app-number-with-label`
-Applied when the number component includes an associated label. This class adjusts spacing, alignment, and layout to accommodate the label element alongside the input field.
+/* Disabled state customization */
+.app-number-disabled {
+    opacity: 0.6;
+    background-color: #f5f5f5;
+}
 
-## Usage
+/* Horizontal form layout */
+.form-number-input-horizontal {
+    flex-direction: row;
+    align-items: center;
+}
 
-You can override these classes in your custom CSS to modify the component's appearance according to your design requirements. If additional styling is needed beyond these specific classes, standard application CSS classes can also be applied to the component.
+/* RTL support */
+.app-number-rtl {
+    text-align: right;
+    direction: rtl;
+}
+
+/* Label styling */
+.app-number-with-label {
+    margin-top: 20px;
+}
+```
+
+## Dynamic Styling
+
+```javascript
+// Apply custom styles programmatically
+Page.Widgets.myNumber.styles = {
+    backgroundColor: '#e3f2fd',
+    borderColor: '#2196f3',
+    color: '#1976d2'
+};
+
+// Add custom CSS classes
+Page.Widgets.myNumber.classname = 'custom-number-input highlight';
+```

@@ -2,32 +2,52 @@
 
 ## CSS Classes
 
-The anchor component provides the following CSS classes for styling customization:
+| Class Name | Description |
+|------------|-------------|
+| `app-anchor` | Default base styling for the anchor component |
+| `app-anchor-rtl` | Right-to-left language support styling |
+| `link-primary` | Primary theme color styling |
+| `link-secondary` | Secondary theme color styling |
+| `link-success` | Success state color (green) |
+| `link-danger` | Danger/error state color (red) |
+| `link-warning` | Warning state color (yellow/orange) |
+| `link-info` | Information state color (blue) |
+| `link-light` | Light theme color variant |
+| `link-dark` | Dark theme color variant |
 
-### Base Classes
+## Styling Examples
 
-- **`app-anchor`** - Default style class that applies the standard anchor styling
-- **`app-anchor-rtl`** - Applies right-to-left text direction styling for RTL language support
+```javascript
+// Apply theme-based styling
+Page.Widgets.myAnchor.classname = "link-primary";
 
-### Color Variants
+// Combine multiple classes
+Page.Widgets.myAnchor.classname = "link-success custom-anchor";
 
-- **`link-primary`** - Applies primary brand color styling to the link
-- **`link-secondary`** - Applies secondary color styling to the link
-- **`link-success`** - Applies success state color (typically green) to the link
-- **`link-danger`** - Applies danger/error state color (typically red) to the link
-- **`link-warning`** - Applies warning state color (typically yellow/orange) to the link
-- **`link-info`** - Applies informational state color (typically blue) to the link
-- **`link-light`** - Applies light color variant to the link
-- **`link-dark`** - Applies dark color variant to the link
+// Custom inline styles
+Page.Widgets.myAnchor.styles = {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+    color: '#007bff'
+};
 
-## Usage
-
-You can combine the base classes with color variants to achieve the desired visual appearance:
-
-```html
-<a class="app-anchor link-primary">Primary Link</a>
-<a class="app-anchor link-danger">Danger Link</a>
-<a class="app-anchor-rtl link-success">RTL Success Link</a>
+// Icon styling
+Page.Widgets.myAnchor.iconwidth = 20;
+Page.Widgets.myAnchor.iconheight = 20;
+Page.Widgets.myAnchor.iconmargin = 8;
 ```
 
-Standard application CSS classes can also be used in conjunction with these component-specific classes for additional styling customization.
+## Badge Styling
+
+When using `badgevalue`, the badge inherits styling from the parent anchor and can be customized through CSS:
+
+```css
+.app-anchor .badge {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 12px;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+```

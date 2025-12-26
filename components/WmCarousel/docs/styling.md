@@ -1,21 +1,42 @@
 # Styling
 
-The carousel component provides the following CSS classes for customization:
+The Carousel component supports customization through CSS classes for different visual states and orientations.
 
-## Component-Specific Classes
+## Default Classes
 
-### `.app-carousel`
-Default style class for the carousel component. This applies the base styling and layout for the carousel container and its elements.
+| Class Name | Description |
+|------------|-------------|
+| `app-carousel` | Base styling for the carousel component |
+| `app-carousel-rtl` | Right-to-left layout styling |
+| `app-carousel-1` | Alternative carousel style variant 1 |
+| `app-carousel-2` | Alternative carousel style variant 2 |
 
-### `.app-carousel-rtl`
-Enables right-to-left (RTL) layout for the carousel. This class adjusts the carousel's direction, navigation controls, and slide transitions to support RTL languages and layouts.
+## Child Component Classes
 
-### `.app-carousel-1`
-First variant styling for the carousel. This class provides an alternative visual appearance or layout option for the carousel component.
+| Class Name | Component | Description |
+|------------|-----------|-------------|
+| `app-carousel-content` | carousel-content | Default styling for static carousel content areas |
+| `app-carousel-template` | carousel-template | Default styling for dynamic carousel template areas |
 
-### `.app-carousel-2`
-Second variant styling for the carousel. This class offers another distinct visual styling or functional variation for the carousel component.
+## Usage Example
 
-## Additional Styling
+```css
+/* Custom carousel styling */
+.app-carousel {
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-You can also apply standard application CSS classes alongside these component-specific classes to further customize the carousel's appearance and behavior.
+/* RTL support */
+.app-carousel-rtl {
+    direction: rtl;
+}
+
+/* Content area customization */
+.app-carousel-content {
+    padding: 16px;
+    background-color: #f5f5f5;
+}
+```
+
+You can apply additional styling by using the `classname` property to add custom CSS classes to the carousel and its child components.

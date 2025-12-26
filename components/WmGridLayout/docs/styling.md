@@ -1,17 +1,61 @@
 # Styling
 
-## CSS Classes
+The `layoutgrid` component provides multiple CSS classes for customizing the appearance of the grid system and its child components.
 
-The layoutgrid component provides the following CSS classes for styling:
+## LayoutGrid Classes
 
-### Component-Specific Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-layoutgrid` | Default style class applied to the main grid container |
+| `table` | Table-like styling for structured layouts |
+| `table-header-label` | Styling for header labels in table-style grids |
 
-- **`.app-layoutgrid`** - Default style class that provides the base styling for the layout grid component
-- **`.table`** - Applies table-specific styling to create a structured grid layout with proper spacing and alignment
-- **`.table-header-label`** - Styles the header labels within the table layout, typically providing distinct typography and positioning for column headers
+## GridRow Classes
 
-### Usage
+| Class Name | Description |
+|------------|-------------|
+| `app-gridrow` | Default style class applied to grid rows |
+| `table-row` | Standard table row styling |
+| `table-header-row` | Special styling for header rows |
+| `table-striped-row0` | Styling for even-numbered rows in striped tables |
+| `table-striped-row1` | Styling for odd-numbered rows in striped tables |
 
-These classes can be used individually or combined to achieve the desired visual appearance. The base `.app-layoutgrid` class should typically be applied to the root component element, while `.table` and `.table-header-label` classes target specific elements within the grid structure.
+## GridColumn Classes
 
-You can also apply standard application CSS classes alongside these component-specific classes for additional customization.
+| Class Name | Description |
+|------------|-------------|
+| `app-gridcolumn` | Default style class applied to grid columns |
+| `table-cell` | Table cell styling for structured data display |
+
+### Custom Styling Example
+
+```css
+/* Customize grid container */
+.app-layoutgrid {
+  padding: 16px;
+  background-color: #f5f5f5;
+}
+
+/* Style grid rows with borders */
+.app-gridrow {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px 0;
+}
+
+/* Style grid columns */
+.app-gridcolumn {
+  padding: 8px;
+  text-align: center;
+}
+
+/* Striped row styling */
+.table-striped-row0 {
+  background-color: #ffffff;
+}
+
+.table-striped-row1 {
+  background-color: #f9f9f9;
+}
+```
+
+Apply custom classes using the `classname` prop on any grid component to extend or override default styling.

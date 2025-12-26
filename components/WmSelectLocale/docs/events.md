@@ -2,11 +2,32 @@
 
 | Event | Parameters | Description |
 |-------|------------|-------------|
-| onFocus | (event, widget) | Triggered when the component gains focus |
-| onBlur | ({}, widget) | Triggered when the component loses focus |
-| onChange | (undefined, widget, newValue, oldValue) | Triggered when locale selection changes - typically used to change app locale and reload |
-| onTap | (event) | Triggered when the component is tapped |
-| onTouchstart | (event) | Triggered when touch starts on the component |
-| onDoubletap | (event) | Triggered on double tap gesture |
-| onLongtap | (event) | Triggered on long press gesture |
-| onTouchend | (event) | Triggered when touch ends on the component |
+| `onFocus` | (event, proxy) | Triggered when the locale selector gains focus |
+| `onBlur` | ({}, proxy) | Triggered when the locale selector loses focus |
+| `onChange` | (undefined, proxy, value, oldValue) | Triggered when a new locale is selected. Default behavior changes app locale and reloads the application |
+| `onTap` | (e) | Triggered when the component is tapped |
+| `onTouchstart` | (e) | Triggered when touch interaction begins |
+| `onDoubletap` | (e) | Triggered on double-tap gesture |
+| `onLongtap` | (e) | Triggered on long-press gesture |
+| `onTouchend` | (e) | Triggered when touch interaction ends |
+
+## Event Usage Examples
+
+```javascript
+// Custom locale change handler
+Page.myLocaleSelectChange = function($event, widget, newVal, oldVal) {
+    // Custom logic before locale change
+    console.log('Changing locale from', oldVal, 'to', newVal);
+    
+    // Change app locale
+    App.changeLocale({datavalue: newVal});
+    
+    // Optional: Custom reload logic
+    // App.reload();
+};
+
+// Handle focus events
+Page.myLocaleSelectFocus = function($event, widget) {
+    console.log('Locale selector focused');
+};
+```

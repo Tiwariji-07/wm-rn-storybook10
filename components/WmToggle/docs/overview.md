@@ -1,16 +1,16 @@
 # Overview
 
-The Toggle component is a binary input control that allows users to switch between two states, typically representing on/off, enabled/disabled, or true/false values. This component is essential for mobile applications where users need to quickly toggle settings, preferences, or feature states with a simple tap gesture. It provides a clear visual indication of the current state and offers smooth transitions between states for an intuitive user experience.
+The **Toggle widget** represents a physical switch that allows users to turn things on or off in mobile applications. Use Toggle controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in an immediate action.
 
-Built on the BaseProps foundation, the Toggle component is designed to handle various data types and integration scenarios while maintaining accessibility standards. It supports both interactive and read-only modes, making it suitable for configuration screens, settings panels, form inputs, and display-only contexts where the toggle state needs to be shown but not modified.
+Toggles are ideal for binary choices and settings where users need immediate visual feedback. Unlike checkboxes, toggles suggest that the action will take effect immediately when the user flips the switch.
 
 ## Features
 
-- **Dual State Management** - Supports distinct values for checked and unchecked states through `checkedvalue` and `uncheckedvalue` properties
-- **Data Binding** - Integrates with data sources via `datavalue` for dynamic state management
-- **Read-Only Mode** - Can be set to `readonly` for display purposes without user interaction
-- **Change Detection** - Triggers `onFieldChange` events when state transitions occur
-- **Event Handling** - Supports custom event invocation through `invokeEvent` for complex interactions
-- **Accessibility Support** - Comprehensive accessibility features including `accessibilitylabel`, `accessibilityrole`, and `accessibilitylabelledby`
-- **User Guidance** - Built-in `hint` support to provide contextual information to users
-- **Mobile Optimized** - Designed specifically for touch interactions and mobile interface patterns
+- **Binary State Control**: Provides clear on/off functionality with visual feedback
+- **Customizable Values**: Define custom values for checked and unchecked states beyond boolean true/false
+- **Accessibility Support**: Built-in accessibility features including labels, hints, and roles
+- **Visual Customization**: Support for toggle icons and check icons
+- **Touch-Friendly**: Optimized for mobile touch interactions
+- **Validation Ready**: Includes validation methods for form integration
+- **Responsive Design**: Skeleton loading states and device-specific visibility options
+- **Event Handling**: Comprehensive event system for user interactions

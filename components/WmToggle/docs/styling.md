@@ -1,22 +1,69 @@
 # Styling
 
-The toggle component provides several CSS classes for customization and state management:
+The Toggle widget provides several CSS classes for customization:
 
 ## Available CSS Classes
 
-### `.app-toggle`
-Default style class for the toggle component base styling.
+| Class Name | Description |
+|------------|-------------|
+| `app-toggle` | Default style class applied to all toggle widgets |
+| `form-toggle-input-horizontal` | Styles for horizontal layout in forms |
+| `app-toggle-on` | Applied when toggle is in the checked/on state |
+| `app-toggle-off` | Applied when toggle is in the unchecked/off state |
+| `app-toggle-rtl` | Styles for right-to-left language support |
+| `app-toggle-disabled` | Applied when toggle is disabled |
 
-### `.app-toggle-on`
-Applied when the toggle is in the active/enabled state. Typically styles the toggle to appear "switched on" with appropriate visual indicators.
+## Styling Examples
 
-### `.app-toggle-off`
-Applied when the toggle is in the inactive/disabled state. Styles the toggle to appear "switched off" with visual indicators showing the inactive state.
+```css
+/* Customize default toggle appearance */
+.app-toggle {
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
 
-### `.app-toggle-rtl`
-Right-to-left layout support class. Adjusts the toggle's visual appearance and animations for RTL text direction and layout requirements.
+/* Style the checked state */
+.app-toggle-on {
+    background-color: #4CAF50;
+    border-color: #45a049;
+}
 
-### `.app-toggle-disabled`
-Applied when the toggle is disabled and non-interactive. Typically reduces opacity, changes cursor behavior, and applies visual styling to indicate the component cannot be interacted with.
+/* Style the unchecked state */
+.app-toggle-off {
+    background-color: #ccc;
+    border-color: #999;
+}
 
-These classes can be customized in your CSS to match your application's design system and branding requirements.
+/* Custom disabled state */
+.app-toggle-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Right-to-left support */
+.app-toggle-rtl {
+    direction: rtl;
+}
+
+/* Custom toggle sizes */
+.toggle-large {
+    transform: scale(1.2);
+}
+
+.toggle-small {
+    transform: scale(0.8);
+}
+```
+
+## Dynamic Styling
+
+```javascript
+// Apply custom classes dynamically
+Page.Widgets.myToggle.classname = "toggle-large custom-primary";
+
+// Apply inline styles
+Page.Widgets.myToggle.styles = {
+    backgroundColor: '#007bff',
+    borderRadius: '25px'
+};
+```

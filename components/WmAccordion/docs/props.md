@@ -1,43 +1,38 @@
 # Props
 
-## Accordion Properties
+## Accordion Props
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| animation | string | 'fadeInDown' | Animation effect applied when expanding/collapsing panes |
-| children | any | - | Child accordion pane components |
-| defaultpaneindex | number | 0 | Index of the pane that should be expanded by default |
-| closeothers | any | true | Whether expanding one pane should close others |
-| disabled | any | false | Disables the entire accordion component |
-| show | Boolean/String/Number | true | Controls visibility of the accordion |
-| styles | any | null | Custom styling object |
-| classname | string | null | Additional CSS class names |
-| showindevice | array | null | Device breakpoints where component is visible ['xs','sm','md','lg','xl','xxl'] |
-| showskeleton | boolean | undefined | Shows skeleton loading state |
-| disabletoucheffect | boolean | false | Disables touch feedback effects |
+| `animation` | string | `'fadeInDown'` | Animation type for expand/collapse transitions |
+| `defaultpaneindex` | number | `0` | Index of the pane to be expanded by default |
+| `closeothers` | boolean | `true` | Whether to close other panes when one is expanded |
+| `expandediconclass` | string | - | CSS class for the icon when pane is expanded |
+| `collapsediconclass` | string | - | CSS class for the icon when pane is collapsed |
+| `disabled` | boolean | `false` | Disables the entire accordion component |
+| `show` | boolean | `true` | Controls component visibility |
+| `styles` | object | `null` | Custom inline styles |
+| `classname` | string | `null` | Additional CSS class names |
+| `showindevice` | array | `null` | Device sizes where component is visible |
+| `showskeleton` | boolean | `undefined` | Shows skeleton loader while content loads |
+| `disabletoucheffect` | boolean | `false` | Disables touch ripple effects |
 
-## Accordion Pane Properties
+## Accordion Pane Props
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| children | any | - | Content to be displayed in the pane |
-| iconclass | string | null | CSS class for the pane header icon |
-| title | string | 'Title' | Header title text for the pane |
-| renderPartial | Function | - | Function to render partial page content |
-| subheading | string | null | Subtitle text displayed below the title |
-| badgevalue | string | null | Value displayed in the badge area |
-| badgetype | string | null | Badge style type (primary, success, info, warning, danger) |
-| disabled | any | false | Disables the specific pane |
-| show | Boolean/String/Number | true | Controls visibility of the pane |
-| styles | any | null | Custom styling for the pane |
-| classname | string | null | Additional CSS classes for the pane |
-| showindevice | array | null | Device breakpoints where pane is visible |
-| showskeleton | boolean | undefined | Shows skeleton loading for the pane |
-| disabletoucheffect | boolean | false | Disables touch effects for the pane |
+| `iconclass` | string | `null` | CSS class for pane header icon |
+| `title` | string | `'Title'` | Main heading text for the pane |
+| `subheading` | string | `null` | Secondary heading below the title |
+| `badgevalue` | string | `null` | Text or number displayed in badge |
+| `badgetype` | string | `null` | Badge style (primary, success, info, warning, danger) |
+| `disabled` | boolean | `false` | Disables individual pane interaction |
+| `show` | boolean | `true` | Controls pane visibility |
+| `renderPartial` | function | - | Function to render partial page content |
 
-## Common Use Cases
+### Common Use Cases
 
-### Configure Accordion Behavior
+#### Configure Accordion Behavior
 ```javascript
 // Allow multiple panes to be open
 Page.Widgets.myAccordion.closeothers = false;
@@ -49,21 +44,11 @@ Page.Widgets.myAccordion.animation = "slideDown";
 Page.Widgets.myAccordion.defaultpaneindex = 2;
 ```
 
-### Setup Pane Headers
+#### Setup Accordion Pane with Badge
 ```javascript
-// Configure pane with badge and icon
-Page.Widgets.salesPane.title = "Sales Department";
-Page.Widgets.salesPane.subheading = "Q4 Performance";
-Page.Widgets.salesPane.badgevalue = "15";
-Page.Widgets.salesPane.badgetype = "success";
-Page.Widgets.salesPane.iconclass = "fa fa-chart-line";
-```
-
-### Dynamic Content Loading
-```javascript
-// Hide skeleton after content loads
-Page.Widgets.dataPane.showskeleton = false;
-
-// Show pane conditionally
-Page.Widgets.adminPane.show = Page.Variables.userRole.dataValue === 'admin';
+// Configure pane with badge
+Page.Widgets.myPane.title = "Orders";
+Page.Widgets.myPane.badgevalue = "5";
+Page.Widgets.myPane.badgetype = "primary";
+Page.Widgets.myPane.iconclass = "wi wi-shopping-cart";
 ```

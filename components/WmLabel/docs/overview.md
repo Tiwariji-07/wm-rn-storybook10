@@ -1,16 +1,15 @@
 # Overview
 
-The Label component is a fundamental UI element designed to display text content and provide contextual information to users in mobile applications. It serves as a versatile text presentation tool that can function as standalone descriptive text, form field labels, captions, or informational messages throughout your app's interface.
-
-This component extends beyond basic text display by offering advanced features like validation states, skeleton loading patterns, and flexible text wrapping options. Whether you need simple static text or dynamic labels with loading states and validation feedback, the Label component provides a comprehensive solution for all text-based UI needs.
+The **Label** component displays text content in mobile applications. It serves as a versatile text display widget that can be used for captions, form field labels, headers, paragraphs, and links. The Label component supports rich text formatting including bold text and clickable links using Markdown-style syntax.
 
 ## Features
 
-- **Animation Support** - Built-in animation capabilities with configurable delay timing
-- **Form Integration** - Required field indicators and validation state management
-- **Flexible Text Display** - Configurable text wrapping and line limitations
-- **Caption Functionality** - Support for descriptive caption text
-- **Loading States** - Skeleton loading with customizable dimensions for single and multi-line content
-- **Validation Feedback** - Visual indicators for valid/invalid states
-- **Responsive Design** - Adaptive text rendering optimized for mobile interfaces
-- **Accessibility Ready** - Semantic markup and screen reader compatibility
+- **Rich Text Support**: Format text with bold styling and clickable links using Markdown syntax
+- **Text Animation**: Word-by-word text animation effects with customizable speed
+- **Accessibility**: Built-in accessibility support with customizable labels and roles
+- **Validation Integration**: Visual indicators for required fields and validation states
+- **Touch Events**: Support for tap, double tap, and long tap interactions
+- **Responsive Design**: Show/hide based on device breakpoints
+- **Skeleton Loading**: Built-in loading state with customizable skeleton dimensions
+- **Text Wrapping**: Control text wrapping and line limits
+- **Android Ellipsis**: Platform-specific ellipsis support for Android devices

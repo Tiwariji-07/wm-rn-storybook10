@@ -1,15 +1,65 @@
 # Styling
 
-The following CSS classes are available for styling the menu component:
+The Menu component provides specific CSS classes for customization:
 
-## Component-Specific Classes
+## CSS Classes
 
-### `app-menu`
-Default style class for the menu component. This class provides the base styling and layout for the menu structure.
+| Class Name | Description |
+|------------|-------------|
+| `.app-menu` | Default style class applied to the menu container |
+| `.app-menu-rtl` | Style class for right-to-left text direction support |
 
-### `app-menu-rtl`
-Applies right-to-left (RTL) layout styling to the menu component. This class adjusts text direction, alignment, and positioning to support RTL languages such as Arabic, Hebrew, or Persian.
+## Styling Examples
 
-## Additional Styling
+```css
+/* Customize menu container */
+.app-menu {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: #ffffff;
+}
 
-Beyond these component-specific classes, you can also apply standard application CSS classes to further customize the menu's appearance and behavior.
+/* Style menu items */
+.app-menu .menu-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Style menu icons */
+.app-menu .menu-icon {
+  margin-right: 8px;
+  width: 20px;
+  text-align: center;
+}
+
+/* RTL support */
+.app-menu-rtl .menu-icon {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+/* Custom hover effects */
+.app-menu .menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Nested menu styling */
+.app-menu .submenu {
+  padding-left: 20px;
+  background-color: #fafafa;
+}
+```
+
+## Dynamic Styling
+
+```javascript
+// Apply custom styles programmatically
+Page.Widgets.myMenu.styles = {
+  backgroundColor: '#2196F3',
+  color: 'white',
+  borderRadius: '4px'
+};
+
+// Add custom CSS classes
+Page.Widgets.myMenu.classname = 'custom-menu-theme';
+```

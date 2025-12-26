@@ -1,16 +1,16 @@
 # Overview
 
-The progress-bar component is a fundamental UI element designed to visually represent the completion status or progress of tasks, operations, or data values within mobile applications. It provides users with immediate visual feedback about ongoing processes such as file uploads, form completion, loading states, or any measurable progress toward a goal.
+The **Progress Bar** widget is a visual indicator used to show the completion status of tasks or processes in mobile applications. It displays progress as a horizontal bar that fills from left to right, representing a percentage of completion between minimum and maximum values. This component is essential for providing user feedback during loading operations, file uploads, form completion, or any process that takes time to complete.
 
-This versatile component supports both determinate progress tracking (with specific min/max values) and indeterminate loading states, making it suitable for a wide range of scenarios from simple loading indicators to complex data visualization needs. Built with accessibility as a core consideration, it ensures all users can understand progress information regardless of their interaction method.
+The Progress Bar supports different visual states through type variations and can display tooltips for additional context. It's particularly useful in mobile applications where users need clear visual feedback about ongoing operations.
 
 ## Features
 
-• **Flexible Progress Types** - Supports different visual styles and behaviors through configurable type settings
-• **Customizable Value Range** - Define minimum and maximum values to represent any data scale or progress range  
-• **Real-time Progress Updates** - Dynamic data value binding for live progress tracking
-• **Accessibility Compliance** - Built-in support for accessibility labels and roles to ensure screen reader compatibility
-• **Interactive Tooltips** - Optional tooltip functionality with customizable positioning and content
-• **Responsive Design** - Adapts seamlessly to different screen sizes and orientations
-• **Unique Identification** - Component ID support for programmatic access and testing
-• **Screen Reader Support** - Comprehensive accessibility features for inclusive user experiences
+- **Multiple Visual Types**: Support for default, success, info, warning, and error states
+- **Configurable Value Range**: Customizable minimum and maximum values with current progress tracking
+- **Accessibility Support**: Built-in accessibility features with configurable labels and roles
+- **Interactive Tooltips**: Optional tooltip display with customizable positioning
+- **Touch Events**: Full touch interaction support including tap, double tap, and long tap
+- **Responsive Design**: Device-specific visibility controls for different screen sizes
+- **Skeleton Loading**: Optional skeleton state for loading scenarios
+- **Flexible Styling**: Comprehensive styling options with predefined CSS classes

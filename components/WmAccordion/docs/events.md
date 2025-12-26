@@ -2,51 +2,43 @@
 
 ## Accordion Events
 
-| Event | Description |
-|-------|-------------|
-| onChange | Triggered when a pane is expanded or collapsed. Parameters: `({}, proxy, expandedId, collapseId, expandedPaneName, collapsedPaneName)` |
-| onTap | Triggered when the accordion is tapped. Parameters: `(null, proxy)` |
+| Event | Parameters | Description |
+|-------|------------|-------------|
+| `onChange` | `({}, proxy, expandedId, collapseId, expandedName, collapsedName)` | Triggered when any pane is expanded or collapsed |
+| `onTap` | `(null, proxy)` | Fired when accordion header is tapped |
 
 ## Accordion Pane Events
 
-| Event | Description |
-|-------|-------------|
-| onExpand | Triggered when the pane is expanded. Parameters: `(null, proxy)` |
-| onCollapse | Triggered when the pane is collapsed. Parameters: `(null, proxy)` |
-| onLoad | Triggered when the pane is loaded. Parameters: `(proxy)` |
+| Event | Parameters | Description |
+|-------|------------|-------------|
+| `onExpand` | `(null, proxy)` | Triggered when the pane is expanded |
+| `onCollapse` | `(null, proxy)` | Fired when the pane is collapsed |
+| `onLoad` | `(proxy)` | Called when the pane content is loaded |
 
-## Event Usage Examples
+### Event Usage Examples
 
-### Accordion onChange Event
+#### Track Accordion Changes
 ```javascript
-Page.myAccordionChange = function($event, widget, expandedId, collapseId, expandedPaneName, collapsedPaneName) {
-    console.log('Expanded pane:', expandedPaneName);
-    console.log('Collapsed pane:', collapsedPaneName);
+Page.myAccordionChange = function(widget, proxy, expandedId, collapseId, expandedName, collapsedName) {
+    console.log('Expanded pane:', expandedName);
+    console.log('Collapsed pane:', collapsedName);
     
-    // Load data when specific pane expands
-    if (expandedPaneName === 'dataPane') {
-        Page.Variables.dataVariable.invoke();
+    // Update analytics or perform actions based on expanded content
+    if (expandedName === 'orders') {
+        Page.Actions.loadOrderData.invoke();
     }
 };
 ```
 
-### Pane-specific Events
+#### Handle Individual Pane Events
 ```javascript
-// Handle pane expansion
-Page.salesPaneExpand = function($event, widget) {
-    // Load sales data when pane expands
-    Page.Variables.salesData.invoke();
+Page.ordersPaneExpand = function(widget, proxy) {
+    // Load data when orders pane is expanded
+    Page.Variables.OrdersData.invoke();
 };
 
-// Handle pane collapse
-Page.salesPaneCollapse = function($event, widget) {
-    // Clean up resources when pane collapses
-    Page.Variables.salesData.clearData();
-};
-
-// Handle pane load
-Page.salesPaneLoad = function(widget) {
-    // Initialize pane content
-    widget.title = "Sales - " + new Date().getFullYear();
+Page.ordersPaneCollapse = function(widget, proxy) {
+    // Clean up or save state when pane is collapsed
+    Page.saveUserPreferences();
 };
 ```

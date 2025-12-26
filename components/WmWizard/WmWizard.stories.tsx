@@ -93,7 +93,7 @@ export const Basic: Story = {
   args: {
     name: "basicWizard",
     // styles: { root: style.wizardStyle },
-    classname: "number vertical",
+    classname: "classic",
     defaultstep: "step1",
     actionsalignment: "right",
     previousbtnlabel: "Previous",

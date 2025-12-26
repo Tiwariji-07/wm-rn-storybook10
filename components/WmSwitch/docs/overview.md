@@ -1,15 +1,15 @@
 # Overview
 
-The Switch component is a binary input control that allows users to toggle between two states (on/off, enabled/disabled, true/false) in mobile applications. It provides an intuitive and touch-friendly interface for users to make quick binary choices, commonly used for settings, preferences, feature toggles, and conditional configurations within forms and settings panels.
+The **Switch widget** is a mobile-friendly input component that allows users to switch between 3 or more different options by pressing a single key. Unlike traditional toggle switches that only handle binary states, this Switch component can handle multiple predefined values, making it ideal for scenarios where users need to cycle through several options.
 
-This component extends BaseDatasetProps, enabling it to work seamlessly with data sources and collections. It supports both standalone operation and data-driven scenarios where switch states can be bound to dataset fields, making it ideal for dynamic forms, user preference management, and bulk data editing interfaces.
+The Switch component extends the BaseDatasetProps class and provides a touch-optimized interface for mobile applications. It supports data binding, custom datasets, and various accessibility features to ensure a smooth user experience across different devices.
 
 ## Features
 
-- **Binary state management** - Toggle between on/off or true/false states
-- **Dataset integration** - Bind switch state to data sources and collections through dataset and dataItems props
-- **Flexible data binding** - Support for datavalue, displayfield, and datafield properties for versatile data mapping
-- **Custom display logic** - Configure presentation through displayexpression and getDisplayExpression for complex rendering scenarios
-- **Event handling** - Built-in invokeEvent support for responding to state changes and user interactions
-- **Data grouping** - Group related switches using groupby functionality for organized data presentation
-- **Touch-optimized interface** - Designed for mobile interaction patterns with appropriate sizing and visual feedback
+• **Multi-option switching** - Handle 3 or more predefined values (default: 'yes, no, maybe')
+• **Data binding support** - Connect to datasets with custom display and data fields
+• **Touch-optimized** - Designed for mobile interactions with tap, long tap, and double tap events
+• **Accessibility compliant** - Built-in accessibility features with ARIA support
+• **Customizable appearance** - Flexible styling options and device-specific visibility
+• **Validation support** - Integration with form validation and required field handling
+• **RTL support** - Right-to-left language support built-in

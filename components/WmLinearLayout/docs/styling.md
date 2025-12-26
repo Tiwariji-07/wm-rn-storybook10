@@ -1,13 +1,62 @@
 # Styling
 
-## CSS Classes
+The `linearlayout` component provides CSS classes for customization:
 
-The linearlayout component provides the following CSS classes for styling:
+## Layout Styles
 
-### Component-Specific Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-linearlayout` | Default style class applied to the layout container |
 
-- **`.app-linearlayout`** - Default style class applied to the linear layout container. This class provides the base styling and layout behavior for arranging child elements in a linear fashion (either horizontally or vertically).
+## Child Component Styles
 
-### Additional Styling Options
+| Class Name | Description |
+|------------|-------------|
+| `app-linearlayoutitem` | Default style class applied to layout items |
 
-Beyond the component-specific class, you can also apply standard application CSS classes to customize the appearance and behavior of the linear layout component according to your design requirements.
+## Custom Styling
+
+```javascript
+// Apply custom CSS class
+Page.Widgets.myLayout.classname = 'custom-layout-style';
+
+// Apply inline styles
+Page.Widgets.myLayout.styles = {
+  backgroundColor: '#f5f5f5',
+  padding: 16,
+  borderRadius: 8
+};
+
+// Style individual layout items
+Page.Widgets.myLayoutItem.classname = 'custom-item-style';
+Page.Widgets.myLayoutItem.styles = {
+  margin: 8,
+  backgroundColor: 'white'
+};
+```
+
+## CSS Customization
+
+```css
+/* Custom layout styling */
+.custom-layout-style {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Custom layout item styling */
+.custom-item-style {
+  background-color: #f9f9f9;
+  margin: 4px;
+  border-radius: 4px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .app-linearlayout {
+    flex-direction: column;
+  }
+}
+```

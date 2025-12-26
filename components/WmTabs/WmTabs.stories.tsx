@@ -38,8 +38,9 @@ const style = {
 const Docs = () => (
     <ComponentDocumentation
         overview={overview}
-        studioPropsAndEvents={studioPropsAndEvents}
-        scriptPropsMethods={scriptPropsMethods}
+        props={props}
+        events={events}
+        methods={methods}
         styling={styling}
     />
 );

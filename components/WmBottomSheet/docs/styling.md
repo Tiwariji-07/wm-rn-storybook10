@@ -1,13 +1,55 @@
 # Styling
 
-## Available CSS Classes
+The Bottom Sheet component provides CSS classes for customization:
 
-The bottomsheet component provides the following style classes for customization:
+## CSS Classes
 
-### Component-Specific Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-bottomsheet` | Default style class applied to the bottom sheet container |
 
-- **`.app-bottomsheet`** - Default style class that applies the base styling for the bottomsheet component, including positioning, background, borders, and animation behaviors for the slide-up panel interface.
+## Styling Examples
 
-## Additional Styling Options
+```css
+/* Customize bottom sheet appearance */
+.app-bottomsheet {
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
 
-Beyond the component-specific class, you can also apply standard application CSS classes to further customize the appearance and behavior of the bottomsheet component.
+/* Custom class styling */
+.my-custom-bottomsheet {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+/* Responsive styling for different devices */
+.app-bottomsheet {
+    /* Mobile styles */
+    border-radius: 12px 12px 0 0;
+}
+
+@media (min-width: 768px) {
+    .app-bottomsheet {
+        /* Tablet styles */
+        border-radius: 16px 16px 0 0;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+```
+
+## Style Customization
+
+```javascript
+// Apply custom styles via styles property
+Page.Widgets.myBottomSheet.styles = {
+    backgroundColor: '#f8f9fa',
+    borderRadius: '20px 20px 0 0',
+    padding: '20px'
+};
+
+// Apply custom CSS class
+Page.Widgets.myBottomSheet.classname = 'my-custom-bottomsheet';
+```

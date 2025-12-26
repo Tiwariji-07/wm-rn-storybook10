@@ -1,17 +1,20 @@
 # Overview
 
-The line-chart component is a versatile data visualization tool designed for mobile applications that need to display trending data and time-series information. Built on the BaseChartComponentProps foundation, this component transforms numerical datasets into clear, interactive line graphs that help users understand patterns, trends, and relationships in their data over time or across categories.
+The Line Chart component is a versatile data visualization widget that displays data as a series of points connected by straight line segments. It's ideal for showing trends over time, comparing multiple data series, and visualizing continuous data relationships. Line charts excel at revealing patterns, trends, and changes in data over intervals.
 
-This component is ideal for mobile dashboards, analytics screens, financial apps, fitness trackers, and any application requiring visual representation of continuous data. The line-chart offers a clean, touch-friendly interface optimized for mobile viewing while maintaining the flexibility to handle various data types and visualization requirements.
+Line charts are particularly effective for time-series data, performance tracking, and comparative analysis where you need to observe how values change and relate to each other across a continuous axis.
 
 ## Features
 
-- **Customizable Line Appearance** - Adjust line thickness and styling to match your app's design language
-- **Interactive Data Selection** - Touch-enabled data point selection with callback functionality
-- **Loading State Management** - Built-in skeleton loading with configurable dimensions for smooth user experience
-- **Flexible Data Mapping** - Configurable X and Y axis data keys for versatile dataset integration
-- **Icon Integration** - Custom icon support for enhanced visual context
-- **Multiple Chart Types** - Support for various line chart variations and styles
-- **Dynamic Titles** - Customizable chart titles for clear data context
-- **Dataset Compatibility** - Seamless integration with various data formats and structures
-- **Mobile-Optimized** - Responsive design optimized for touch interactions and mobile screen sizes
+- **Multiple Data Series**: Support for displaying multiple lines on the same chart for comparison
+- **Interactive Elements**: Built-in tooltips, hover effects, and selection capabilities
+- **Customizable Appearance**: Configurable line thickness, colors, interpolation methods, and styling options
+- **Flexible Data Binding**: Connect to various data sources including databases, web services, and variables
+- **Axis Configuration**: Full control over X and Y axis labels, scaling, formatting, and positioning
+- **Legend Management**: Configurable legend positioning and styling
+- **Point Highlighting**: Optional point markers and value display on data points
+- **Responsive Design**: Automatic adjustment to different screen sizes and orientations
+- **Theme Support**: Multiple built-in themes and custom color schemes
+- **Data Aggregation**: Built-in support for grouping and aggregating data
+- **Loading States**: Skeleton loading and custom loading indicators
+- **Grid Customization**: Configurable grid lines and axis visibility

@@ -1,18 +1,18 @@
 # Overview
 
-The Number component is a specialized input field designed for capturing and validating numeric data in mobile applications. It provides a user-friendly interface for entering numbers with built-in validation, formatting, and control features that ensure data integrity and enhance the user experience.
+The Number component is an input widget specifically designed for accepting numeric input in mobile applications. It provides locale-aware number formatting and validation capabilities to ensure users can enter numbers in the appropriate format for their region.
 
-This component is ideal for forms requiring numerical input such as quantities, prices, ages, ratings, or any scenario where precise numeric values are needed. It offers comprehensive functionality including range validation, step increments, and flexible update behaviors to accommodate various business requirements.
+The component automatically applies number formatting based on the app's locale settings and provides extensive validation options including minimum/maximum values, decimal places control, and regular expression validation. It supports both read-only display and interactive editing modes.
 
 ## Features
 
-- **Auto-focus capability** - Automatically focuses the input field when the component loads
-- **Floating label support** - Dynamic labels that float above the input when focused or filled
-- **Placeholder text** - Helpful hints displayed when the field is empty
-- **Data binding** - Two-way data binding for seamless state management
-- **Value constraints** - Configurable minimum and maximum value limits
-- **Step increments** - Define specific intervals for value changes
-- **Update triggers** - Flexible options for when value updates are processed
-- **Read-only mode** - Display-only state for non-editable scenarios
-- **Input validation** - Built-in numeric validation and error handling
-- **Mobile-optimized** - Touch-friendly interface designed for mobile devices
+- Locale-aware number formatting and display
+- Configurable minimum and maximum value constraints
+- Decimal places control with trailing zero handling
+- Step-based increment/decrement functionality
+- Regular expression validation for custom input patterns
+- Two-way data binding support
+- Accessibility features including screen reader support
+- Floating label and placeholder text options
+- Read-only mode for display-only scenarios
+- Comprehensive event handling for user interactions

@@ -1,17 +1,15 @@
 # Overview
 
-The CheckboxSet component is a versatile input control that allows users to select multiple options from a predefined dataset. Built on the BaseDatasetProps foundation, this component renders a collection of checkboxes in a customizable grid layout, making it ideal for forms, surveys, settings pages, and any scenario where users need to make multiple selections from a list of options.
+CheckboxSet is a mobile input component that allows users to select multiple options from a predefined set of choices. It renders a collection of checkboxes grouped under a common interface, making it ideal for multi-selection scenarios in mobile applications.
 
-This component provides a clean, organized way to present selectable items with flexible display options and responsive design capabilities. It supports data binding, custom rendering, and skeleton loading states to ensure optimal user experience across different mobile device sizes and loading conditions.
+The component supports data binding to populate checkbox options dynamically and provides flexible layout options to display checkboxes in various arrangements. It extends BaseDatasetProps to provide comprehensive data handling capabilities.
 
 ## Features
-
-- **Multi-selection capability** - Users can select multiple options simultaneously from the available dataset
-- **Flexible grid layout** - Configure the number of items displayed per row using `itemsperrow` for optimal screen utilization
-- **Data binding support** - Seamlessly connect to data sources through `dataset`, `datafield`, and `displayfield` properties
-- **Custom display values** - Override default text display using `displayValue` for localization or formatting
-- **Custom rendering** - Implement custom item appearance and behavior with `renderitempartial`
-- **Required field validation** - Mark the component as mandatory using the `required` property
-- **Loading state management** - Display skeleton placeholders during data loading with `numberofskeletonitems`
-- **Value management** - Track and manage selected values through the `datavalue` property
-- **Responsive design** - Automatically adapts to different screen sizes and orientations
+- **Multi-selection Support**: Allow users to select multiple options simultaneously
+- **Data Binding**: Populate options from datasets, variables, or static data
+- **Flexible Layout**: Configure items per row for different screen sizes
+- **Grouping**: Group related options under category headings using the groupby property
+- **Custom Rendering**: Use custom templates to render individual checkbox items
+- **Accessibility**: Built-in accessibility features with customizable labels and roles
+- **Responsive Design**: Adaptive layout configuration for different device breakpoints
+- **Validation**: Support for required field validation

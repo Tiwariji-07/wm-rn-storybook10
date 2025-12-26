@@ -1,17 +1,18 @@
 # Overview
 
-The List component is a versatile data display component designed for efficiently rendering collections of items in mobile applications. It serves as the primary interface for displaying structured data sets, from simple text lists to complex item layouts with custom rendering capabilities. The component is built to handle large datasets gracefully while maintaining smooth performance through features like deferred loading and on-demand content delivery.
+The **List component** provides a versatile list view for displaying data from various sources like databases, web services, or static datasets. It offers flexible templating options, pagination, and interactive features like selection and reordering, making it ideal for creating dynamic data presentations in mobile applications.
 
-This component excels in scenarios where users need to browse through multiple items, such as contact lists, product catalogs, news feeds, or navigation menus. With its flexible architecture, the List component can adapt to various content types and presentation styles while providing consistent user experience patterns across different sections of your mobile application.
+The List component supports both vertical and horizontal layouts with responsive design capabilities, making it suitable for various mobile screen sizes and orientations.
 
 ## Features
 
-- **Custom Item Rendering** - Support for personalized item layouts through renderItem functionality
-- **Performance Optimization** - Built-in deferred loading capabilities to improve initial load times
-- **Large Dataset Handling** - Configurable maximum item limits to manage memory usage and performance
-- **Dynamic Content Loading** - On-demand message display for progressive content delivery
-- **Form Integration** - Seamless integration with form systems through form reference support
-- **Visual Customization** - Configurable icon classes for enhanced visual presentation
-- **Hierarchical Content** - Support for titles, subheadings, and nested child components
-- **Data Binding** - Direct dataset integration for streamlined data presentation
-- **Flexible Layout** - Extensible design supporting various list item configurations
+- **Flexible Data Sources**: Connect to databases, web services, or static datasets
+- **Custom Templates**: Define custom layouts using `list-template` and `list-action-template` child components
+- **Multiple Selection Modes**: Support for single and multi-item selection with customizable limits
+- **Pagination Options**: Choose from scroll, on-demand, or none navigation types
+- **Responsive Layout**: Configure items per row for different screen sizes
+- **Data Grouping & Sorting**: Group by fields and order data with custom sorting
+- **Loading States**: Built-in skeleton loading and custom loading messages
+- **Touch Interactions**: Support for tap, long tap, and swipe gestures
+- **Horizontal Scrolling**: Horizontal list layout with optional scroll bars
+- **Item Reordering**: Enable drag-and-drop reordering of list items

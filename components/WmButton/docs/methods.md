@@ -1,44 +1,48 @@
 # Methods
 
-The Button component can be accessed and controlled programmatically through the page script using `Page.Widgets.buttonName`.
+The Button component inherits from BaseProps but does not define additional public methods. You can access and manipulate the button through its properties using the standard widget access pattern.
 
-| Method | Parameters | Return Type | Description |
-|--------|------------|-------------|-------------|
-| setWidgetProperty | (property, value) | void | Sets any widget property dynamically |
-| getWidgetProperty | (property) | any | Gets the current value of a widget property |
+## Widget Access
 
-### Common Method Use Cases
+Access the button widget using: `Page.Widgets.buttonName`
 
-#### Dynamic Property Updates
+### Common Method Usage
+
 ```javascript
-// Change button caption dynamically
-Page.Widgets.myButton.setWidgetProperty('caption', 'Updated Text');
+// Show/hide button
+Page.Widgets.myButton.show = true;
+Page.Widgets.myButton.show = false;
 
-// Update icon class
-Page.Widgets.myButton.setWidgetProperty('iconclass', 'fa fa-check');
+// Enable/disable button
+Page.Widgets.myButton.disabled = false;
+Page.Widgets.myButton.disabled = true;
 
-// Toggle button state
-Page.Widgets.myButton.setWidgetProperty('disabled', !Page.Widgets.myButton.disabled);
+// Update button text and styling
+Page.Widgets.myButton.caption = "Updated Text";
+Page.Widgets.myButton.classname = "btn-success";
+
+// Change icon dynamically
+Page.Widgets.myButton.iconclass = "fa fa-check";
+Page.Widgets.myButton.iconposition = "right";
+
+// Update badge value
+Page.Widgets.myButton.badgevalue = "3";
+
+// Trigger programmatic events
+Page.Widgets.myButton.onTap();
 ```
 
-#### Property Access
+### Property Access Examples
+
 ```javascript
 // Get current button state
-const isDisabled = Page.Widgets.myButton.getWidgetProperty('disabled');
-const currentCaption = Page.Widgets.myButton.getWidgetProperty('caption');
+const isDisabled = Page.Widgets.myButton.disabled;
+const currentCaption = Page.Widgets.myButton.caption;
+const isVisible = Page.Widgets.myButton.show;
 
-// Conditional actions based on state
-if (!isDisabled) {
-    // Button is enabled, perform action
+// Conditional button updates
+if (Page.Widgets.myButton.disabled) {
+    Page.Widgets.myButton.disabled = false;
+    Page.Widgets.myButton.caption = "Enabled";
 }
-```
-
-#### Animation Control
-```javascript
-// Apply animation
-Page.Widgets.myButton.setWidgetProperty('animation', 'fadeIn');
-Page.Widgets.myButton.setWidgetProperty('animationdelay', 500);
-
-// Remove animation
-Page.Widgets.myButton.setWidgetProperty('animation', null);
 ```

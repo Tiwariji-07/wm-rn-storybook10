@@ -1,16 +1,84 @@
 # Styling
 
-## Available CSS Classes
+The Slider component can be customized using CSS classes and inline styles.
 
-The slider component provides the following specific CSS classes for customization:
+## CSS Classes
 
-### Component-Specific Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-slider` | Default style class applied to the slider component |
+| `form-slider-input-horizontal` | Styles for horizontal slider layout |
+| `app-slider-disabled` | Applied when slider is in disabled state |
 
-- **`app-slider`** - Default style class that applies the base styling to the slider component
-- **`app-slider-disabled`** - Applied when the slider is in a disabled state, typically reducing opacity and preventing user interaction
+## Customization Examples
 
-## Usage
+```css
+/* Custom slider track styling */
+.app-slider .slider-track {
+    background-color: #e0e0e0;
+    height: 4px;
+    border-radius: 2px;
+}
 
-Apply these classes to customize the appearance and behavior of your slider component. The `app-slider` class provides the foundational styling, while `app-slider-disabled` handles the visual representation of the disabled state.
+/* Custom active track color */
+.app-slider .slider-track-active {
+    background-color: #2196f3;
+}
 
-You can also use standard application CSS classes in combination with these component-specific classes for additional styling flexibility.
+/* Custom thumb styling */
+.app-slider .slider-thumb {
+    background-color: #ffffff;
+    border: 2px solid #2196f3;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    shadow-opacity: 0.3;
+    shadow-radius: 2;
+    elevation: 3;
+}
+
+/* Disabled slider styling */
+.app-slider-disabled {
+    opacity: 0.6;
+}
+
+.app-slider-disabled .slider-thumb {
+    background-color: #cccccc;
+    border-color: #999999;
+}
+
+/* Custom marker styling */
+.app-slider .slider-marker {
+    background-color: #666666;
+    width: 2px;
+    height: 8px;
+}
+
+/* Tooltip styling */
+.app-slider .slider-tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+```
+
+## Dynamic Styling
+
+```javascript
+// Apply custom styles programmatically
+Page.customizeSlider = function() {
+    Page.Widgets.mySlider.styles = {
+        track: {
+            backgroundColor: '#ffeb3b',
+            height: 6
+        },
+        thumb: {
+            backgroundColor: '#ff9800',
+            width: 24,
+            height: 24
+        }
+    };
+};
+```

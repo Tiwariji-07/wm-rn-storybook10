@@ -1,17 +1,52 @@
 # Styling
 
-## CSS Classes
+The Lottie component provides CSS classes for customization:
 
-The following CSS classes are available for styling the Lottie component:
+| CSS Class | Description |
+|-----------|-------------|
+| `.app-lottie` | Default style class applied to the Lottie component container |
 
-### Component-Specific Classes
+### Custom Styling Examples
 
-| Class Name | Description |
-|------------|-------------|
-| `app-lottie` | Default style class for the Lottie component container |
+```css
+/* Customize the Lottie container */
+.app-lottie {
+    border-radius: 8px;
+    background-color: transparent;
+    overflow: hidden;
+}
 
-The `app-lottie` class serves as the base styling foundation for Lottie animation components, providing default appearance and layout properties for the animation container.
+/* Add custom class styling */
+.my-custom-lottie {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
 
-## Additional Styling
+/* Loading animation specific styling */
+.loading-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+```
 
-Beyond the component-specific class, you can also apply standard application CSS classes and custom styles to further customize the appearance and behavior of your Lottie animations.
+### Responsive Styling
+
+```css
+/* Responsive sizing */
+@media (max-width: 768px) {
+    .app-lottie {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
+@media (min-width: 769px) {
+    .app-lottie {
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+```

@@ -1,18 +1,15 @@
 # Overview
 
-The Date component is a specialized input control designed for capturing date values in mobile applications. Built on the WmDatetimeProps base class, this component provides users with an intuitive interface for selecting dates, whether for scheduling appointments, setting deadlines, filtering content by date ranges, or any scenario requiring precise date input.
+The Date component is a mobile date picker widget that provides an intuitive interface for users to select dates. It displays as a modal overlay with a native-style date selection interface, complete with customizable header text and action buttons.
 
-This component streamlines the date selection process by offering a user-friendly alternative to manual date entry, reducing input errors and improving the overall user experience. It integrates seamlessly into forms and data collection workflows, making it an essential tool for applications that require temporal data management.
+This component is designed for mobile applications where space is limited and a dedicated date picker interface is preferred over inline date inputs. It supports date range restrictions and provides a clean, accessible way to capture date input from users.
 
 ## Features
 
-- **Native date picker integration** for platform-consistent user experience
-- **Flexible date format support** to accommodate regional preferences
-- **Min/max date constraints** to enforce valid date ranges
-- **Default value configuration** for pre-populated date fields
-- **Validation and error handling** to ensure data integrity
-- **Accessibility support** for screen readers and assistive technologies
-- **Responsive design** optimized for various screen sizes
-- **Customizable styling** to match application branding
-- **Localization support** for international date formats
-- **Touch-friendly interface** designed for mobile interaction patterns
+- **Modal Date Picker**: Full-screen modal interface optimized for mobile touch interaction
+- **Date Range Validation**: Set minimum and maximum date boundaries to restrict user selection
+- **Customizable Labels**: Configure header title, confirm button, and cancel button text
+- **Event Callbacks**: Handle date selection, cancellation, and modal close events
+- **Responsive Design**: Conditional display based on device screen sizes
+- **Accessibility Support**: Built-in accessibility features with skeleton loading states
+- **Touch Interaction**: Native touch experience with optional touch effect disabling

@@ -48,7 +48,7 @@ export const Basic: Story = {
     name: "basicSlider",
     minvalue: 0,
     maxvalue: 100,
-    step: 1000,
+    step: 1,
     datavalue: 0,
     onChange: action("onChange"),
 

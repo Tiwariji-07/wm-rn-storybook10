@@ -1,16 +1,16 @@
 # Overview
 
-The Area Chart component is a powerful data visualization tool designed for mobile applications that need to display quantitative data trends over time or across categories. Built on the BaseChartComponentProps foundation, this component renders filled area graphs that effectively show data volume changes and cumulative values, making it ideal for displaying metrics like revenue growth, user engagement over time, or performance analytics in mobile dashboards.
-
-This component seamlessly integrates into mobile interfaces while providing robust customization options for various data presentation needs. Whether you're building analytics dashboards, financial tracking apps, or performance monitoring tools, the Area Chart component delivers clear visual insights that help users quickly understand data patterns and trends on mobile devices.
+The Area Chart component is a data visualization widget that displays quantitative data as filled areas between lines and axes. It's particularly effective for showing trends over time and comparing multiple data series. Area charts are ideal for representing cumulative values, proportions, or volume changes across continuous intervals.
 
 ## Features
 
-- **Interactive Data Selection** - Touch-enabled data point selection with callback support
-- **Flexible Data Binding** - Configurable X and Y axis data mapping from custom datasets
-- **Visual Customization** - Adjustable line thickness and themeable styling options
-- **Rich Content Display** - Support for titles, subheadings, and custom iconography
-- **Multiple Chart Types** - Various area chart styles and configurations
-- **Mobile-Optimized** - Responsive design optimized for touch interactions and mobile viewports
-- **Dataset Integration** - Direct data binding from various data sources and formats
-- **Theme Support** - Built-in theming system for consistent visual styling across applications
+- **Multiple Data Series Support**: Display multiple data sets with customizable colors and transparency
+- **Interactive Legends**: Toggle data series visibility by clicking legend items
+- **Flexible Data Binding**: Connect to various data sources including databases, web services, and variables
+- **Customizable Appearance**: Control colors, themes, interpolation methods, and styling
+- **Touch-Friendly Tooltips**: Display detailed information on hover or touch
+- **Responsive Layout**: Automatic adjustment to different screen sizes and orientations
+- **Accessibility Support**: Built-in accessibility features for screen readers
+- **Data Aggregation**: Group and aggregate data with functions like sum, average, count
+- **Grid Customization**: Control axis lines, grid visibility, and positioning
+- **Animation Options**: Smooth transitions and interpolation between data points

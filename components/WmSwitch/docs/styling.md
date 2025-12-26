@@ -1,24 +1,83 @@
 # Styling
 
-The switch component provides the following CSS classes for customization:
+The Switch component provides several CSS classes for customization:
 
 ## Available CSS Classes
 
-### `.app-switch`
-Default style class that provides the base styling for the switch component.
+| Class Name | Description |
+|------------|-------------|
+| `app-switch` | Default style class for the switch component |
+| `form-switch-input-horizontal` | Styles for horizontal layout in forms |
+| `app-switch-disabled` | Applied when the switch is disabled |
+| `app-switch-rtl` | Right-to-left language support styling |
+| `app-switch1-rtl` | Alternative RTL styling variant |
+| `app-switch1` | Alternative switch styling variant |
 
-### `.app-switch-disabled`
-Applies disabled state styling to the switch, typically reducing opacity and preventing user interaction visual feedback.
+## Custom Styling Examples
 
-### `.app-switch-rtl`
-Provides right-to-left (RTL) layout support for the switch component, adjusting positioning and orientation for RTL languages.
+### Basic Switch Styling
+```css
+/* Custom switch appearance */
+.app-switch {
+    border-radius: 25px;
+    padding: 8px 16px;
+    font-weight: 500;
+}
 
-### `.app-switch1`
-Alternative switch styling variant that offers a different visual appearance from the default switch style.
+/* Disabled state styling */
+.app-switch-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+```
 
-### `.app-switch1-rtl`
-Right-to-left (RTL) layout support specifically for the alternative switch variant (`.app-switch1`), ensuring proper RTL orientation and positioning.
+### Form Integration Styling
+```css
+/* Horizontal form layout */
+.form-switch-input-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
 
-## Usage
+.form-switch-input-horizontal label {
+    margin-right: 15px;
+    flex: 1;
+}
+```
 
-Apply these classes directly to your switch component elements to achieve the desired styling and layout behavior. The RTL classes should be used when implementing right-to-left language support, while the numbered variants provide alternative visual styles for different design requirements.
+### RTL Language Support
+```css
+/* RTL specific styling */
+.app-switch-rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.app-switch1-rtl {
+    padding-right: 20px;
+    padding-left: 10px;
+}
+```
+
+### State-based Styling
+```css
+/* Active state */
+.app-switch[data-value="active"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Warning state */
+.app-switch[data-value="warning"] {
+    background-color: #FF9800;
+    color: white;
+}
+
+/* Error state */
+.app-switch[data-value="error"] {
+    background-color: #f44336;
+    color: white;
+}
+```

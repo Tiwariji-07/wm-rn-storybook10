@@ -1,19 +1,79 @@
 # Styling
 
-The textarea component provides the following CSS classes for customization:
+The Textarea component provides several CSS classes for customization:
 
-## Available CSS Classes
+## Primary Classes
 
-### `.app-textarea`
-Default style class that applies the standard textarea appearance and behavior.
+| Class Name | Description |
+|------------|-------------|
+| `app-textarea` | Default base styling for all textarea components |
+| `form-textarea-input-horizontal` | Styling for horizontal form layout orientation |
+| `app-textarea-disabled` | Applied when the textarea is in disabled state |
+| `app-textarea-rtl` | Right-to-left text direction support |
+| `app-textarea-with-label` | Additional styling when floating label is present |
 
-### `.app-textarea-disabled`
-Applied when the textarea is in a disabled state, typically providing visual indicators such as reduced opacity, grayed-out appearance, or altered cursor behavior to show the field is not interactive.
+## Styling Examples
 
-### `.app-textarea-rtl`
-Enables right-to-left text direction support for the textarea, adjusting text alignment, padding, and any directional elements to accommodate RTL languages such as Arabic or Hebrew.
+```css
+/* Custom textarea styling */
+.app-textarea {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+}
 
-### `.app-textarea-with-label`
-Applied when the textarea is used in conjunction with a label element, providing appropriate spacing, alignment, and visual relationship between the label and textarea field.
+/* Focused state */
+.app-textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
 
-You can also use standard application CSS classes in combination with these component-specific classes to further customize the appearance and layout of the textarea component.
+/* Disabled state customization */
+.app-textarea-disabled {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* With floating label */
+.app-textarea-with-label {
+    margin-top: 20px;
+}
+
+/* RTL text support */
+.app-textarea-rtl {
+    text-align: right;
+    direction: rtl;
+}
+
+/* Error state */
+.app-textarea.error {
+    border-color: #dc3545;
+}
+
+/* Character limit warning */
+.app-textarea.near-limit {
+    border-color: #ffc107;
+}
+```
+
+## Responsive Styling
+
+```css
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .app-textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        min-height: 100px;
+    }
+}
+
+/* Tablet and desktop */
+@media (min-width: 769px) {
+    .app-textarea {
+        min-height: 120px;
+    }
+}
+```

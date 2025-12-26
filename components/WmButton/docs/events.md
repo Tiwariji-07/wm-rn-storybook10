@@ -1,41 +1,40 @@
 # Callback Events
 
-| Event | Description |
-|-------|-------------|
-| onTap | Triggered when the button is tapped. Primary interaction event for mobile. |
-| onTouchstart | Fired when user touches the button (touch begins) |
-| onTouchend | Fired when user lifts finger from the button (touch ends) |
-| onDoubletap | Triggered when button is double-tapped quickly |
-| onLongtap | Fired when button is pressed and held for extended time |
+| Event | Parameters | Description |
+|-------|------------|-------------|
+| `onTap` | (e) | Triggered when the button is tapped |
+| `onTouchstart` | (e) | Triggered when touch begins on the button |
+| `onDoubletap` | (e) | Triggered when the button is double-tapped |
+| `onLongtap` | (e) | Triggered when the button is pressed and held |
+| `onTouchend` | (e) | Triggered when touch ends on the button |
 
-### Event Handler Examples
+### Event Usage Examples
 
-#### Handle Button Tap
 ```javascript
-// In page script
+// Handle tap event
 Page.myButtonTap = function($event, widget) {
     console.log('Button tapped!');
     // Perform action
 };
-```
 
-#### Touch Event Handling
-```javascript
-// Touch start feedback
-Page.myButtonTouchstart = function($event, widget) {
-    widget.styles = {opacity: 0.7};
-};
-
-// Touch end feedback
-Page.myButtonTouchend = function($event, widget) {
-    widget.styles = {opacity: 1};
-};
-```
-
-#### Long Tap Action
-```javascript
-// Show context menu on long tap
+// Handle long tap for additional actions
 Page.myButtonLongtap = function($event, widget) {
-    Page.Widgets.contextMenu.show = true;
+    console.log('Long tap detected');
+    // Show context menu or additional options
+};
+
+// Handle double tap
+Page.myButtonDoubletap = function($event, widget) {
+    console.log('Double tap detected');
+    // Quick action
+};
+
+// Touch feedback
+Page.myButtonTouchstart = function($event, widget) {
+    widget.classname = 'btn-primary pressed';
+};
+
+Page.myButtonTouchend = function($event, widget) {
+    widget.classname = 'btn-primary';
 };
 ```

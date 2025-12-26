@@ -4,57 +4,62 @@
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| dataset | any | - | The data source for populating select options. Can be bound to variables or static data |
-| datavalue | any | - | The currently selected value from the dataset |
-| datafield | any | - | Property name in dataset items that provides the value to be stored |
-| displayfield | any | - | Property name in dataset items that provides the text to be displayed |
-| displayexpression | any | - | JavaScript expression for custom formatting of display text |
-| getDisplayExpression | any | - | Function to dynamically generate display expressions |
-| displaylabel | any | - | Custom label text for the selected item |
-| displayValue | any | null | The text value currently displayed in the select |
-| displayimagesrc | any | - | Image source URL to display alongside options |
-| iconclass | any | - | CSS class for icons to display with options |
+| `dataset` | any | - | The data source for populating dropdown options |
+| `datavalue` | any | - | The actual value to be stored when an item is selected |
+| `datafield` | any | - | The field from dataset to use as the data value |
+| `displayfield` | any | - | The field from dataset to show as display text |
+| `displayexpression` | any | - | JavaScript expression for custom display formatting |
+| `getDisplayExpression` | any | - | Function to generate display expressions dynamically |
+| `displayValue` | any | null | The currently displayed value in the select widget |
+| `displaylabel` | any | - | Label text to display for the selected item |
 
-## Appearance
+## Display & Behavior
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| placeholder | string | null | Placeholder text shown when no value is selected |
-| styles | any | null | Custom styling object for the component |
-| classname | string | null | Additional CSS class names to apply |
-| showindevice | array | null | Device sizes where component should be visible |
-| showskeleton | boolean | undefined | Whether to show skeleton loading state |
+| `placeholder` | string | null | Text shown when no value is selected |
+| `readonly` | boolean | null | Prevents user interaction when true |
+| `disabled` | any | false | Disables the widget when true |
+| `show` | any | true | Controls widget visibility |
+| `dateformat` | any | - | Format for date values if applicable |
+| `displayimagesrc` | any | - | Image source for display items |
+| `iconclass` | any | - | CSS class for icons in dropdown items |
 
-## Behavior
+## Data Organization
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| readonly | boolean | null | Prevents user interaction when true |
-| disabled | any | false | Disables the component when true |
-| show | any | true | Controls component visibility |
-| dateformat | any | - | Format string for date values |
-| groupby | any | - | Property to group options by |
-| match | any | - | Filter criteria for dataset items |
-| orderby | any | - | Sort order for dataset items |
-| disabletoucheffect | boolean | false | Disables touch feedback effects |
-| skipscripteventtrigger | boolean | false | Skip script-triggered events |
+| `groupby` | any | - | Field to group dropdown items by |
+| `orderby` | any | - | Field(s) to sort dropdown items |
+| `match` | any | - | Criteria for filtering dropdown items |
 
 ## Accessibility
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| accessible | boolean | true | Enables accessibility features |
-| accessibilitylabel | string | undefined | ARIA label for screen readers |
-| accessibilityrole | AccessibilityRole | - | ARIA role attribute |
-| accessibilitylabelledby | string | undefined | References element that labels this component |
-| hint | string | undefined | Tooltip text for additional information |
+| `accessible` | boolean | true | Enables accessibility features |
+| `accessibilitylabel` | string | undefined | ARIA label for screen readers |
+| `accessibilityrole` | AccessibilityRole | - | ARIA role attribute |
+| `accessibilitylabelledby` | string | undefined | ID of element that labels this widget |
+| `hint` | string | undefined | Tooltip text shown on hover/focus |
 
-## Event Handlers
+## Events & Validation
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| onFieldChange | any | - | Callback function when field value changes |
-| triggerValidation | any | - | Function to trigger validation |
+| `onFieldChange` | any | - | Callback function when field value changes |
+| `triggerValidation` | any | - | Function to trigger validation manually |
+| `skipscripteventtrigger` | boolean | false | Skips script-based event triggers when true |
+
+## Styling & Layout
+
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| `styles` | any | null | Custom styles object |
+| `classname` | string | null | Additional CSS class names |
+| `showindevice` | ('xs'\|'sm'\|'md'\|'lg'\|'xl'\|'xxl')[] | null | Device sizes where widget is visible |
+| `showskeleton` | boolean | undefined | Shows skeleton loader while loading |
+| `disabletoucheffect` | boolean | false | Disables touch feedback effects |
 
 ### Configure Select Data Binding
 
@@ -64,7 +69,7 @@ Page.Widgets.mySelect.dataset = Page.Variables.countriesData;
 Page.Widgets.mySelect.datafield = 'code';
 Page.Widgets.mySelect.displayfield = 'name';
 
-// Use display expression for complex formatting
+// Use display expression for custom formatting
 Page.Widgets.mySelect.displayexpression = 'name + " (" + code + ")"';
 
 // Set placeholder text
@@ -80,9 +85,9 @@ Page.Widgets.mySelect.readonly = true;
 // Set default value
 Page.Widgets.mySelect.datavalue = 'US';
 
-// Enable grouping
-Page.Widgets.mySelect.groupby = 'region';
+// Configure ordering
+Page.Widgets.mySelect.orderby = 'name:asc';
 
-// Add ordering
-Page.Widgets.mySelect.orderby = 'name ASC';
+// Group items
+Page.Widgets.mySelect.groupby = 'region';
 ```

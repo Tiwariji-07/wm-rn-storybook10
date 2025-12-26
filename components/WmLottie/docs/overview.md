@@ -1,16 +1,18 @@
 # Overview
 
-The Lottie component is a versatile animation element designed to render and control Lottie animations within mobile applications. Lottie animations are lightweight, scalable vector animations that provide rich visual experiences while maintaining optimal performance across different devices and screen sizes.
+The Lottie component enables developers to integrate high-quality Lottie animations into WaveMaker React Native applications. Lottie animations are vector-based animations that are lightweight, scalable, and provide smooth performance across different devices.
 
-This component serves as a powerful tool for enhancing user interfaces with smooth, high-quality animations such as loading indicators, onboarding illustrations, micro-interactions, and decorative elements. It offers comprehensive control over animation playback and appearance, making it suitable for both simple animated icons and complex interactive sequences.
+This component provides comprehensive control over animation playback, including play/pause functionality, looping options, speed control, and event handling. It's perfect for adding engaging visual elements like loading indicators, micro-interactions, and decorative animations to enhance user experience.
 
-## Features
+**Features:**
+- Support for Lottie JSON animation files
+- Playback control with play, pause, and reset methods
+- Configurable animation speed and direction
+- Autoplay and loop options
+- Event callbacks for animation lifecycle
+- Responsive design with device-specific visibility
+- Touch effect customization
 
-- **Animation Control**: Customize playback speed and enable automatic playback on component mount
-- **Loop Configuration**: Set animations to repeat continuously or play once
-- **Flexible Animation Sources**: Support for various Lottie animation file formats and sources
-- **Unique Identification**: Assign custom IDs and names for component reference and tracking
-- **State Management**: Enable or disable animations based on application logic
-- **Visibility Control**: Show or hide animations dynamically without unmounting the component
-- **Custom Styling**: Apply custom styles and CSS class names for seamless design integration
-- **Performance Optimized**: Lightweight rendering suitable for mobile environments
+:::note
+Lottie Widget is supported only in React Native applications in WaveMaker.
+:::

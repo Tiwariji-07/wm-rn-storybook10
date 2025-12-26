@@ -1,15 +1,14 @@
 # Overview
 
-The progress-circle component is a visual indicator that displays progress or completion status in a circular format. This component is commonly used in mobile applications to show loading states, task completion percentages, goal achievements, or any metric that benefits from a radial visualization. It provides users with an immediate visual understanding of progress through an intuitive circular design that clearly communicates how much of a process or goal has been completed.
+The **Progress Circle** widget is a visual component designed to display the progress or completion status of tasks in mobile applications. It provides an intuitive circular representation that shows how much work has been completed relative to a total amount, making it ideal for indicating loading states, task completion, or any measurable progress.
 
-The component offers flexible configuration options to accommodate various use cases, from simple loading indicators to complex data visualizations with detailed labeling and accessibility features.
+This component can operate in two modes: determinate (showing specific progress between defined minimum and maximum values) or indeterminate (showing ongoing activity without specific completion metrics). The circular design is particularly effective in mobile interfaces where screen real estate is valuable.
 
 ## Features
-
-- **Flexible Value Range** - Supports custom minimum and maximum values through `minvalue` and `maxvalue` props for versatile data representation
-- **Multiple Display Types** - Configurable `type` property to customize the visual appearance and behavior of the progress circle
-- **Rich Content Support** - Includes `title` and `subtitle` properties for descriptive text and context
-- **Customizable Caption Layout** - `captionplacement` option to control the positioning of accompanying text and labels
-- **Accessibility Compliance** - Built-in accessibility features with `accessibilitylabel` and `accessibilityrole` for screen reader compatibility
-- **Data-Driven Updates** - Real-time progress updates through the `datavalue` property
-- **Unique Identification** - Support for custom `id` assignment for easy component referencing and styling
+- **Multiple Visual States**: Support for different types including default, success, info, warning, and error states
+- **Customizable Value Range**: Configurable minimum and maximum values to suit different use cases
+- **Flexible Caption Display**: Options for showing progress information inside the circle or hiding it completely
+- **Accessibility Support**: Built-in accessibility features with customizable labels and roles
+- **Touch Interaction**: Complete touch event support including tap, double-tap, and long-tap gestures
+- **Responsive Design**: Device-specific visibility controls and responsive behavior
+- **Theming Support**: Multiple style classes for different visual appearances

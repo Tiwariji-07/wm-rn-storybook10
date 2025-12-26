@@ -1,52 +1,52 @@
 # Methods
 
-Access the Select widget programmatically using `Page.Widgets.selectName` where `selectName` is the name of your Select widget.
+Access the Select widget methods using `Page.Widgets.[widgetName]` followed by the method name.
 
 | Method | Parameters | Return Type | Description |
 |--------|------------|-------------|-------------|
-| onPress | event: any | void | Programmatically trigger press action |
-| onPropertyChange | name: string, newValue: any, oldValue: any | void | Handle property value changes |
-| prepareModalOptions | content: ReactNode, styles: WmSelectStyles, modalService: ModalService | void | Configure modal presentation options |
-| focus | none | void | Programmatically focus the select component |
-| renderSelect | none | void | Re-render the select component |
-| isSelected | item: any | void | Check if an item is currently selected |
-| onItemSelect | item: any, isPlaceholder?: boolean | void | Handle item selection programmatically |
-| renderSelectItem | item: any, index: number, isPlaceholder: boolean, isLast: boolean | void | Render individual select items |
-| updateDefaultQueryModel | none | void | Update the default query configuration |
-| onDataItemsUpdate | none | void | Handle updates to data items |
+| `onPress` | `event: any` | void | Handles press events on the widget |
+| `onPropertyChange` | `name: string, newValue: any, oldValue: any` | void | Handles property change events |
+| `prepareModalOptions` | `content: React.ReactNode, styles: WmSelectStyles, modalService: ModalService` | void | Prepares modal configuration for dropdown display |
+| `focus` | - | void | Programmatically sets focus to the widget |
+| `renderSelect` | - | void | Renders the select widget component |
+| `isSelected` | `item: any` | void | Checks if a specific item is currently selected |
+| `onItemSelect` | `item: any, isPlaceholder?: boolean` | void | Handles item selection events |
+| `renderSelectItem` | `item: any, index: number, isPlaceholder: boolean, isLast: boolean` | void | Renders individual dropdown items |
+| `updateDefaultQueryModel` | - | void | Updates the default query model for data binding |
+| `onDataItemsUpdate` | - | void | Handles updates to the data items collection |
 
-### Common Method Usage
+### Common Method Use Cases
 
 ```javascript
-// Programmatically focus the select
+// Programmatically focus the select widget
 Page.Widgets.mySelect.focus();
 
+// Handle value changes programmatically
+Page.mySelectChange = function($event, widget, newVal, oldVal) {
+    console.log('Selection changed from', oldVal, 'to', newVal);
+    
+    // Perform actions based on selection
+    if (newVal === 'premium') {
+        Page.Widgets.extraOptions.show = true;
+    }
+};
+
 // Check if specific item is selected
-var isSelected = Page.Widgets.mySelect.isSelected(someItem);
-
-// Manually trigger item selection
-Page.Widgets.mySelect.onItemSelect(selectedItem);
-
-// Update data items
-Page.Widgets.mySelect.onDataItemsUpdate();
+var isItemSelected = Page.Widgets.mySelect.isSelected(someItem);
 
 // Handle property changes
 Page.Widgets.mySelect.onPropertyChange('datavalue', newValue, oldValue);
 ```
 
-### Programmatic Value Setting
+### Data Management Methods
 
 ```javascript
-// Set value programmatically
-Page.Widgets.mySelect.datavalue = 'newValue';
-
-// Clear selection
-Page.Widgets.mySelect.datavalue = null;
-
-// Set display value directly
-Page.Widgets.mySelect.displayValue = 'Custom Display Text';
-
-// Refresh data and selection
-Page.Widgets.mySelect.updateDefaultQueryModel();
+// Update data items after external changes
 Page.Widgets.mySelect.onDataItemsUpdate();
+
+// Update query model for data binding
+Page.Widgets.mySelect.updateDefaultQueryModel();
+
+// Handle item selection with custom logic
+Page.Widgets.mySelect.onItemSelect(selectedItem, false);
 ```

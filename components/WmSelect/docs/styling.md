@@ -1,66 +1,66 @@
 # Styling
 
-The Select widget provides several CSS classes for customization:
+The Select widget provides several CSS classes for customizing its appearance and behavior.
 
-## Base Classes
+## Primary Style Classes
 
 | Class Name | Description |
 |------------|-------------|
-| `.app-select` | Default style class applied to the select component |
+| `.app-select` | Default style class applied to the select widget |
 | `.form-select-input-horizontal` | Styles for horizontal form layout |
-| `.app-select-disabled` | Styles applied when the select is disabled |
-| `.select-dropdown` | Styles for the dropdown/picker interface |
-| `.app-select-rtl` | Right-to-left language support styles |
-| `.form-widget-selectform-select-input-horizontal` | Complex horizontal form widget styles |
+| `.app-select-disabled` | Applied when the widget is in disabled state |
+| `.select-dropdown` | Styles the dropdown menu container |
+| `.app-select-rtl` | Right-to-left text direction support |
+| `.form-widget-selectform-select-input-horizontal` | Combined form widget and horizontal layout styles |
 
-## Custom Styling
+## Customization Examples
 
 ```css
-/* Customize select appearance */
+/* Custom select widget styling */
 .app-select {
     border-radius: 8px;
-    border-color: #007bff;
+    border: 2px solid #e0e0e0;
+    background-color: #ffffff;
 }
 
-/* Style disabled state */
+/* Disabled state styling */
 .app-select-disabled {
     opacity: 0.6;
-    background-color: #f8f9fa;
+    background-color: #f5f5f5;
+    cursor: not-allowed;
 }
 
-/* Customize dropdown appearance */
+/* Dropdown menu styling */
 .select-dropdown {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-height: 300px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* RTL support customization */
+/* RTL support */
 .app-select-rtl {
     text-align: right;
     direction: rtl;
 }
+
+/* Horizontal form layout */
+.form-select-input-horizontal {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
 ```
 
-## Platform-Specific Styling
+## Theme Integration
 
-The Select widget uses native mobile pickers, so styling options may be limited by platform constraints. Focus on:
+The Select widget automatically inherits theme colors and styles. You can override specific theme properties:
 
-- Container styling (borders, backgrounds, spacing)
-- Text styling (fonts, colors)
-- State-based styling (disabled, focused)
-- Layout and positioning
-
-## Dynamic Styling
-
-```javascript
-// Apply custom styles programmatically
-Page.Widgets.mySelect.styles = {
-    backgroundColor: '#f8f9fa',
-    borderColor: '#007bff',
-    borderRadius: '8px'
-};
-
-// Add custom CSS class
-Page.Widgets.mySelect.classname = 'my-custom-select';
+```css
+/* Override theme colors */
+.app-select {
+    --select-border-color: #007bff;
+    --select-focus-color: #0056b3;
+    --select-text-color: #333333;
+    --select-placeholder-color: #999999;
+}
 ```

@@ -1,16 +1,15 @@
 # Overview
 
-The Anchor component is a fundamental UI element that provides interactive navigation and action capabilities within mobile applications. It serves as a clickable link or button that can redirect users to different screens, external URLs, or trigger specific actions, while offering extensive customization options for visual presentation and behavior.
+The **Anchor** component creates clickable links that allow navigation to external URLs or internal app routes. It provides a flexible way to implement navigation with customizable appearance, including icons, badges, and various styling options.
 
-This versatile component combines the functionality of traditional hyperlinks with modern mobile design patterns, supporting features like badges for notifications, icons for visual clarity, and smooth animations for enhanced user experience. The Anchor component is essential for creating intuitive navigation flows and call-to-action elements throughout your application.
+The Anchor component is essential for creating intuitive navigation flows in mobile applications, supporting both simple text links and rich interactive elements with visual indicators.
 
 ## Features
 
-- **Hyperlink Navigation** - Direct users to internal screens or external URLs with automatic URL encoding support
-- **Visual Customization** - Configurable width, height, and styling options for consistent design integration
-- **Icon Integration** - Support for custom icon classes with flexible positioning relative to text content
-- **Badge Notifications** - Display numerical badges for indicating counts, notifications, or status updates
-- **Smooth Animations** - Built-in animation effects with customizable delay timing for polished interactions
-- **Caption Support** - Rich text labeling capabilities for clear user guidance and accessibility
-- **Responsive Design** - Adaptive sizing and layout that works across different screen sizes and orientations
-- **Touch Optimization** - Mobile-first design with appropriate touch targets and feedback mechanisms
+- **Flexible Navigation**: Support for external URLs and internal routing
+- **Visual Customization**: Icons, badges, and custom styling options
+- **Accessibility Support**: Built-in accessibility features with customizable labels and roles
+- **Touch Interactions**: Comprehensive touch event handling including tap, double-tap, and long-tap
+- **Responsive Design**: Device-specific visibility controls
+- **Loading States**: Skeleton loading support for better user experience
+- **URL Encoding**: Automatic URL encoding for special characters

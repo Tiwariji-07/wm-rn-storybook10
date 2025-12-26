@@ -1,22 +1,54 @@
 # Styling
 
-The container component provides several CSS classes for different styling approaches:
+The Container component provides several built-in CSS classes for different visual styles and layouts.
 
-## Available Classes
+## Available Style Classes
 
-### `.app-container`
-Default style class for basic container styling with standard padding and layout properties.
+| Class Name | Description |
+|------------|-------------|
+| `app-container` | Default styling for standard container layout and spacing |
+| `media-body` | Styling for container used in media object layouts |
+| `media-right` | Right-aligned container styling for media layouts |
+| `app-elevated-container` | Container with elevated appearance (shadow/depth) |
+| `app-outlined-container` | Container with border outline styling |
 
-### `.media-body`
-Styles the container as a flexible media body element, typically used for content that flows alongside media elements with automatic width adjustment.
+## Styling Examples
 
-### `.media-right`
-Positions the container to the right side of a media layout, commonly used for secondary content or actions in media object patterns.
+```css
+/* Custom container with elevated appearance */
+.my-elevated-container {
+    background: #ffffff;
+    border-radius: 8px;
+    shadow-color: #000;
+    shadow-offset: {width: 0, height: 2};
+    shadow-opacity: 0.1;
+    shadow-radius: 4;
+    elevation: 3;
+}
 
-### `.app-elevated-container`
-Applies elevation styling to the container, typically adding shadow effects to create a raised appearance above the background surface.
+/* Media layout container */
+.media-container {
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+}
 
-### `.app-outlined-container`
-Applies border styling to the container, creating a outlined appearance with defined edges and boundaries.
+/* Sticky header container */
+.sticky-header-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom-width: 1px;
+    border-bottom-color: #e0e0e0;
+}
+```
 
-You can combine these classes or use them individually depending on your design requirements. Standard application-wide CSS classes can also be applied for additional customization.
+### Conditional Styling
+
+Use the Conditional Class property to apply styles based on data or state:
+
+```javascript
+// Apply different styles based on container state
+Page.Widgets.myContainer.conditionalclass = {
+    'app-elevated-container': Variables.isHighlighted.dataValue,
+    'app-outlined-container': !Variables.isHighlighted.dataValue
+};
+```

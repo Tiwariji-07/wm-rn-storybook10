@@ -1,15 +1,14 @@
 # Overview
 
-The Tile component is a versatile container element designed to display content in a structured, card-like format within mobile applications. It serves as a fundamental building block for creating organized layouts, featuring distinct content areas that can house various types of information, interactive elements, or media. Tiles are commonly used in dashboard interfaces, menu systems, content galleries, and grid-based layouts where information needs to be presented in digestible, visually separated sections.
+The **Tile** component is a specialized container widget designed for creating dashboard-like interfaces in mobile applications. Unlike generic containers, Tile comes with default styling optimized for presenting analytics data, images, text, videos, or custom content in a visually appealing card format.
 
-This component provides extensive customization options and responsive behavior, making it suitable for a wide range of mobile interface patterns. Whether used as a simple content wrapper or as part of a complex grid system, the Tile component offers developers the flexibility to create engaging and organized user experiences across different device types and screen sizes.
+Tile components are ideal for building data visualization dashboards where you need to display key metrics, status information, or actionable content in a structured grid layout. The component provides touch interaction capabilities and responsive behavior while maintaining a clean, professional appearance.
 
 ## Features
 
-- **Animation Support** - Built-in animation capabilities with configurable delay options for smooth transitions and engaging user interactions
-- **Flexible Content Container** - Accepts any child components or content through the children prop for maximum layout versatility
-- **State Management** - Disabled and visibility states for controlling user interaction and conditional rendering
-- **Custom Styling** - Comprehensive styling options through both CSS classes and inline styles for design consistency
-- **Unique Identification** - ID and name properties for programmatic access and form integration
-- **Device-Specific Display** - Conditional rendering based on device type for optimized mobile experiences
-- **Responsive Design** - Adapts to different screen sizes and orientations for consistent mobile performance
+- **Dashboard-ready styling** - Pre-styled container with professional appearance
+- **Touch interactions** - Built-in support for tap, double-tap, and long-tap gestures
+- **Animation support** - CSS-based animations for smooth user experience
+- **Responsive design** - Device-specific visibility controls
+- **Skeleton loading** - Optional skeleton UI for improved perceived performance
+- **Accessibility** - Proper touch feedback and disabled state handling

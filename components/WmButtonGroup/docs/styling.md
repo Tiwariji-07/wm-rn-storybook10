@@ -1,19 +1,57 @@
 # Styling
 
-The ButtonGroup component provides the following CSS classes for customization:
+The Button Group component provides several CSS classes for customizing its appearance and the appearance of its child buttons.
 
-## Available CSS Classes
+## Component CSS Classes
 
-### `.app-buttongroup`
-The default style class applied to the button group container. This class defines the base styling and layout for the entire button group component.
+| Class Name | Description |
+|------------|-------------|
+| `app-buttongroup` | Default style class applied to the button group container |
+| `btn-group-child` | Applied to all button elements within the group |
+| `btn-group-first-child` | Applied specifically to the first button in the group |
+| `btn-group-last-child` | Applied specifically to the last button in the group |
 
-### `.btn-group-child`
-Applied to individual button elements within the group. This class handles the styling for buttons that are part of the group, typically managing borders, spacing, and alignment between adjacent buttons.
+## Styling Examples
 
-### `.btn-group-first-child`
-Applied to the first button in the group. This class manages special styling for the leftmost button, such as preserving the left border radius while removing the right border radius for seamless connection to adjacent buttons.
+```css
+/* Customize the button group container */
+.app-buttongroup {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
 
-### `.btn-group-last-child`
-Applied to the last button in the group. This class handles special styling for the rightmost button, such as preserving the right border radius while removing the left border radius for seamless connection to adjacent buttons.
+/* Style all buttons in the group */
+.btn-group-child {
+  border: none;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+}
 
-These classes work together to create a cohesive visual appearance where buttons appear as a unified group with shared borders and consistent styling.
+/* Remove border from last button */
+.btn-group-last-child {
+  border-right: none;
+}
+
+/* Special styling for first button */
+.btn-group-first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+```
+
+## Vertical Layout Styling
+
+```css
+/* Vertical button group adjustments */
+.app-buttongroup.vertical .btn-group-child {
+  border-right: none;
+  border-bottom: 1px solid #e0e0e0;
+  display: block;
+  width: 100%;
+}
+
+.app-buttongroup.vertical .btn-group-last-child {
+  border-bottom: none;
+}
+```

@@ -1,17 +1,15 @@
 # Overview
 
-The Tabs component is a versatile container component that provides a tabbed interface for organizing and displaying content in distinct panels. This component enables users to navigate between different sections of related content through clickable tab headers, making it ideal for organizing complex information, settings screens, product details, or any scenario where content needs to be categorized and accessed quickly without overwhelming the user interface.
+The **Tabs** component provides a tab-based navigation interface that allows multiple containers within a single window. It offers an easy and powerful mechanism to handle a large amount of content within a limited area by separating content into different panes where one pane is viewable at a time. Users can quickly access content by switching between panes without leaving the page.
 
-Built on the BaseProps foundation, the Tabs component offers a comprehensive solution for creating interactive, user-friendly navigation experiences in mobile applications. It supports both touch gestures and traditional tap interactions, ensuring accessibility across different user preferences and device capabilities.
+Tabs implement a Tabbed Document Interface (TDI) that allows multiple documents or panels to be contained within a single window, serving as a navigational widget for switching between sets of documents.
 
 ## Features
 
-- **Tab Navigation**: Organize content into distinct, labeled sections with intuitive tab headers
-- **Default Panel Selection**: Set an initial active tab using the default pane index configuration
-- **Gesture Support**: Enable swipe gestures for seamless navigation between tabs on touch devices
-- **Scroll Capability**: Handle overflow content with built-in scrolling functionality
-- **Flexible Content**: Accept any child components or content within tab panels
-- **State Management**: Control component visibility and interaction through show/hide and disabled states
-- **Unique Identification**: Support for custom ID and name attributes for form integration and testing
-- **Customizable Styling**: Apply custom CSS classes and inline styles for brand-specific theming
-- **Responsive Design**: Adapt to different screen sizes and orientations automatically
+- **Static and Dynamic Tabs**: Support for both predefined tab panes and dynamically generated tabs from data sources
+- **Gesture Support**: Built-in touch gestures for navigation including swipe functionality
+- **Customizable Layout**: Flexible positioning and styling options
+- **Programmatic Navigation**: Methods for controlling tab selection programmatically
+- **Child Components**: Includes `tabpane` for content areas and `tabheader` for navigation
+- **Accessibility**: Full accessibility support with proper roles and labels
+- **Responsive Design**: Device-specific visibility controls and responsive behavior

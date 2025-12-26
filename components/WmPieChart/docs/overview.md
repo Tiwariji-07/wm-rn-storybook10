@@ -1,17 +1,17 @@
 # Overview
 
-The pie-chart component is a versatile data visualization tool designed for mobile applications that need to display proportional data in an intuitive, circular format. This component transforms numerical datasets into interactive pie or donut charts, making it ideal for representing market share distributions, survey results, budget breakdowns, or any scenario where you need to show how parts relate to a whole.
+The pie chart component is a specialized chart widget that displays data in a circular format, where each segment represents a proportion of the whole dataset. It's ideal for showing the composition of data, such as market share distribution, demographic breakdowns, or any categorical data where you want to visualize parts of a whole.
 
-Built on the BaseChartComponentProps foundation, this component offers comprehensive customization options while maintaining consistent behavior with other chart components in your application. It supports both traditional pie charts and modern donut chart variations, with flexible labeling systems and interactive capabilities that enhance user engagement and data comprehension.
+The component extends the base chart functionality with pie-specific features like donut mode, customizable label placement, and center labels. It supports both traditional pie charts and donut charts (pie charts with a hollow center) through the `donutratio` property.
 
 ## Features
 
-- **Flexible Chart Types**: Support for both standard pie charts and donut charts with customizable donut ratios
-- **Smart Label Positioning**: Configurable label placement options for optimal readability across different screen sizes
-- **Center Label Display**: Ability to show summary information or totals in the center of donut charts
-- **Interactive Selection**: Built-in tap handling with onSelect callbacks for creating drill-down experiences
-- **Customizable Data Mapping**: Flexible X and Y axis data key configuration for various dataset structures
-- **Icon Integration**: Support for custom icons to enhance visual appeal and context
-- **Dynamic Theming**: Consistent styling integration with your app's design system
-- **Responsive Design**: Automatic scaling and layout optimization for mobile screen constraints
-- **Accessible Titles**: Built-in title support for improved accessibility and context setting
+- **Multiple Display Modes**: Support for both pie and donut chart configurations
+- **Flexible Label Options**: Labels can be positioned inside, outside, or hidden with various formatting options
+- **Interactive Selection**: Touch-enabled selection of pie segments with callback events
+- **Custom Styling**: Configurable colors, themes, and visual customization options
+- **Data Binding**: Integration with various data sources including databases and web services
+- **Legend Support**: Configurable legend positioning and formatting
+- **Center Label**: Custom content display in the center of donut charts
+- **Responsive Design**: Automatic adjustment for different screen sizes and orientations
+- **Loading States**: Built-in loading indicators and no-data messaging

@@ -1,16 +1,16 @@
 # Overview
 
-The Accordion is a container component that displays a vertically stacked list of collapsible panels called accordion panes. Only one panel is typically expanded at a time, allowing users to navigate through content in an organized, space-efficient manner. Each accordion pane consists of a header with title, optional icon, and badge, plus expandable content that can contain other widgets or partial pages.
+The **Accordion** component is a collapsible container that displays content in stacked panels, where only one panel can be expanded at a time by default. It's ideal for organizing related content in a space-efficient manner, allowing users to focus on specific sections while keeping other content easily accessible.
 
-The Accordion component is ideal for organizing related content sections, FAQs, navigation menus, or any scenario where you need to present multiple content areas in a compact, user-friendly interface.
+Accordions consist of multiple accordion panes, each containing a header with title, optional subheading, and expandable content area. The component supports both inline content and partial page integration, making it versatile for various mobile app layouts.
 
 ## Features
 
-- **Collapsible Panels**: Each accordion pane can be expanded or collapsed independently
-- **Single or Multiple Expansion**: Configure whether multiple panes can be open simultaneously
-- **Rich Headers**: Support for titles, subtitles, icons, and badges in pane headers
-- **Flexible Content**: Panes can contain inline content, widgets, or partial pages
-- **Customizable Animation**: Built-in animation effects for smooth expand/collapse transitions
-- **Programmatic Control**: Methods to expand, collapse, or toggle panes via JavaScript
-- **Responsive Design**: Adaptive layout that works across different screen sizes
-- **Accessibility Support**: Tab navigation and keyboard interaction support
+- **Collapsible Panels**: Expandable/collapsible panes with smooth animations
+- **Customizable Headers**: Configurable titles, subheadings, icons, and badges
+- **Multiple Content Types**: Support for inline content and partial pages
+- **Flexible Behavior**: Option to allow multiple panes open simultaneously
+- **Touch Interactions**: Native mobile touch support with optional touch effects
+- **Accessibility**: Full keyboard navigation and screen reader support
+- **Responsive Design**: Adaptive layout for different screen sizes
+- **Dynamic Control**: Programmatic expand/collapse functionality

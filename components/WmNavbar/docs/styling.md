@@ -1,21 +1,39 @@
 # Styling
 
-## Available CSS Classes
+## CSS Classes
 
-The navbar component supports the following specific CSS classes:
+| Class Name | Description |
+|------------|-------------|
+| `app-navbar` | Default style class applied to the navbar component |
+| `stackedNav` | Applied when navigation items are arranged in a stacked layout |
+| `childNav` | Applied to child navigation components |
+| `justifiedNav` | Applied when navigation items are justified across available space |
 
-### `.app-navbar`
-Default style class for the navbar component. This provides the base styling and layout for the navigation bar.
+## Style Customization
 
-### `.stackedNav`
-Applies a stacked layout to the navigation items, arranging them vertically rather than horizontally. Useful for mobile layouts or sidebar navigation.
+The navbar component supports custom styling through the `styles` prop and additional CSS classes through the `classname` prop.
 
-### `.childNav`
-Styles the navbar as a child or secondary navigation element. Typically used for sub-navigation menus with reduced visual prominence compared to the main navbar.
+```css
+/* Custom navbar styling */
+.app-navbar {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
 
-### `.justifiedNav`
-Creates a justified layout where navigation items are evenly distributed across the full width of the container, with equal spacing between items.
+.app-navbar.stackedNav {
+    flex-direction: column;
+}
 
-## Usage
+.app-navbar.justifiedNav {
+    justify-content: space-between;
+}
 
-Apply these classes to customize the navbar appearance and layout according to your design requirements. Multiple classes can be combined to achieve the desired styling effect.
+.app-navbar.childNav {
+    margin-left: 20px;
+    border-left: 2px solid #007bff;
+}
+```
+
+## Responsive Styling
+
+The component automatically applies responsive styles based on the `showindevice` prop, allowing for device-specific styling and layout adjustments.

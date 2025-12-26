@@ -1,16 +1,16 @@
 # Overview
 
-The Time component is a mobile-friendly time picker input control that provides users with an intuitive interface for selecting specific times. This component is designed to seamlessly integrate into mobile applications where time selection is required, such as scheduling apps, reminder systems, alarm clocks, or any workflow that involves time-based data entry.
+The Time component is a specialized input widget designed for capturing time-related data in mobile applications. It provides a native time picker interface that allows users to select hours and minutes in either 12-hour or 24-hour format.
 
-Built on the BaseProps foundation, this component offers a modal-style time picker that can be easily triggered and dismissed while maintaining a consistent user experience across different mobile platforms. The component supports both 12-hour and 24-hour time formats to accommodate global user preferences and localization requirements.
+This component extends the BaseProps class and offers a modal-style time selection experience optimized for touch interfaces. When activated, it presents a time picker overlay with customizable header text and action buttons.
 
 ## Features
 
-- **Modal visibility control** - Show or hide the time picker interface on demand
-- **Pre-selected time values** - Initialize the picker with existing datetime values
-- **Flexible time format support** - Toggle between 12-hour and 24-hour display formats
-- **Customizable titles and labels** - Configure header, confirmation, and cancel button text
-- **Multiple interaction callbacks** - Handle close, select, and cancel actions independently
-- **Unique component identification** - Built-in ID support for form integration and tracking
-- **Mobile-optimized interface** - Touch-friendly controls designed for mobile devices
-- **Event-driven architecture** - Responsive callback system for seamless integration with parent components
+- **Time Format Support**: Choose between 12-hour (AM/PM) and 24-hour time formats
+- **Modal Interface**: Clean overlay presentation with customizable header and button text
+- **Touch Optimized**: Native time picker optimized for mobile touch interactions
+- **Flexible Display**: Responsive design with device-specific visibility controls
+- **Accessibility Support**: Built-in support for screen readers and keyboard navigation
+- **Customizable Actions**: Configurable confirm and cancel button labels
+- **State Management**: Controlled visibility and selected time state
+- **Styling Support**: Custom CSS classes and inline styles support

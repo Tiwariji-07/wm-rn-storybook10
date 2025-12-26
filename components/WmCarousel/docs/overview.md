@@ -1,18 +1,15 @@
 # Overview
 
-The Carousel component is an advanced UI element designed for displaying multiple content items in a horizontally scrollable, swipeable interface within mobile applications. This component is ideal for showcasing image galleries, product listings, onboarding screens, promotional banners, or any collection of related content that benefits from a slide-based presentation format.
+The Carousel component is a flexible, responsive slider widget that allows you to display a series of images, content, or any other type of media in a rotating slideshow format. It supports both touch gestures and automatic animation, making it ideal for showcasing featured content, image galleries, or promotional materials in mobile applications.
 
-Built on the BaseProps foundation, the Carousel component provides a rich, interactive experience that allows users to navigate through content using touch gestures, automatic transitions, or manual controls. It's particularly effective for highlighting featured content, creating engaging user onboarding flows, or presenting visual content in a space-efficient manner while maintaining an intuitive and familiar user interaction pattern.
+The Carousel supports two distinct modes: Static mode for predefined content slides, and Dynamic mode for data-driven content from arrays or datasets. It includes built-in navigation controls, indicators, and smooth animations to provide an engaging user experience.
 
 ## Features
 
-- **Dynamic Data Binding** - Supports dataset configuration for populating carousel content from data sources
-- **Multiple Display Types** - Configurable presentation modes to suit different content requirements
-- **Smooth Animations** - Built-in animation system with customizable transition effects
-- **Auto-Play Functionality** - Automatic slide progression with configurable interval timing
-- **Interactive Controls** - Optional navigation controls for manual slide navigation
-- **Touch Gesture Support** - Native swipe and pan gestures for intuitive mobile interaction
-- **Custom Slide Rendering** - Flexible slide content customization through render functions
-- **Pagination Indicators** - Visual dot indicators with configurable maximum display count
-- **Unique Item Identification** - Key-based item tracking for optimal performance
-- **Flexible Content Support** - Accommodates various content types through children components
+- **Dual Mode Support**: Static carousel for fixed content and Dynamic carousel for data-driven slides
+- **Touch Gesture Support**: Swipe navigation with configurable gesture thresholds
+- **Automatic Animation**: Auto-play functionality with customizable intervals
+- **Navigation Controls**: Configurable navigation arrows and dot indicators
+- **Skeleton Loading**: Built-in loading states for better UX
+- **Responsive Design**: Adaptive layout for different screen sizes
+- **Child Components**: Specialized carousel-content and carousel-template sub-components

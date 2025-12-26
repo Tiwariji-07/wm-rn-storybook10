@@ -1,13 +1,50 @@
 # Styling
 
-## Available CSS Classes
+The Video widget provides CSS classes for customization.
 
-### Component-Specific Classes
+## Default Classes
 
-- **`.app-video`** - Default style class that provides the base styling for the video component
+| Class Name | Description |
+|------------|-------------|
+| `.app-video` | Default style class applied to the video widget container |
 
-## Usage
+## Custom Styling
 
-The video component can be styled using the provided CSS class or standard application classes. The `.app-video` class serves as the foundation for the component's visual appearance and can be customized or extended as needed for your application's design requirements.
+```css
+/* Customize video container */
+.app-video {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-You can also apply additional styling by combining the default class with other application-wide CSS classes or by adding custom styles that target the video element specifically.
+/* Style video poster */
+.app-video .video-poster {
+    object-fit: cover;
+    background-color: #f0f0f0;
+}
+
+/* Customize video controls */
+.app-video .video-controls {
+    background: linear-gradient(transparent, rgba(0,0,0,0.5));
+}
+```
+
+## Responsive Video Styling
+
+```css
+/* Mobile-first responsive video */
+.app-video {
+    width: 100%;
+    height: auto;
+    max-width: 100vw;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+    .app-video {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+```

@@ -1,14 +1,65 @@
 # Styling
 
-## CSS Classes
+The Checkbox component supports custom styling through CSS classes and style objects.
 
-The checkbox component supports the following CSS classes for styling:
+## Default CSS Classes
 
-### Component-Specific Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-checkbox` | Default style class applied to all checkbox components |
+| `form-checkbox-input-horizontal` | Styles for horizontal form layout checkboxes |
+| `app-checkbox-disabled` | Styles applied when checkbox is disabled |
 
-- **`.app-checkbox`** - Default style class that provides the base styling for the checkbox component
-- **`.app-checkbox-disabled`** - Applied to disabled checkbox instances, typically providing visual indicators such as reduced opacity, grayed-out appearance, or altered cursor states to show the component is not interactive
+## Custom Styling
 
-### Additional Styling
+Apply custom styles using the `styles` prop or `classname` prop:
 
-Beyond the component-specific classes listed above, you can also apply standard application CSS classes to further customize the checkbox appearance and behavior.
+```javascript
+// Using styles prop
+Page.Widgets.myCheckbox.styles = {
+    backgroundColor: '#f0f0f0',
+    borderColor: '#007bff',
+    borderWidth: 2
+};
+
+// Using classname prop
+Page.Widgets.myCheckbox.classname = 'custom-checkbox-style';
+```
+
+## CSS Customization
+
+```css
+/* Custom checkbox styling */
+.custom-checkbox-style {
+    margin: 10px;
+    padding: 5px;
+}
+
+/* Override default styles */
+.app-checkbox {
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Disabled state styling */
+.app-checkbox-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Horizontal form layout */
+.form-checkbox-input-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+```
+
+## Touch Effect Styling
+
+Control touch feedback using the `disabletoucheffect` prop:
+
+```javascript
+// Disable touch effects for custom styling
+Page.Widgets.myCheckbox.disabletoucheffect = true;
+```

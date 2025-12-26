@@ -1,15 +1,15 @@
 # Overview
 
-The ButtonGroup component is a foundational UI element that organizes multiple related buttons into a cohesive, visually grouped container. This component is essential for mobile applications where users need to select from multiple options or perform related actions, such as filter controls, navigation tabs, or action toolbars. By grouping buttons together, it provides clear visual hierarchy and improves the overall user experience through consistent spacing and alignment.
+The **Button Group** component is a container widget that organizes a set of buttons into a cohesive group for better visual presentation and management. It provides a clean way to display related actions together, making the interface more intuitive and organized.
 
-ButtonGroup extends the BaseProps class and offers flexible layout options to accommodate various design requirements across different mobile interfaces. It provides a clean, accessible way to present multiple interactive elements while maintaining proper touch targets and visual consistency throughout your application.
+Button groups are particularly useful when you need to present multiple related actions for a single entity, such as media controls (play, pause, stop) or editing operations (edit, delete, share). The buttons can be arranged either horizontally or vertically based on your layout requirements.
 
 ## Features
 
-- **Flexible Layout Options** - Supports both horizontal (default) and vertical button arrangements through the `vertical` prop
-- **Child Component Integration** - Accepts multiple button children through the `children` prop for versatile content composition
-- **Loading State Support** - Built-in skeleton loading functionality with customizable dimensions via `skeletonheight` and `skeletonwidth`
-- **Accessibility Ready** - Includes proper identification and naming through `id` and `name` props for screen readers
-- **State Management** - Provides `disabled` and `show` props for controlling component interactivity and visibility
-- **Custom Styling** - Extensive theming support through `styles` and `classname` props for brand consistency
-- **Mobile Optimized** - Designed with touch-friendly interactions and responsive behavior for mobile devices
+- **Flexible Layout**: Support for both horizontal and vertical button arrangements
+- **Visual Grouping**: Buttons are visually connected as a single unit
+- **Responsive Design**: Adaptive display based on device size and orientation
+- **Skeleton Loading**: Built-in loading state with customizable skeleton dimensions
+- **Touch Effects**: Configurable touch feedback for better user interaction
+- **Conditional Display**: Show/hide based on device type or other conditions
+- **Accessibility**: Full support for disabled states and screen readers

@@ -1,21 +1,54 @@
 # Styling
 
-The panel component provides several CSS classes for customization and theming:
+The Panel component provides several CSS classes for customization:
 
-## Available CSS Classes
+## Default Classes
 
-### Base Classes
-- **`app-panel`** - Default style class for the panel component
-- **`app-panel-rtl`** - Provides right-to-left text direction support for the panel
+| Class Name | Description |
+|------------|-------------|
+| `app-panel` | Base styling for the panel component |
+| `app-panel-rtl` | Right-to-left layout support for panels |
 
-### Theme Variant Classes
-- **`panel-danger`** - Applies danger/error theme styling with red color scheme
-- **`panel-default`** - Applies the default neutral theme styling
-- **`panel-info`** - Applies informational theme styling with blue color scheme
-- **`panel-primary`** - Applies primary theme styling with the main brand colors
-- **`panel-success`** - Applies success theme styling with green color scheme
-- **`panel-warning`** - Applies warning theme styling with yellow/orange color scheme
+## Theme Classes
 
-## Usage
+| Class Name | Description |
+|------------|-------------|
+| `panel-default` | Default panel styling with neutral colors |
+| `panel-primary` | Primary theme styling with brand colors |
+| `panel-success` | Success state styling with green accents |
+| `panel-info` | Information styling with blue accents |
+| `panel-warning` | Warning state styling with yellow/orange accents |
+| `panel-danger` | Error/danger state styling with red accents |
 
-Theme variant classes are typically used to convey different states or importance levels of the panel content. These classes modify the panel's border, background, and header colors to match their semantic meaning.
+## Child Component Styling
+
+| Class Name | Description |
+|------------|-------------|
+| `app-panel-content` | Styling for the main content area of the panel |
+| `app-panel-footer` | Styling for the footer section of the panel |
+
+## Usage Examples
+
+```javascript
+// Apply theme class
+Page.Widgets.myPanel.classname = 'panel-primary';
+
+// Combine multiple classes
+Page.Widgets.myPanel.classname = 'panel-success custom-panel';
+
+// Apply custom styles
+Page.Widgets.myPanel.styles = {
+    backgroundColor: '#f8f9fa',
+    borderRadius: '8px',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+};
+```
+
+## Conditional Styling
+
+```javascript
+// Apply different styles based on state
+Page.updatePanelStyle = function(isActive) {
+    Page.Widgets.myPanel.classname = isActive ? 'panel-primary' : 'panel-default';
+};
+```

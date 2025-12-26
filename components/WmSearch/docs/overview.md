@@ -1,19 +1,16 @@
 # Overview
 
-The Search component is a versatile search interface that provides users with an intuitive way to find and select items from datasets within your mobile application. Built on the BaseDatasetProps foundation, this component delivers a comprehensive search experience with real-time querying, autocomplete functionality, and customizable result presentation. It's ideal for scenarios where users need to quickly locate specific records, filter through large datasets, or perform type-ahead searches with immediate visual feedback.
+The Search component provides powerful search and autocomplete functionality for mobile applications. It enables users to quickly find and select items from datasets with real-time filtering and customizable display options.
 
-This component seamlessly integrates into any mobile workflow requiring data discovery and selection, from customer lookup forms to product catalogs. The search interface can be configured to work with various data sources while providing a consistent, user-friendly experience across different screen sizes and device orientations.
+The component supports two main modes: traditional search with filtered results display, and autocomplete with dropdown selection. It integrates seamlessly with WaveMaker's data services and provides extensive customization options for appearance and behavior.
 
 ## Features
 
-- **Auto-focus capability** for immediate user interaction upon component load
-- **Real-time query processing** with customizable search parameters
-- **Configurable search keys** to target specific data fields
-- **Multiple search types** to accommodate different search methodologies
-- **Smart autocomplete** with customizable minimum character thresholds
-- **Result limiting** to optimize performance and user experience
-- **Custom placeholder text** for enhanced user guidance
-- **Flexible image display** with adjustable width and height settings
-- **Completion messaging** to provide user feedback when searches finish
-- **Dataset integration** through BaseDatasetProps for seamless data binding
-- **Mobile-optimized interface** designed for touch interactions
+- **Dual Mode Support**: Switch between search and autocomplete modes
+- **Real-time Filtering**: Instant results as users type
+- **Data Integration**: Direct binding to database and web service variables
+- **Customizable Display**: Configurable labels, images, and formatting
+- **Performance Optimized**: Debounce timing and minimum character requirements
+- **Accessibility**: Full accessibility support with proper roles and labels
+- **Touch Optimized**: Mobile-friendly interactions and gestures
+- **Flexible Matching**: Multiple match modes for different search behaviors

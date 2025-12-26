@@ -1,15 +1,14 @@
 # Overview
 
-The Container component is a fundamental layout element that serves as a versatile wrapper for organizing and structuring content within mobile applications. It provides a flexible foundation for grouping related UI elements while offering enhanced functionality beyond basic view containers.
+The **Container** is a versatile layout component that serves as an empty box for organizing and grouping other components. It acts as a fundamental building block for creating structured layouts in React Native applications, allowing you to arrange content semantically and apply styling for visual organization.
 
-This component extends PartialHostProps to deliver essential container capabilities including scroll management, sticky positioning, and smooth animations. It's designed to handle common mobile app scenarios where content needs to be dynamically loaded, animated into view, or maintained in specific positions during user interactions.
+Container components are essential for creating responsive layouts and can be used to wrap content that needs to be grouped together with specific styling, animations, or behavioral properties. They support both static content and dynamic partial page inclusion.
 
-## Features
-
-- **Animation Support** - Built-in animation capabilities with customizable timing and delay options
-- **Scroll Management** - Configurable scrollable behavior for content that exceeds container bounds
-- **Sticky Positioning** - Ability to maintain fixed positioning relative to the viewport or parent container
-- **Load Event Handling** - Lifecycle management with onLoad callback for initialization logic
-- **Flexible Layout** - Inherits comprehensive styling and layout properties from PartialHostProps
-- **Performance Optimized** - Efficient rendering and memory management for mobile environments
-- **Responsive Design** - Adaptive container behavior across different screen sizes and orientations
+**Features:**
+- Flexible layout direction (row/column) with wrap capabilities
+- Built-in scroll support for content overflow
+- Sticky positioning with opacity control
+- Animation support with configurable delays
+- Touch and gesture event handling
+- Gap and alignment control for child elements
+- Conditional styling and theming support

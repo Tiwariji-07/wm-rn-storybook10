@@ -1,15 +1,61 @@
 # Styling
 
-The tile component provides several CSS classes for customization and visual styling.
+The Tile component provides several CSS classes for customization:
 
-## Available CSS Classes
+## Default Classes
 
-### Component-Specific Classes
+| Class Name | Description |
+|------------|-------------|
+| `app-tile` | Base styling class applied to all tile components |
+| `tile-template-text` | Styling for text content within tiles |
+| `well` | Additional container styling for depth effect |
 
-- **`.app-tile`** - Default style class that provides the base styling for the tile component
-- **`.tile-template-text`** - Applies text-specific formatting and layout styles for tile content containing textual elements
-- **`.well`** - Creates a recessed, bordered container effect with subtle background styling to make the tile appear inset
+## Custom Styling
 
-## Usage
+```css
+/* Override default tile appearance */
+.app-tile {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 8px;
+    padding: 16px;
+}
 
-These classes can be applied individually or combined to achieve the desired visual appearance for your tile components. When no specific styling is needed, the component will fall back to standard application classes for consistent theming across your interface.
+/* Text content styling */
+.tile-template-text {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.4;
+}
+
+/* Well effect for depth */
+.well {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+}
+```
+
+## Conditional Styling
+
+```javascript
+// Apply conditional classes based on state
+Page.Widgets.myTile.classname = Page.Variables.isActive ? 'active-tile' : 'inactive-tile';
+```
+
+## Touch States
+
+```css
+/* Touch feedback styling */
+.app-tile:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+}
+
+/* Disabled state */
+.app-tile.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+```

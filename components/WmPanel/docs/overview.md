@@ -1,16 +1,14 @@
 # Overview
 
-The Panel component is a versatile container element designed to organize and display content within mobile applications. It serves as a flexible wrapper that can group related information, form elements, or other UI components while providing consistent styling and layout structure. Panels are commonly used to create organized sections within screens, such as settings groups, information cards, or expandable content areas.
-
-This component offers extensive customization options including collapsible functionality for managing screen real estate, animation support for smooth user interactions, and comprehensive labeling capabilities with titles, subheadings, and badge notifications. The Panel component is particularly useful in mobile interfaces where space optimization and clear content hierarchy are essential for maintaining good user experience across various screen sizes.
+The Panel component is a container widget designed to group related content together in a structured format. It provides a collapsible interface with designated sections including header, body, and footer, making it ideal for organizing information in mobile applications.
 
 ## Features
 
-- **Collapsible Content** - Expandable and collapsible functionality to save screen space and improve content organization
-- **Animation Support** - Smooth transitions and animations for enhanced user experience during expand/collapse operations
-- **Flexible Content** - Accepts child components through the children prop for versatile content composition
-- **Rich Labeling** - Support for titles, subheadings, and custom icons to clearly identify panel content
-- **Badge Notifications** - Built-in badge system with customizable values and types for displaying status or count information
-- **Partial Rendering** - Conditional rendering capabilities for optimized performance and dynamic content display
-- **State Management** - Controlled expanded/collapsed state for programmatic panel behavior
-- **Mobile-Optimized** - Designed specifically for mobile interfaces with touch-friendly interactions and responsive layout
+- **Collapsible Interface**: Users can expand or collapse panels to manage screen real estate effectively
+- **Structured Layout**: Includes header with title/subtitle, main content area, and optional footer section
+- **Badge Support**: Display badges with customizable values and types for status indication
+- **Icon Integration**: Support for custom icons in the header with flexible sizing options
+- **Animation Support**: Smooth transitions for expand/collapse operations
+- **Responsive Design**: Device-specific visibility controls for different screen sizes
+- **Touch Interaction**: Mobile-optimized touch events and gestures
+- **Accessibility**: Built-in skeleton loading and touch effect controls

@@ -1,17 +1,17 @@
 # Overview
 
-The bubble-chart component is a specialized data visualization tool designed for mobile applications that displays three-dimensional data relationships using bubbles positioned on a two-dimensional coordinate system. This component extends the BaseChartComponentProps to provide an interactive and visually appealing way to represent complex datasets where each bubble represents a data point with X and Y coordinates, while the bubble size or color can represent additional data dimensions.
+The Bubble Chart component is a powerful data visualization widget that enables you to display three-dimensional data in a two-dimensional format. Unlike traditional charts that only use X and Y axes, bubble charts use the size of bubbles as a third dimension to represent additional data values.
 
-This component is particularly useful for displaying correlations between multiple variables, comparative analysis, and identifying patterns or outliers in datasets. Common use cases include financial portfolio analysis, performance metrics visualization, market research data, and any scenario where users need to understand relationships between three or more data attributes simultaneously.
+Bubble charts are ideal for displaying complex datasets where you need to show relationships between three variables simultaneously, such as comparing sales performance (X-axis), profit margins (Y-axis), and market share (bubble size) across different product categories.
 
 ## Features
 
-- **Interactive Data Selection** - Touch-enabled bubble selection with callback functionality through onSelect
-- **Dual-Axis Data Mapping** - Configurable X and Y axis data keys for flexible data binding
-- **Customizable Axis Labels** - Support for descriptive axis labeling to improve data readability
-- **Rich Dataset Integration** - Comprehensive dataset prop for handling complex multi-dimensional data
-- **Visual Customization** - Theme support and icon class configuration for brand consistency
-- **Descriptive Headers** - Built-in title and subheading support for chart context
-- **Chart Type Flexibility** - Type property allowing for different bubble chart variations
-- **Mobile-Optimized Design** - Responsive layout optimized for touch interactions on mobile devices
-- **Accessible Data Visualization** - Screen reader friendly with proper semantic structure
+- **Three-dimensional data representation** - X-axis, Y-axis, and bubble size for comprehensive data analysis
+- **Multiple data source support** - Works with databases, web services, and live variables
+- **Interactive tooltips and selection** - Hover effects and click events for data exploration
+- **Customizable styling** - Themes, colors, legends, and layout options
+- **Flexible axis configuration** - Custom labels, units, domains, and formatting
+- **Data aggregation and grouping** - Built-in support for data transformation
+- **Responsive layout** - Configurable offsets and positioning for different screen sizes
+- **Accessibility support** - ARIA labels and accessible navigation
+- **Loading and empty states** - Customizable messages for data loading and no-data scenarios

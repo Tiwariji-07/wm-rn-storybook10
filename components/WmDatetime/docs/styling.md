@@ -1,19 +1,41 @@
 # Styling
 
-The datetime component provides the following CSS classes for customization:
+The datetime component provides several CSS classes for customization:
 
 ## Available CSS Classes
 
-### `.app-datetime`
-Default style class for the datetime component. This is the base class applied to all datetime instances and contains the foundational styling properties.
+| Class Name | Description |
+|------------|-------------|
+| `app-datetime` | Default style class applied to the datetime component |
+| `form-datetime-input-horizontal` | Styles for horizontal datetime input layout |
+| `form-timestamp-input-horizontal` | Styles for horizontal timestamp input layout |
+| `app-datetime-disabled` | Applied when the component is disabled |
+| `app-datetime-rtl` | Applied for right-to-left text direction |
+| `app-datetime-with-label` | Applied when the component has a floating label |
 
-### `.app-datetime-disabled`
-Applied when the datetime component is in a disabled state. This class typically modifies the visual appearance to indicate that the component is not interactive, such as reduced opacity, grayed-out colors, or different cursor styles.
+## Styling Examples
 
-### `.app-datetime-rtl`
-Applied when the datetime component is rendered in right-to-left (RTL) layout mode. This class adjusts the component's styling to properly support RTL languages and text direction.
+```css
+/* Custom datetime input styling */
+.app-datetime {
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
 
-### `.app-datetime-with-label`
-Applied when the datetime component includes an associated label element. This class provides appropriate spacing and layout adjustments to accommodate the label positioning and styling.
+/* Disabled state styling */
+.app-datetime-disabled {
+  background-color: #f5f5f5;
+  opacity: 0.6;
+}
 
-You can override these classes or combine them with standard application CSS classes to achieve the desired visual appearance for your datetime components.
+/* RTL support */
+.app-datetime-rtl {
+  text-align: right;
+  direction: rtl;
+}
+
+/* With floating label */
+.app-datetime-with-label {
+  margin-top: 20px;
+}
+```
