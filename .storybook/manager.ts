@@ -41,5 +41,5 @@ const customTheme = create({
 
 addons.setConfig({
   theme: customTheme,
-
 });
+
