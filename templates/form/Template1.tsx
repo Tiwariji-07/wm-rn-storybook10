@@ -14,6 +14,7 @@ import WmTextarea from "@wavemaker/app-rn-runtime/components/input/textarea/text
 import WmNumber from "@wavemaker/app-rn-runtime/components/input/number/number.component";
 import WmSelect from "@wavemaker/app-rn-runtime/components/input/select/select.component";
 import { Users } from "../../constants/constant";
+import { action } from "storybook/actions";
 
 const PC_Name = () => {
   return (

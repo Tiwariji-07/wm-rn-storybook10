@@ -281,4 +281,27 @@ export function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
 }
 
+// useEvent - used by gesture-handler for event handling
+// Returns a function that can be used as an event handler
+export function useEvent(handler, eventNames = [], rebuild = false) {
+    const handlerRef = React.useRef(handler);
+    handlerRef.current = handler;
+
+    return React.useCallback((...args) => {
+        if (handlerRef.current) {
+            handlerRef.current(...args);
+        }
+    }, []);
+}
+
+// useHandler - similar to useEvent for gesture handling
+export function useHandler(handlers, dependencies) {
+    return handlers;
+}
+
+// useWorkletCallback - creates a worklet callback
+export function useWorkletCallback(callback, dependencies) {
+    return React.useCallback(callback, dependencies || []);
+}
+
 export default Animated;
