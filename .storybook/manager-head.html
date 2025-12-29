@@ -34,6 +34,26 @@
     padding: 10px 16px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     background: linear-gradient(135deg, rgba(41, 109, 246, 0.03) 0%, rgba(41, 109, 246, 0.08) 100%);
+    order: 2 !important;
+    /* Position between logo (1) and search (3) */
+  }
+
+  /* Make sidebar header use flexbox for ordering */
+  .sidebar-container>div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Logo/branding area comes first */
+  .sidebar-container>div:first-child>a:first-child,
+  .sidebar-container>div:first-child>div:first-child {
+    order: 1 !important;
+  }
+
+  /* Search bar comes after version switcher */
+  .sidebar-container>div:first-child>form,
+  .sidebar-container>div:first-child>div:has(form) {
+    order: 3 !important;
   }
 
   .wm-version-switcher-header {
@@ -46,6 +66,7 @@
   .wm-framework-badge {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
     padding: 3px 8px;
     border-radius: 10px;
@@ -53,8 +74,8 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    background: linear-gradient(135deg, #296df6 0%, #1a4fd6 100%);
-    color: white;
+    background: transparent;
+    color: #296df6;
     font-family: "neurial-grotesk-medium", sans-serif;
   }
 
@@ -76,11 +97,12 @@
   }
 
   .wm-version-select:hover {
-    border-color: #296df6;
+    /* border-color: #296df6; */
+    background-color: rgb(226, 244, 254);
   }
 
   .wm-version-select:focus {
-    border-color: #296df6;
+    /* border-color: #296df6; */
     box-shadow: 0 0 0 2px rgba(41, 109, 246, 0.15);
   }
 </style>
@@ -240,9 +262,9 @@
         }
       });
 
-      // Insert after the target element
-      insertTarget.insertAdjacentElement('afterend', switcher);
-      console.log('WM Version Switcher: Injected successfully');
+      // Insert BEFORE the target element (above the search bar)
+      insertTarget.insertAdjacentElement('beforebegin', switcher);
+      console.log('WM Version Switcher: Injected above search bar');
     };
 
     // Function to replace SVGs with FontAwesome icons
